@@ -292,12 +292,12 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Artificial Intelligence",
         "days": [
-            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 132, "title": "Minimax & Alpha-Beta Pruning", "focus": "Game trees, utility values, alpha-beta cutoffs", "resource": "Berkeley CS188 Game Trees Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note02.pdf" },
+            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "CS188 Search Note 01 (Sec. 1-3: DFS/BFS)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "CS188 Search Note 01 (Sec. 3: Depth-Limited & IDS)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "CS188 Search Note 01 (Sec. 4: Greedy Search)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "CS188 Search Note 01 (Sec. 4: A* Search)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "CS188 Search Note 01 (Sec. 5: Consistency & Optimality)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 132, "title": "Minimax & Alpha-Beta Pruning", "focus": "Game trees, utility values, alpha-beta cutoffs", "resource": "CS188 Game Trees Note 02 (Minimax & Pruning)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note02.pdf" },
             { "id": 133, "title": "Search Algorithms Problems", "focus": "Solve game trees and calculate admissible A* heuristics", "resource": "GATE Overflow AI Questions", "url": "https://gateoverflow.in/tag/artificial-intelligence" }
         ]
     },
@@ -307,12 +307,12 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Artificial Intelligence",
         "days": [
-            { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
-            { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
-            { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
-            { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "Berkeley CS188 First-Order Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
-            { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "Berkeley CS188 Bayesian Networks Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note03.pdf" },
-            { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "Berkeley CS188 Bayes Nets Independence Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note03.pdf" },
+            { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "CS188 Logic Note 07 (Sec. 1: Prop Logic Basics)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
+            { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "CS188 Logic Note 07 (Sec. 2: Propositional Inference)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
+            { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "CS188 Logic Note 07 (Sec. 3: FOL Syntax & Quantifiers)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
+            { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "CS188 Logic Note 07 (Sec. 4: FOL Inference & Unification)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note07.pdf" },
+            { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "CS188 Bayes Nets Note 03 (Sec. 1: Syntax & CPTs)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note03.pdf" },
+            { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "CS188 Bayes Nets Note 03 (Sec. 2: d-separation)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note03.pdf" },
             { "id": 140, "title": "Artificial Intelligence Subject Test", "focus": "Complete AI subject test, check resolution and Bayes nets", "resource": "GATE Overflow AI Questions", "url": "https://gateoverflow.in/tag/artificial-intelligence" }
         ]
     },
@@ -342,7 +342,7 @@ STUDY_PLAN = [
             { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GeeksforGeeks SQL Cheat Sheet", "url": "https://www.geeksforgeeks.org/sql-cheat-sheet/" },
             { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
             { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
-            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "CS188 Note 01 & 07 (Combined Search & Logic Summary)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
             { "id": 154, "title": "CS & ML/AI Combined Revision Test", "focus": "Take 40-question technical combined test", "resource": "GATE Overflow ML Questions", "url": "https://gateoverflow.in/tag/machine-learning" }
         ]
     },
