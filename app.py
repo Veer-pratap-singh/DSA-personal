@@ -817,6 +817,360 @@ with tabs[0]:
                     else:
                         st.markdown("<span style='font-size:12px; color:#5e6b82;'>Check off day to log review</span>", unsafe_allow_html=True)
                 
+                # Inline Premium Mock Test for Day 162 and Day 164 (Week 24)
+                if day_id in [162, 164]:
+                    is_unlocked = state.get("is_premium_unlocked", False)
+                    if not is_unlocked:
+                        st.markdown("""
+                        <div style="background: linear-gradient(135deg, rgba(255, 126, 95, 0.08) 0%, rgba(254, 180, 123, 0.08) 100%); 
+                                    border: 1px dashed rgba(255, 126, 95, 0.25); border-radius: 8px; padding: 12px; margin: 10px 0 10px 30px;">
+                            <span style="color:#ff7e5f; font-weight:bold; font-size:13px;">🔒 Premium Mock Test is Locked</span>
+                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Unlock Mock 1 and Mock 2 with step-by-step video solutions, grading, and key verification for ₹10.</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        col_pad, col_unlock_btn = st.columns([0.15, 3.85])
+                        with col_unlock_btn:
+                            with st.popover("🔓 Unlock Mock Exams (₹10)"):
+                                st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹10", width=180)
+                                st.success("UPI ID: 6376541591@fam")
+                                if st.button("✅ Confirm simulated payment of ₹10", key=f"pay_inline_{day_id}"):
+                                    state["is_premium_unlocked"] = True
+                                    commit_changes()
+                                    st.balloons()
+                                    st.success("🎉 All Mock Exams Unlocked!")
+                                    st.rerun()
+                    else:
+                        # Unlocked: render interactive quiz
+                        exam_index = 0 if day_id == 162 else 1
+                        exam_id = f"premium_mock_{exam_index + 1}"
+                        exam_name = "Mock Exam 1: GATE DA Full-Length Prediction Mock" if day_id == 162 else "Mock Exam 2: Advanced AI, ML & Math Subject Mock"
+                        
+                        # Define questions locally inside the loop
+                        INLINE_QUESTIONS = [
+                            {
+                                "id": "q1",
+                                "type": "MCQ",
+                                "question": "Let $A$ be a $3 \\times 3$ matrix with eigenvalues $1, 2, 3$. What is the determinant of the matrix $B = A^2 - A$?",
+                                "options": ["A) 0", "B) 6", "C) 12", "D) 18"],
+                                "correct": "A) 0",
+                                "explanation": "The eigenvalues of $A$ are $\\lambda_1 = 1$, $\\lambda_2 = 2$, and $\\lambda_3 = 3$.\n\n"
+                                               "The eigenvalues of the matrix $B = A^2 - A$ are given by $f(\\lambda_i) = \\lambda_i^2 - \\lambda_i$:\n"
+                                               "- For $\\lambda_1 = 1$: $1^2 - 1 = 0$\n"
+                                               "- For $\\lambda_2 = 2$: $2^2 - 2 = 2$\n"
+                                               "- For $\\lambda_3 = 3$: $3^2 - 3 = 6$\n\n"
+                                               "The determinant of a matrix is the product of its eigenvalues. Therefore, $\\text{det}(B) = 0 \\times 2 \\times 6 = 0$. Thus, Option A is correct."
+                            },
+                            {
+                                "id": "q2",
+                                "type": "MSQ",
+                                "question": "Which of the following statements are **TRUE** regarding Artificial Intelligence search algorithms? (Select all that apply)",
+                                "options": [
+                                    "A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.",
+                                    "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.",
+                                    "C) A consistent heuristic is always admissible.",
+                                    "D) Depth-First Search (DFS) has a worst-case space complexity of $O(b^d)$ where $b$ is the branching factor and $d$ is the depth."
+                                ],
+                                "correct": ["A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.", 
+                                            "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.", 
+                                            "C) A consistent heuristic is always admissible."],
+                                "explanation": "Let's analyze the statements:\n"
+                                               "- **A is TRUE**: Admissibility of $h(n)$ guarantees optimality in tree search.\n"
+                                               "- **B is TRUE**: UCS is a special case of Dijkstra's algorithm; it is complete and optimal if step costs $\\ge \\epsilon > 0$.\n"
+                                               "- **C is TRUE**: Consistency ($h(n) \\le c(n, a, n') + h(n')$) is a stronger condition than admissibility; all consistent heuristics are admissible.\n"
+                                               "- **D is FALSE**: DFS has a space complexity of $O(bd)$ in the worst case, not $O(b^d)$. (BFS has $O(b^d)$ space complexity)."
+                            },
+                            {
+                                "id": "q3",
+                                "type": "NAT",
+                                "question": "Consider a Naive Bayes classifier with two classes $C_1$ and $C_2$. The prior probability is $P(C_1) = 0.6$. "
+                                            "For a binary feature $X$, the conditional probabilities are $P(X=1 \\mid C_1) = 0.3$ and $P(X=1 \\mid C_2) = 0.8$. "
+                                            "Compute the posterior probability $P(C_1 \\mid X=1)$. (Enter your answer rounded off to 2 decimal places, e.g. 0.36)",
+                                "correct": 0.36,
+                                "tolerance": 0.01,
+                                "explanation": "By Bayes' Theorem:\n"
+                                               "$$P(C_1 \\mid X=1) = \\frac{P(X=1 \\mid C_1) P(C_1)}{P(X=1)}$$\n\n"
+                                               "First, calculate the marginal probability $P(X=1)$ using the law of total probability:\n"
+                                               "$$P(X=1) = P(X=1 \\mid C_1)P(C_1) + P(X=1 \\mid C_2)P(C_2)$$\n"
+                                               "Given $P(C_1) = 0.6 \\implies P(C_2) = 1 - 0.6 = 0.4$:\n"
+                                               "$$P(X=1) = (0.3 \\times 0.6) + (0.8 \\times 0.4) = 0.18 + 0.32 = 0.50$$\n\n"
+                                               "Now, substitute back into Bayes' formula:\n"
+                                               "$$P(C_1 \\mid X=1) = \\frac{0.18}{0.50} = 0.36$$"
+                            },
+                            {
+                                "id": "q4",
+                                "type": "MCQ",
+                                "question": "Let $R(A, B, C, D, E)$ be a relational schema with functional dependencies: $A \\to B$, $B \\to C$, and $D \\to E$. "
+                                            "Which of the following is the candidate key for $R$?",
+                                "options": ["A) A", "B) AD", "C) ADE", "D) ABD"],
+                                "correct": "B) AD",
+                                "explanation": "To find the candidate key, we compute the closure of attributes:\n"
+                                               "- $\\{A\\}^+ = \\{A, B, C\\}$ (does not contain $D, E$)\n"
+                                               "- $\\{AD\\}^+ = \\{A, D\\}^+$\n"
+                                               "  Using $A \\to B$: $\\{A, D, B\\}$\n"
+                                               "  Using $B \\to C$: $\\{A, D, B, C\\}$ \n"
+                                               "  Using $D \\to E$: $\\{A, D, B, C, E\\}$ = all attributes of relation $R$.\n\n"
+                                               "Since $\\{AD\\}^+$ contains all attributes and no proper subset of $\\{AD\\}$ is a superkey, $AD$ is the candidate key."
+                            },
+                            {
+                                "id": "q5",
+                                "type": "NAT",
+                                "question": "The probability density function of a continuous random variable $X$ is given by $f(x) = k x^2$ for $0 \\le x \\le 2$, and $f(x) = 0$ otherwise. "
+                                            "Calculate the value of the constant $k$. (Enter your answer as a decimal rounded off to 3 decimal places, e.g. 0.375)",
+                                "correct": 0.375,
+                                "tolerance": 0.005,
+                                "explanation": "Since $f(x)$ is a probability density function, the total area under the curve must equal 1:\n"
+                                               "$$\\int_{-\\infty}^{\\infty} f(x) dx = 1 \\implies \\int_0^2 k x^2 dx = 1$$\n\n"
+                                               "Perform the integration:\n"
+                                               "$$k \\left[ \\frac{x^3}{3} \\right]_0^2 = 1 \\implies k \\left( \\frac{8}{3} - 0 \\right) = 1$$\n"
+                                               "$$k \\frac{8}{3} = 1 \\implies k = \\frac{3}{8} = 0.375$$"
+                            }
+                        ] if day_id == 162 else [
+                            {
+                                "id": "q1",
+                                "type": "MCQ",
+                                "question": "Let $X$ and $Y$ be independent Poisson random variables with parameters $\\lambda_1 = 2$ and $\\lambda_2 = 3$ respectively. "
+                                            "What is the probability $P(X + Y = 1)$?",
+                                "options": ["A) $e^{-5}$", "B) $5e^{-5}$", "C) $6e^{-5}$", "D) $2.5e^{-5}$"],
+                                "correct": "B) $5e^{-5}$",
+                                "explanation": "Since $X$ and $Y$ are independent Poisson random variables with parameters $\\lambda_1$ and $\\lambda_2$, their sum $Z = X + Y$ is also a Poisson random variable with parameter $\\lambda = \\lambda_1 + \\lambda_2 = 2 + 3 = 5$.\n\n"
+                                               "The probability mass function of a Poisson random variable is $P(Z = z) = \\frac{e^{-\\lambda} \\lambda^z}{z!}$.\n\n"
+                                               "For $z = 1$:\n"
+                                               "$$P(X + Y = 1) = \\frac{e^{-5} 5^1}{1!} = 5e^{-5}$$"
+                            },
+                            {
+                                "id": "q2",
+                                "type": "MSQ",
+                                "question": "Which of the following are **TRUE** regarding support vector machines (SVM)? (Select all that apply)",
+                                "options": [
+                                    "A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
+                                    "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
+                                    "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors.",
+                                    "D) The radial basis function (RBF) kernel maps the inputs to a finite-dimensional feature space."
+                                ],
+                                "correct": ["A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
+                                            "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
+                                            "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors."],
+                                "explanation": "- **A is TRUE**: $C$ regulates regularization. High $C$ prioritizes correct classification, small $C$ prioritizes a wider margin.\n"
+                                               "- **B is TRUE**: High $C$ fits training data very strictly, shrinking the margin, leading to overfitting risk.\n"
+                                               "- **C is TRUE**: The dual objective function involves $\\sum \\alpha_i \\alpha_j y_i y_j (x_i \\cdot x_j)$, enabling the kernel trick.\n"
+                                               "- **D is FALSE**: The RBF kernel maps inputs to an *infinite*-dimensional feature space, not finite."
+                            },
+                            {
+                                "id": "q3",
+                                "type": "NAT",
+                                "question": "Assume we run the K-Means algorithm on a 1D dataset containing points $\\{2, 4, 10, 12, 20\\}$ with $K = 2$. "
+                                            "The initial centroids are chosen as $c_1 = 3$ and $c_2 = 15$. "
+                                            "What is the value of the updated centroid $c_1$ after the first iteration? (Enter your answer as a single integer/decimal)",
+                                "correct": 3.0,
+                                "tolerance": 0.01,
+                                "explanation": "Let's run the first assignment step:\n"
+                                               "- Point 2: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 13. Assign to Cluster 1.\n"
+                                               "- Point 4: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 11. Assign to Cluster 1.\n"
+                                               "- Point 10: distance to $c_1(3)$ is 7, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n"
+                                               "- Point 12: distance to $c_1(3)$ is 9, distance to $c_2(15)$ is 3. Assign to Cluster 2.\n"
+                                               "- Point 20: distance to $c_1(3)$ is 17, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n\n"
+                                               "Cluster 1 points: $\\{2, 4\\}$.\n"
+                                               "Cluster 2 points: $\\{10, 12, 20\\}$.\n\n"
+                                               "Updated centroid $c_1 = \\frac{2 + 4}{2} = 3.0$."
+                            },
+                            {
+                                "id": "q4",
+                                "type": "MCQ",
+                                "question": "Let $X$ be a random variable representing the height of students. We collect a sample of size $n = 100$ "
+                                            "and calculate the sample mean $\\bar{x} = 170$ cm with sample standard deviation $s = 10$ cm. "
+                                            "What is the approximate $95\\%$ confidence interval for the population mean? (Use $z_{0.025} = 1.96$)",
+                                "options": ["A) [169.02, 170.98]", "B) [168.04, 171.96]", "C) [165.02, 174.98]", "D) [167.08, 172.92]"],
+                                "correct": "B) [168.04, 171.96]",
+                                "explanation": "The formula for the confidence interval of the mean is:\n"
+                                               "$$\\bar{x} \\pm z \\frac{s}{\\sqrt{n}}$$\n\n"
+                                               "Substitute the given values:\n"
+                                               "- $\\bar{x} = 170$\n"
+                                               "- $z = 1.96$\n"
+                                               "- $s = 10$\n"
+                                               "- $n = 100 \\implies \\sqrt{n} = 10$\n\n"
+                                               "Calculate standard error:\n"
+                                               "$$\\text{SE} = \\frac{10}{10} = 1$$\n\n"
+                                               "Calculate margin of error:\n"
+                                               "$$\\text{ME} = 1.96 \\times 1 = 1.96$$\n\n"
+                                               "Thus, the interval is:\n"
+                                               "$$[170 - 1.96, 170 + 1.96] = [168.04, 171.96]$$"
+                            },
+                            {
+                                "id": "q5",
+                                "type": "NAT",
+                                "question": "Find the maximum value of the function $f(x) = -2x^2 + 8x + 5$ using optimization methods. "
+                                            "(Enter your answer as a single integer/decimal)",
+                                "correct": 13.0,
+                                "tolerance": 0.01,
+                                "explanation": "To find the maximum, we calculate the first derivative and set it to zero:\n"
+                                               "$$f'(x) = -4x + 8 = 0 \\implies x = 2$$\n\n"
+                                               "Verify using the second derivative:\n"
+                                               "$$f''(x) = -4 < 0$$\n"
+                                               "Since the second derivative is negative, $x=2$ is a local and global maximum.\n\n"
+                                               "Substitute $x=2$ back into the original function $f(x)$:\n"
+                                               "$$f(2) = -2(2)^2 + 8(2) + 5 = -8 + 16 + 5 = 13.0$$"
+                            }
+                        ]
+                        
+                        col_pad, col_exam_area = st.columns([0.15, 3.85])
+                        with col_exam_area:
+                            with st.expander(f"📝 Attempt {day['title']} (Interactive Exam)", expanded=False):
+                                # Initial state tracking
+                                if "exam_answers" not in st.session_state:
+                                    st.session_state.exam_answers = {}
+                                if "exam_submitted" not in st.session_state:
+                                    st.session_state.exam_submitted = {}
+                                    
+                                submitted_this_exam = st.session_state.exam_submitted.get(exam_id, False)
+                                
+                                # Reset button
+                                if submitted_this_exam:
+                                    if st.button("🔄 Retake This Exam", key=f"retake_btn_{day_id}"):
+                                        st.session_state.exam_submitted[exam_id] = False
+                                        if exam_id in st.session_state.exam_answers:
+                                            st.session_state.exam_answers[exam_id] = {}
+                                        st.rerun()
+                                
+                                st.markdown("---")
+                                
+                                # Rendering questions
+                                user_answers = st.session_state.exam_answers.setdefault(exam_id, {})
+                                
+                                for q_idx, q in enumerate(INLINE_QUESTIONS):
+                                    q_id = q["id"]
+                                    st.markdown(f"**Q{q_idx+1} ({q['type']}):**")
+                                    st.markdown(q["question"])
+                                    
+                                    if not submitted_this_exam:
+                                        if q["type"] == "MCQ":
+                                            user_answers[q_id] = st.radio("Choose option:", q["options"], index=None, key=f"inline_mcq_{day_id}_{q_id}")
+                                        elif q["type"] == "MSQ":
+                                            selected_opts = []
+                                            for opt in q["options"]:
+                                                if st.checkbox(opt, key=f"inline_msq_{day_id}_{q_id}_{opt}"):
+                                                    selected_opts.append(opt)
+                                            user_answers[q_id] = selected_opts
+                                        elif q["type"] == "NAT":
+                                            user_answers[q_id] = st.number_input("Enter numerical value:", value=None, format="%.4f", placeholder="e.g. 0.36", key=f"inline_nat_{day_id}_{q_id}")
+                                    else:
+                                        # Submitted view: display chosen answer and correctness
+                                        chosen = user_answers.get(q_id, None)
+                                        correct = q["correct"]
+                                        
+                                        if q["type"] == "MCQ":
+                                            st.markdown(f"**Your Answer:** {chosen if chosen else 'Not attempted'}")
+                                            if chosen == correct:
+                                                st.success("✅ Correct! (+2 Marks)")
+                                            else:
+                                                st.error(f"❌ Incorrect. Correct Answer: {correct} (-0.66 Negative Marking)")
+                                        elif q["type"] == "MSQ":
+                                            st.markdown(f"**Your Answer:** {', '.join(chosen) if chosen else 'Not attempted'}")
+                                            if set(chosen or []) == set(correct):
+                                                st.success("✅ Correct! (+2 Marks)")
+                                            else:
+                                                st.error(f"❌ Incorrect. Correct Answer: {', '.join(correct)}")
+                                        elif q["type"] == "NAT":
+                                            st.markdown(f"**Your Answer:** {chosen if chosen is not None else 'Not attempted'}")
+                                            is_correct = False
+                                            if chosen is not None:
+                                                try:
+                                                    is_correct = abs(float(chosen) - float(correct)) <= q["tolerance"]
+                                                except:
+                                                    pass
+                                            if is_correct:
+                                                st.success(f"✅ Correct! (+2 Marks)")
+                                            else:
+                                                st.error(f"❌ Incorrect. Correct Answer: {correct}")
+                                                
+                                        with st.expander("📚 View Solved Explanation"):
+                                            st.markdown(q["explanation"])
+                                    
+                                    st.markdown("<hr style='margin:10px 0; border:0; border-top:1px dashed rgba(255,255,255,0.04);'>", unsafe_allow_html=True)
+                                    
+                                # Submit handle
+                                if not submitted_this_exam:
+                                    if st.button("🚀 Submit Premium Exam Paper", type="primary", key=f"submit_inline_{day_id}"):
+                                        st.session_state.exam_submitted[exam_id] = True
+                                        
+                                        # Calculate Score
+                                        raw_score = 0.0
+                                        correct_count = 0
+                                        attempted_count = 0
+                                        
+                                        for q in INLINE_QUESTIONS:
+                                            q_id = q["id"]
+                                            chosen = user_answers.get(q_id, None)
+                                            correct = q["correct"]
+                                            
+                                            if q["type"] == "MCQ":
+                                                if chosen:
+                                                    attempted_count += 1
+                                                    if chosen == correct:
+                                                        raw_score += 2.0
+                                                        correct_count += 1
+                                                    else:
+                                                        raw_score -= 0.66
+                                            elif q["type"] == "MSQ":
+                                                if chosen:
+                                                    attempted_count += 1
+                                                    if set(chosen) == set(correct):
+                                                        raw_score += 2.0
+                                                        correct_count += 1
+                                            elif q["type"] == "NAT":
+                                                if chosen is not None:
+                                                    attempted_count += 1
+                                                    is_correct = False
+                                                    try:
+                                                        is_correct = abs(float(chosen) - float(correct)) <= q["tolerance"]
+                                                    except:
+                                                        pass
+                                                    if is_correct:
+                                                        raw_score += 2.0
+                                                        correct_count += 1
+                                                        
+                                        st.session_state[f"score_{exam_id}"] = round(raw_score, 2)
+                                        st.session_state[f"acc_{exam_id}"] = round((correct_count / attempted_count * 100), 1) if attempted_count > 0 else 0.0
+                                        st.session_state[f"correct_{exam_id}"] = correct_count
+                                        st.session_state[f"attempted_{exam_id}"] = attempted_count
+                                        
+                                        st.balloons()
+                                        st.rerun()
+                                else:
+                                    # Show results summary
+                                    score = st.session_state.get(f"score_{exam_id}", 0.0)
+                                    accuracy = st.session_state.get(f"acc_{exam_id}", 0.0)
+                                    correct_c = st.session_state.get(f"correct_{exam_id}", 0)
+                                    attempted_c = st.session_state.get(f"attempted_{exam_id}", 0)
+                                    
+                                    st.markdown("##### 📊 Test Performance Summary")
+                                    col_m1, col_m2 = st.columns(2)
+                                    with col_m1:
+                                        st.metric("Total Score", f"{score} / 10", "Marks Scored")
+                                    with col_m2:
+                                        st.metric("Accuracy Rate", f"{accuracy}%", f"{correct_c}/{attempted_c} Correct")
+                                        
+                                    # Option to log directly to logbook
+                                    log_key_str = f"logged_{exam_id}_{score}"
+                                    if log_key_str not in st.session_state:
+                                        if st.button("➕ Log this score to my Log Book", key=f"log_inline_{day_id}"):
+                                            new_mock = {
+                                                "id": str(int(pd.Timestamp.now().timestamp() * 1000)),
+                                                "name": exam_name,
+                                                "score": float(score) * 10.0, # Scale to out of 100
+                                                "accuracy": float(accuracy),
+                                                "date": date.today().strftime("%Y-%m-%d"),
+                                                "type": "Full Length Mock"
+                                            }
+                                            state["mocks"].append(new_mock)
+                                            state["mocks"].sort(key=lambda x: x["date"])
+                                            commit_changes()
+                                            st.session_state[log_key_str] = True
+                                            st.success("Entry successfully logged in your Mock Attempts Log Book!")
+                                            st.rerun()
+                                    else:
+                                        st.info("✓ Score successfully saved to your Log Book.")
+
+
                 st.markdown("<hr style='margin:10px 0; border:0; border-top:1px solid rgba(255,255,255,0.04);'>", unsafe_allow_html=True)
 
 # ------------------------------------------
