@@ -43,7 +43,7 @@ STUDY_PLAN = [
             { "id": 11, "title": "Change of Basis Matrix", "focus": "Transformation matrix from basis B1 to B2", "resource": "3Blue1Brown Linear Algebra - Lec 13", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
             { "id": 12, "title": "The Four Fundamental Subspaces", "focus": "Definitions of C(A), N(A), C(A^T), N(A^T)", "resource": "GO Classes Linear Algebra - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 13, "title": "Subspace Dimensions & Relations", "focus": "Finding dimensions of the 4 subspaces for mxn matrix", "resource": "GO Classes Linear Algebra - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
-            { "id": 14, "title": "Bases & Subspaces Practice", "focus": "Solve past GATE questions on vectors & subspaces", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 14, "title": "Bases & Subspaces Practice", "focus": "Solve past GATE questions on vectors & subspaces", "resource": "GATE Overflow Linear Algebra Questions", "url": "https://gateoverflow.in/tag/linear-algebra" }
         ]
     },
     {
@@ -58,7 +58,7 @@ STUDY_PLAN = [
             { "id": 18, "title": "Cramer's Rule & Formula", "focus": "Solving systems via Cramer's rule, cofactor formula", "resource": "GO Classes Linear Algebra - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 19, "title": "Eigenvalues & Eigenvectors", "focus": "Characteristic equation, solving det(A - λI) = 0", "resource": "GO Classes Linear Algebra - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 20, "title": "Diagonalization & Similarity", "focus": "Symmetric matrices, algebraic vs geometric multiplicity", "resource": "GO Classes Linear Algebra - Lec 37-39", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
-            { "id": 21, "title": "Transformation & Eigenvalue practice", "focus": "Practice solving eigenvalues from GATE CS/EC papers", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 21, "title": "Transformation & Eigenvalue practice", "focus": "Practice solving eigenvalues from GATE CS/EC papers", "resource": "GATE Overflow Linear Algebra Questions", "url": "https://gateoverflow.in/tag/linear-algebra" }
         ]
     },
     {
@@ -73,7 +73,7 @@ STUDY_PLAN = [
             { "id": 25, "title": "LU Decomposition", "focus": "Lower-Upper matrix decomposition, forwards-back substitution", "resource": "GO Classes Linear Algebra - Lec 49-51", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 26, "title": "Singular Value Decomposition (SVD)", "focus": "Mathematical formula, singular values, U Σ V^T properties", "resource": "GO Classes Linear Algebra - Lec 52-54", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 27, "title": "Matrix Decomposition Problems", "focus": "Practice LU, QR, and SVD calculation", "resource": "Maths for ML Deisenroth Textbook", "url": "https://mml-book.github.io/book/mml-book.pdf" },
-            { "id": 28, "title": "Linear Algebra Subject Test", "focus": "Solve 30-question subject test. Analyze error log", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 28, "title": "Linear Algebra Subject Test", "focus": "Solve 30-question subject test. Analyze error log", "resource": "GATE Overflow Linear Algebra Questions", "url": "https://gateoverflow.in/tag/linear-algebra" }
         ]
     },
     {
@@ -118,7 +118,7 @@ STUDY_PLAN = [
             { "id": 46, "title": "Sum of Independent Random Variables", "focus": "Convolutions of discrete and continuous variables", "resource": "GO Classes Probability - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 47, "title": "Chebyshev's Inequality", "focus": "Bounding probability using mean and variance", "resource": "GO Classes Probability - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 48, "title": "LLN & Central Limit Theorem", "focus": "Law of Large Numbers, CLT application to approximations", "resource": "GO Classes Probability - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-            { "id": 49, "title": "Joint Distributions & Limits Practice", "focus": "Solve past GATE questions on CLT & Covariance", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 49, "title": "Joint Distributions & Limits Practice", "focus": "Solve past GATE questions on CLT & Covariance", "resource": "GATE Overflow Probability Questions", "url": "https://gateoverflow.in/tag/probability" }
         ]
     },
     {
@@ -133,7 +133,7 @@ STUDY_PLAN = [
             { "id": 53, "title": "Hypothesis Testing Basics", "focus": "Null/Alternative, Type I & II errors, significance level", "resource": "NPTEL Hypothesis Testing", "url": "https://nptel.ac.in/courses/111105039" },
             { "id": 54, "title": "z-test & t-test Procedures", "focus": "One-sample, two-sample tests, critical values, p-value", "resource": "Wasserman All of Statistics PDF", "url": "https://egrcc.github.io/docs/math/all-of-statistics.pdf" },
             { "id": 55, "title": "Chi-Square Test & Likelihood Ratio", "focus": "Goodness of fit, independence tests", "resource": "NPTEL Statistical Inference - Lec 30", "url": "https://nptel.ac.in/courses/111105039" },
-            { "id": 56, "title": "Probability & Stats Subject Test", "focus": "Practice full Statistics subject test, log mistakes", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 56, "title": "Probability & Stats Subject Test", "focus": "Practice full Statistics subject test, log mistakes", "resource": "GATE Overflow Probability Questions", "url": "https://gateoverflow.in/tag/probability" }
         ]
     },
     {
@@ -148,7 +148,7 @@ STUDY_PLAN = [
             { "id": 60, "title": "Taylor & Maclaurin Series", "focus": "Power series expansion, approximations, error term", "resource": "3Blue1Brown Calculus - Lec 11", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" },
             { "id": 61, "title": "Single Variable Maxima & Minima", "focus": "First & second derivative tests, critical points", "resource": "GeeksforGeeks Calculus Study Guide", "url": "https://www.geeksforgeeks.org/calculus-for-gate-syllabus/" },
             { "id": 62, "title": "Integration Basics & FTC", "focus": "Fundamental Theorem of Calculus, standard integrals", "resource": "3Blue1Brown Calculus - Lec 8", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" },
-            { "id": 63, "title": "Single-Variable Calculus Practice", "focus": "Solve 20 calculus questions from past GATE papers", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 63, "title": "Single-Variable Calculus Practice", "focus": "Solve 20 calculus questions from past GATE papers", "resource": "GATE Overflow Calculus Questions", "url": "https://gateoverflow.in/tag/calculus" }
         ]
     },
     {
@@ -163,7 +163,7 @@ STUDY_PLAN = [
             { "id": 67, "title": "Multivariable Maxima & Minima", "focus": "Saddle points, critical points checks using Hessian", "resource": "GeeksforGeeks Calculus Study Guide", "url": "https://www.geeksforgeeks.org/calculus-for-gate-syllabus/" },
             { "id": 68, "title": "Unconstrained Optimization Basics", "focus": "Objective function, local vs global minima definition", "resource": "NPTEL Optimization Methods", "url": "https://nptel.ac.in/courses/111105039" },
             { "id": 69, "title": "Gradient Descent Algorithm", "focus": "Learning rate, updates, divergence, convergence criteria", "resource": "Maths for ML Deisenroth Textbook", "url": "https://mml-book.github.io/book/mml-book.pdf" },
-            { "id": 70, "title": "Calculus & Optimization Subject Test", "focus": "Complete optimization subject test, log mistakes", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 70, "title": "Calculus & Optimization Subject Test", "focus": "Complete optimization subject test, log mistakes", "resource": "GATE Overflow Calculus Questions", "url": "https://gateoverflow.in/tag/calculus" }
         ]
     },
     {
@@ -193,7 +193,7 @@ STUDY_PLAN = [
             { "id": 81, "title": "Sorting Algorithms (Merge, Quick)", "focus": "Divide & conquer, pivot selections, average vs worst cases", "resource": "Madhavan Mukund DSA Python - Week 2", "url": "https://nptel.ac.in/courses/106106145" },
             { "id": 82, "title": "Heapsort, Bubble, Insert, Select", "focus": "Time/space complexities, stability of sorts", "resource": "Madhavan Mukund DSA Python - Week 3", "url": "https://nptel.ac.in/courses/106106145" },
             { "id": 83, "title": "Graphs Traversals (BFS & DFS)", "focus": "Adjacency matrix/list representation, BFS, DFS code", "resource": "Madhavan Mukund DSA Python - Week 7", "url": "https://nptel.ac.in/courses/106106145" },
-            { "id": 84, "title": "DSA Subject Mock Test", "focus": "Take 30-question DSA quiz, record mistakes", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 84, "title": "DSA Subject Mock Test", "focus": "Take 30-question DSA quiz, record mistakes", "resource": "GATE Overflow DSA Questions", "url": "https://gateoverflow.in/tag/data-structures" }
         ]
     },
     {
@@ -223,7 +223,7 @@ STUDY_PLAN = [
             { "id": 95, "title": "Serializability & Concurrency Control", "focus": "Conflict serializable check (precedence graph), view serializability", "resource": "NPTEL Concurrency Control", "url": "https://nptel.ac.in/courses/106105175" },
             { "id": 96, "title": "File Organization & B+ Trees", "focus": "Indexing concepts, B/B+ tree insertions & capacities", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 97, "title": "Data Warehousing Basics", "focus": "Star schema, snowflake schema, OLAP operations (Rollup, Drilldown)", "resource": "GeeksforGeeks DBMS & Warehousing Guide", "url": "https://www.geeksforgeeks.org/data-warehousing-and-data-mining-tutorial/" },
-            { "id": 98, "title": "DBMS & DW Subject Test", "focus": "Solve 35 DBMS questions, check normalization & SQL solutions", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 98, "title": "DBMS & DW Subject Test", "focus": "Solve 35 DBMS questions, check normalization & SQL solutions", "resource": "GATE Overflow DBMS Questions", "url": "https://gateoverflow.in/tag/dbms" }
         ]
     },
     {
@@ -282,8 +282,8 @@ STUDY_PLAN = [
             { "id": 122, "title": "Hierarchical Clustering", "focus": "Agglomerative vs divisive, single, complete, average linkage", "resource": "GFG Hierarchical Clustering Guide", "url": "https://www.geeksforgeeks.org/hierarchical-clustering-in-data-mining/" },
             { "id": 123, "title": "PCA Concepts", "focus": "Dimensionality reduction, projection, variance maximization", "resource": "GFG Principal Component Analysis Guide", "url": "https://www.geeksforgeeks.org/principal-component-analysis-pca/" },
             { "id": 124, "title": "PCA Mathematical Derivation", "focus": "Covariance matrix, eigen decomposition, projection matrix", "resource": "Maths for ML Deisenroth Textbook", "url": "https://mml-book.github.io/book/mml-book.pdf" },
-            { "id": 125, "title": "Unsupervised Learning Practice", "focus": "Solve 15 problems on PCA & clustering", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" },
-            { "id": 126, "title": "Machine Learning Subject Test", "focus": "Solve 35 ML questions, log accuracy and weak spots", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 125, "title": "Unsupervised Learning Practice", "focus": "Solve 15 problems on PCA & clustering", "resource": "GATE Overflow ML Questions", "url": "https://gateoverflow.in/tag/machine-learning" },
+            { "id": 126, "title": "Machine Learning Subject Test", "focus": "Solve 35 ML questions, log accuracy and weak spots", "resource": "GATE Overflow ML Questions", "url": "https://gateoverflow.in/tag/machine-learning" }
         ]
     },
     {
@@ -313,7 +313,7 @@ STUDY_PLAN = [
             { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "Berkeley CS188 First-Order Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "Berkeley CS188 Bayesian Networks Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
             { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "Berkeley CS188 Bayes Nets Independence Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
-            { "id": 140, "title": "Artificial Intelligence Subject Test", "focus": "Complete AI subject test, check resolution and Bayes nets", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 140, "title": "Artificial Intelligence Subject Test", "focus": "Complete AI subject test, check resolution and Bayes nets", "resource": "GATE Overflow AI Questions", "url": "https://gateoverflow.in/tag/artificial-intelligence" }
         ]
     },
     {
@@ -328,7 +328,7 @@ STUDY_PLAN = [
             { "id": 144, "title": "Linear Algebra Formulas Review", "focus": "Four subspaces, eigenvalues, QR, SVD formula cards", "resource": "MIT Linear Algebra Lecture Notes (PDF)", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/4d876a9159e32543eb0d73b4d4382f4c_MIT18_06S10ZoomNotes.pdf" },
             { "id": 145, "title": "Probability Distributions Review", "focus": "Continuous/Discrete formula sheets, CLT bounds", "resource": "Probability Cheat Sheet (PDF)", "url": "https://wzchen.com/s/probability_cheatsheet.pdf" },
             { "id": 146, "title": "Calculus & Optimization Review", "focus": "Hessian matrix test, gradient descent update steps", "resource": "Lamar Calculus Cheat Sheet (PDF)", "url": "https://tutorial.math.lamar.edu/pdf/Calculus_Cheat_Sheet_All.pdf" },
-            { "id": 147, "title": "Math & Aptitude Combined Test", "focus": "Take 40-question Math & GA combined mock test", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 147, "title": "Math & Aptitude Combined Test", "focus": "Take 40-question Math & GA combined mock test", "resource": "GATE Overflow General Aptitude", "url": "https://gateoverflow.in/tag/general-aptitude" }
         ]
     },
     {
@@ -343,7 +343,7 @@ STUDY_PLAN = [
             { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
             { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
             { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
-            { "id": 154, "title": "CS & ML/AI Combined Revision Test", "focus": "Take 40-question technical combined test", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
+            { "id": 154, "title": "CS & ML/AI Combined Revision Test", "focus": "Take 40-question technical combined test", "resource": "GATE Overflow ML Questions", "url": "https://gateoverflow.in/tag/machine-learning" }
         ]
     },
     {
