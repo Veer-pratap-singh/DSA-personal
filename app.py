@@ -292,12 +292,12 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Artificial Intelligence",
         "days": [
-            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "UC Berkeley CS188 - Lec 1", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
+            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
             { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
-            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "UC Berkeley CS188 - Lec 2", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
-            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "NPTEL AI Search Methods - Lec 10", "url": "https://nptel.ac.in/courses/106105077" },
-            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "NPTEL AI Search Methods - Lec 11", "url": "https://nptel.ac.in/courses/106105077" },
-            { "id": 132, "title": "Minimax & Alpha-Beta Pruning", "focus": "Game trees, utility values, alpha-beta cutoffs", "resource": "UC Berkeley CS188 - Lec 3", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
+            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
+            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
+            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
+            { "id": 132, "title": "Minimax & Alpha-Beta Pruning", "focus": "Game trees, utility values, alpha-beta cutoffs", "resource": "Berkeley CS188 Game Trees Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note02.pdf" },
             { "id": 133, "title": "Search Algorithms Problems", "focus": "Solve game trees and calculate admissible A* heuristics", "resource": "GATE Overflow AI Questions", "url": "https://gateoverflow.in/tag/artificial-intelligence" }
         ]
     },
@@ -308,7 +308,7 @@ STUDY_PLAN = [
         "subject": "Artificial Intelligence",
         "days": [
             { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
-            { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "NPTEL AI Search/Logic - Lec 20", "url": "https://nptel.ac.in/courses/106105077" },
+            { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "Berkeley CS188 First-Order Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "Berkeley CS188 Bayesian Networks Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
