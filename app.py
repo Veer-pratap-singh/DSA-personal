@@ -817,20 +817,22 @@ with tabs[0]:
                     else:
                         st.markdown("<span style='font-size:12px; color:#5e6b82;'>Check off day to log review</span>", unsafe_allow_html=True)
                 
-                # Inline Premium Mock Test for Day 162 and Day 164 (Week 24)
-                if day_id in [162, 164]:
-                    is_unlocked = state.get("is_premium_unlocked", False)
+                                # Inline Mock Test for Day 162, 164, 169, 171, 173 (Week 24 & Week 25)
+                if day_id in [162, 164, 169, 171, 173]:
+                    is_free_mock = day_id in [162, 164, 169]
+                    is_unlocked = state.get("is_premium_unlocked", False) or is_free_mock
+                    
                     if not is_unlocked:
                         st.markdown("""
                         <div style="background: linear-gradient(135deg, rgba(255, 126, 95, 0.08) 0%, rgba(254, 180, 123, 0.08) 100%); 
                                     border: 1px dashed rgba(255, 126, 95, 0.25); border-radius: 8px; padding: 12px; margin: 10px 0 10px 30px;">
                             <span style="color:#ff7e5f; font-weight:bold; font-size:13px;">🔒 Premium Mock Test is Locked</span>
-                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Unlock Mock 1 and Mock 2 with step-by-step video solutions, grading, and key verification for ₹10.</p>
+                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Mock 1, 2, and 3 are completely free! Pay a one-time fee of ₹10 via UPI to unlock Mock 4 and Mock 5 (Full-Length & Subject Exams).</p>
                         </div>
                         """, unsafe_allow_html=True)
                         col_pad, col_unlock_btn = st.columns([0.15, 3.85])
                         with col_unlock_btn:
-                            with st.popover("🔓 Unlock Mock Exams (₹10)"):
+                            with st.popover("🔓 Unlock All Mock Exams (₹10)"):
                                 st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹10", width=180)
                                 st.success("UPI ID: 6376541591@fam")
                                 if st.button("✅ Confirm simulated payment of ₹10", key=f"pay_inline_{day_id}"):
@@ -840,178 +842,385 @@ with tabs[0]:
                                     st.success("🎉 All Mock Exams Unlocked!")
                                     st.rerun()
                     else:
-                        # Unlocked: render interactive quiz
-                        exam_index = 0 if day_id == 162 else 1
-                        exam_id = f"premium_mock_{exam_index + 1}"
-                        exam_name = "Mock Exam 1: GATE DA Full-Length Prediction Mock" if day_id == 162 else "Mock Exam 2: Advanced AI, ML & Math Subject Mock"
+                        # Render interactive quiz
+                        exam_id = f"premium_mock_{day_id}"
                         
-                        # Define questions locally inside the loop
-                        INLINE_QUESTIONS = [
-                            {
-                                "id": "q1",
-                                "type": "MCQ",
-                                "question": "Let $A$ be a $3 \\times 3$ matrix with eigenvalues $1, 2, 3$. What is the determinant of the matrix $B = A^2 - A$?",
-                                "options": ["A) 0", "B) 6", "C) 12", "D) 18"],
-                                "correct": "A) 0",
-                                "explanation": "The eigenvalues of $A$ are $\\lambda_1 = 1$, $\\lambda_2 = 2$, and $\\lambda_3 = 3$.\n\n"
-                                               "The eigenvalues of the matrix $B = A^2 - A$ are given by $f(\\lambda_i) = \\lambda_i^2 - \\lambda_i$:\n"
-                                               "- For $\\lambda_1 = 1$: $1^2 - 1 = 0$\n"
-                                               "- For $\\lambda_2 = 2$: $2^2 - 2 = 2$\n"
-                                               "- For $\\lambda_3 = 3$: $3^2 - 3 = 6$\n\n"
-                                               "The determinant of a matrix is the product of its eigenvalues. Therefore, $\\text{det}(B) = 0 \\times 2 \\times 6 = 0$. Thus, Option A is correct."
-                            },
-                            {
-                                "id": "q2",
-                                "type": "MSQ",
-                                "question": "Which of the following statements are **TRUE** regarding Artificial Intelligence search algorithms? (Select all that apply)",
-                                "options": [
-                                    "A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.",
-                                    "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.",
-                                    "C) A consistent heuristic is always admissible.",
-                                    "D) Depth-First Search (DFS) has a worst-case space complexity of $O(b^d)$ where $b$ is the branching factor and $d$ is the depth."
-                                ],
-                                "correct": ["A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.", 
-                                            "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.", 
-                                            "C) A consistent heuristic is always admissible."],
-                                "explanation": "Let's analyze the statements:\n"
-                                               "- **A is TRUE**: Admissibility of $h(n)$ guarantees optimality in tree search.\n"
-                                               "- **B is TRUE**: UCS is a special case of Dijkstra's algorithm; it is complete and optimal if step costs $\\ge \\epsilon > 0$.\n"
-                                               "- **C is TRUE**: Consistency ($h(n) \\le c(n, a, n') + h(n')$) is a stronger condition than admissibility; all consistent heuristics are admissible.\n"
-                                               "- **D is FALSE**: DFS has a space complexity of $O(bd)$ in the worst case, not $O(b^d)$. (BFS has $O(b^d)$ space complexity)."
-                            },
-                            {
-                                "id": "q3",
-                                "type": "NAT",
-                                "question": "Consider a Naive Bayes classifier with two classes $C_1$ and $C_2$. The prior probability is $P(C_1) = 0.6$. "
-                                            "For a binary feature $X$, the conditional probabilities are $P(X=1 \\mid C_1) = 0.3$ and $P(X=1 \\mid C_2) = 0.8$. "
-                                            "Compute the posterior probability $P(C_1 \\mid X=1)$. (Enter your answer rounded off to 2 decimal places, e.g. 0.36)",
-                                "correct": 0.36,
-                                "tolerance": 0.01,
-                                "explanation": "By Bayes' Theorem:\n"
-                                               "$$P(C_1 \\mid X=1) = \\frac{P(X=1 \\mid C_1) P(C_1)}{P(X=1)}$$\n\n"
-                                               "First, calculate the marginal probability $P(X=1)$ using the law of total probability:\n"
-                                               "$$P(X=1) = P(X=1 \\mid C_1)P(C_1) + P(X=1 \\mid C_2)P(C_2)$$\n"
-                                               "Given $P(C_1) = 0.6 \\implies P(C_2) = 1 - 0.6 = 0.4$:\n"
-                                               "$$P(X=1) = (0.3 \\times 0.6) + (0.8 \\times 0.4) = 0.18 + 0.32 = 0.50$$\n\n"
-                                               "Now, substitute back into Bayes' formula:\n"
-                                               "$$P(C_1 \\mid X=1) = \\frac{0.18}{0.50} = 0.36$$"
-                            },
-                            {
-                                "id": "q4",
-                                "type": "MCQ",
-                                "question": "Let $R(A, B, C, D, E)$ be a relational schema with functional dependencies: $A \\to B$, $B \\to C$, and $D \\to E$. "
-                                            "Which of the following is the candidate key for $R$?",
-                                "options": ["A) A", "B) AD", "C) ADE", "D) ABD"],
-                                "correct": "B) AD",
-                                "explanation": "To find the candidate key, we compute the closure of attributes:\n"
-                                               "- $\\{A\\}^+ = \\{A, B, C\\}$ (does not contain $D, E$)\n"
-                                               "- $\\{AD\\}^+ = \\{A, D\\}^+$\n"
-                                               "  Using $A \\to B$: $\\{A, D, B\\}$\n"
-                                               "  Using $B \\to C$: $\\{A, D, B, C\\}$ \n"
-                                               "  Using $D \\to E$: $\\{A, D, B, C, E\\}$ = all attributes of relation $R$.\n\n"
-                                               "Since $\\{AD\\}^+$ contains all attributes and no proper subset of $\\{AD\\}$ is a superkey, $AD$ is the candidate key."
-                            },
-                            {
-                                "id": "q5",
-                                "type": "NAT",
-                                "question": "The probability density function of a continuous random variable $X$ is given by $f(x) = k x^2$ for $0 \\le x \\le 2$, and $f(x) = 0$ otherwise. "
-                                            "Calculate the value of the constant $k$. (Enter your answer as a decimal rounded off to 3 decimal places, e.g. 0.375)",
-                                "correct": 0.375,
-                                "tolerance": 0.005,
-                                "explanation": "Since $f(x)$ is a probability density function, the total area under the curve must equal 1:\n"
-                                               "$$\\int_{-\\infty}^{\\infty} f(x) dx = 1 \\implies \\int_0^2 k x^2 dx = 1$$\n\n"
-                                               "Perform the integration:\n"
-                                               "$$k \\left[ \\frac{x^3}{3} \\right]_0^2 = 1 \\implies k \\left( \\frac{8}{3} - 0 \\right) = 1$$\n"
-                                               "$$k \\frac{8}{3} = 1 \\implies k = \\frac{3}{8} = 0.375$$"
-                            }
-                        ] if day_id == 162 else [
-                            {
-                                "id": "q1",
-                                "type": "MCQ",
-                                "question": "Let $X$ and $Y$ be independent Poisson random variables with parameters $\\lambda_1 = 2$ and $\\lambda_2 = 3$ respectively. "
-                                            "What is the probability $P(X + Y = 1)$?",
-                                "options": ["A) $e^{-5}$", "B) $5e^{-5}$", "C) $6e^{-5}$", "D) $2.5e^{-5}$"],
-                                "correct": "B) $5e^{-5}$",
-                                "explanation": "Since $X$ and $Y$ are independent Poisson random variables with parameters $\\lambda_1$ and $\\lambda_2$, their sum $Z = X + Y$ is also a Poisson random variable with parameter $\\lambda = \\lambda_1 + \\lambda_2 = 2 + 3 = 5$.\n\n"
-                                               "The probability mass function of a Poisson random variable is $P(Z = z) = \\frac{e^{-\\lambda} \\lambda^z}{z!}$.\n\n"
-                                               "For $z = 1$:\n"
-                                               "$$P(X + Y = 1) = \\frac{e^{-5} 5^1}{1!} = 5e^{-5}$$"
-                            },
-                            {
-                                "id": "q2",
-                                "type": "MSQ",
-                                "question": "Which of the following are **TRUE** regarding support vector machines (SVM)? (Select all that apply)",
-                                "options": [
-                                    "A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
-                                    "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
-                                    "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors.",
-                                    "D) The radial basis function (RBF) kernel maps the inputs to a finite-dimensional feature space."
-                                ],
-                                "correct": ["A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
-                                            "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
-                                            "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors."],
-                                "explanation": "- **A is TRUE**: $C$ regulates regularization. High $C$ prioritizes correct classification, small $C$ prioritizes a wider margin.\n"
-                                               "- **B is TRUE**: High $C$ fits training data very strictly, shrinking the margin, leading to overfitting risk.\n"
-                                               "- **C is TRUE**: The dual objective function involves $\\sum \\alpha_i \\alpha_j y_i y_j (x_i \\cdot x_j)$, enabling the kernel trick.\n"
-                                               "- **D is FALSE**: The RBF kernel maps inputs to an *infinite*-dimensional feature space, not finite."
-                            },
-                            {
-                                "id": "q3",
-                                "type": "NAT",
-                                "question": "Assume we run the K-Means algorithm on a 1D dataset containing points $\\{2, 4, 10, 12, 20\\}$ with $K = 2$. "
-                                            "The initial centroids are chosen as $c_1 = 3$ and $c_2 = 15$. "
-                                            "What is the value of the updated centroid $c_1$ after the first iteration? (Enter your answer as a single integer/decimal)",
-                                "correct": 3.0,
-                                "tolerance": 0.01,
-                                "explanation": "Let's run the first assignment step:\n"
-                                               "- Point 2: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 13. Assign to Cluster 1.\n"
-                                               "- Point 4: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 11. Assign to Cluster 1.\n"
-                                               "- Point 10: distance to $c_1(3)$ is 7, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n"
-                                               "- Point 12: distance to $c_1(3)$ is 9, distance to $c_2(15)$ is 3. Assign to Cluster 2.\n"
-                                               "- Point 20: distance to $c_1(3)$ is 17, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n\n"
-                                               "Cluster 1 points: $\\{2, 4\\}$.\n"
-                                               "Cluster 2 points: $\\{10, 12, 20\\}$.\n\n"
-                                               "Updated centroid $c_1 = \\frac{2 + 4}{2} = 3.0$."
-                            },
-                            {
-                                "id": "q4",
-                                "type": "MCQ",
-                                "question": "Let $X$ be a random variable representing the height of students. We collect a sample of size $n = 100$ "
-                                            "and calculate the sample mean $\\bar{x} = 170$ cm with sample standard deviation $s = 10$ cm. "
-                                            "What is the approximate $95\\%$ confidence interval for the population mean? (Use $z_{0.025} = 1.96$)",
-                                "options": ["A) [169.02, 170.98]", "B) [168.04, 171.96]", "C) [165.02, 174.98]", "D) [167.08, 172.92]"],
-                                "correct": "B) [168.04, 171.96]",
-                                "explanation": "The formula for the confidence interval of the mean is:\n"
-                                               "$$\\bar{x} \\pm z \\frac{s}{\\sqrt{n}}$$\n\n"
-                                               "Substitute the given values:\n"
-                                               "- $\\bar{x} = 170$\n"
-                                               "- $z = 1.96$\n"
-                                               "- $s = 10$\n"
-                                               "- $n = 100 \\implies \\sqrt{n} = 10$\n\n"
-                                               "Calculate standard error:\n"
-                                               "$$\\text{SE} = \\frac{10}{10} = 1$$\n\n"
-                                               "Calculate margin of error:\n"
-                                               "$$\\text{ME} = 1.96 \\times 1 = 1.96$$\n\n"
-                                               "Thus, the interval is:\n"
-                                               "$$[170 - 1.96, 170 + 1.96] = [168.04, 171.96]$$"
-                            },
-                            {
-                                "id": "q5",
-                                "type": "NAT",
-                                "question": "Find the maximum value of the function $f(x) = -2x^2 + 8x + 5$ using optimization methods. "
-                                            "(Enter your answer as a single integer/decimal)",
-                                "correct": 13.0,
-                                "tolerance": 0.01,
-                                "explanation": "To find the maximum, we calculate the first derivative and set it to zero:\n"
-                                               "$$f'(x) = -4x + 8 = 0 \\implies x = 2$$\n\n"
-                                               "Verify using the second derivative:\n"
-                                               "$$f''(x) = -4 < 0$$\n"
-                                               "Since the second derivative is negative, $x=2$ is a local and global maximum.\n\n"
-                                               "Substitute $x=2$ back into the original function $f(x)$:\n"
-                                               "$$f(2) = -2(2)^2 + 8(2) + 5 = -8 + 16 + 5 = 13.0$$"
-                            }
-                        ]
-                        
+                        # Set titles
+                        if day_id == 162:
+                            exam_name = "Mock Exam 1: GATE DA Full-Length Prediction Mock"
+                        elif day_id == 164:
+                            exam_name = "Mock Exam 2: Advanced AI, ML & Math Subject Mock"
+                        elif day_id == 169:
+                            exam_name = "Mock Exam 3: Linear Algebra, ML & Calculus Mock"
+                        elif day_id == 171:
+                            exam_name = "Mock Exam 4: Deep Learning & Propositional Logic Mock"
+                        else:
+                            exam_name = "Mock Exam 5: AI Heuristics, PCA & Probability Mock"
+                            
+                        # Load questions dataset
+                        if day_id == 162:
+                            INLINE_QUESTIONS = [
+                                {
+                                    "id": "q1",
+                                    "type": "MCQ",
+                                    "question": "Let $A$ be a $3 \\times 3$ matrix with eigenvalues $1, 2, 3$. What is the determinant of the matrix $B = A^2 - A$?",
+                                    "options": ["A) 0", "B) 6", "C) 12", "D) 18"],
+                                    "correct": "A) 0",
+                                    "explanation": "The eigenvalues of $A$ are $\\lambda_1 = 1$, $\\lambda_2 = 2$, and $\\lambda_3 = 3$.\n\n"
+                                                   "The eigenvalues of the matrix $B = A^2 - A$ are given by $f(\\lambda_i) = \\lambda_i^2 - \\lambda_i$:\n"
+                                                   "- For $\\lambda_1 = 1$: $1^2 - 1 = 0$\n"
+                                                   "- For $\\lambda_2 = 2$: $2^2 - 2 = 2$\n"
+                                                   "- For $\\lambda_3 = 3$: $3^2 - 3 = 6$\n\n"
+                                                   "The determinant of a matrix is the product of its eigenvalues. Therefore, $\\text{det}(B) = 0 \\times 2 \\times 6 = 0$. Thus, Option A is correct."
+                                },
+                                {
+                                    "id": "q2",
+                                    "type": "MSQ",
+                                    "question": "Which of the following statements are **TRUE** regarding Artificial Intelligence search algorithms? (Select all that apply)",
+                                    "options": [
+                                        "A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.",
+                                        "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.",
+                                        "C) A consistent heuristic is always admissible.",
+                                        "D) Depth-First Search (DFS) has a worst-case space complexity of $O(b^d)$ where $b$ is the branching factor and $d$ is the depth."
+                                    ],
+                                    "correct": ["A) A* search is optimal if the heuristic function $h(n)$ is admissible for tree search.", 
+                                                "B) Uniform Cost Search (UCS) is optimal and complete if step costs are strictly positive.", 
+                                                "C) A consistent heuristic is always admissible."],
+                                    "explanation": "Let's analyze the statements:\n"
+                                                   "- **A is TRUE**: Admissibility of $h(n)$ guarantees optimality in tree search.\n"
+                                                   "- **B is TRUE**: UCS is a special case of Dijkstra's algorithm; it is complete and optimal if step costs $\\ge \\epsilon > 0$.\n"
+                                                   "- **C is TRUE**: Consistency ($h(n) \\le c(n, a, n') + h(n')$) is a stronger condition than admissibility; all consistent heuristics are admissible.\n"
+                                                   "- **D is FALSE**: DFS has a space complexity of $O(bd)$ in the worst case, not $O(b^d)$. (BFS has $O(b^d)$ space complexity)."
+                                },
+                                {
+                                    "id": "q3",
+                                    "type": "NAT",
+                                    "question": "Consider a Naive Bayes classifier with two classes $C_1$ and $C_2$. The prior probability is $P(C_1) = 0.6$. "
+                                                "For a binary feature $X$, the conditional probabilities are $P(X=1 \\mid C_1) = 0.3$ and $P(X=1 \\mid C_2) = 0.8$. "
+                                                "Compute the posterior probability $P(C_1 \\mid X=1)$. (Enter your answer rounded off to 2 decimal places, e.g. 0.36)",
+                                    "correct": 0.36,
+                                    "tolerance": 0.01,
+                                    "explanation": "By Bayes' Theorem:\n"
+                                                   "$$P(C_1 \\mid X=1) = \\frac{P(X=1 \\mid C_1) P(C_1)}{P(X=1)}$$\n\n"
+                                                   "First, calculate the marginal probability $P(X=1)$ using the law of total probability:\n"
+                                                   "$$P(X=1) = P(X=1 \\mid C_1)P(C_1) + P(X=1 \\mid C_2)P(C_2)$$\n"
+                                                   "Given $P(C_1) = 0.6 \\implies P(C_2) = 1 - 0.6 = 0.4$:\n"
+                                                   "$$P(X=1) = (0.3 \\times 0.6) + (0.8 \\times 0.4) = 0.18 + 0.32 = 0.50$$\n\n"
+                                                   "Now, substitute back into Bayes' formula:\n"
+                                                   "$$P(C_1 \\mid X=1) = \\frac{0.18}{0.50} = 0.36$$"
+                                },
+                                {
+                                    "id": "q4",
+                                    "type": "MCQ",
+                                    "question": "Let $R(A, B, C, D, E)$ be a relational schema with functional dependencies: $A \\to B$, $B \\to C$, and $D \\to E$. "
+                                                "Which of the following is the candidate key for $R$?",
+                                    "options": ["A) A", "B) AD", "C) ADE", "D) ABD"],
+                                    "correct": "B) AD",
+                                    "explanation": "To find the candidate key, we compute the closure of attributes:\n"
+                                                   "- $\\{A\\}^+ = \\{A, B, C\\}$ (does not contain $D, E$)\n"
+                                                   "- $\\{AD\\}^+ = \\{A, D\\}^+$\n"
+                                                   "  Using $A \\to B$: $\\{A, D, B\\}$\n"
+                                                   "  Using $B \\to C$: $\\{A, D, B, C\\}$ \n"
+                                                   "  Using $D \\to E$: $\\{A, D, B, C, E\\}$ = all attributes of relation $R$.\n\n"
+                                                   "Since $\\{AD\\}^+$ contains all attributes and no proper subset of $\\{AD\\}$ is a superkey, $AD$ is the candidate key."
+                                },
+                                {
+                                    "id": "q5",
+                                    "type": "NAT",
+                                    "question": "The probability density function of a continuous random variable $X$ is given by $f(x) = k x^2$ for $0 \\le x \\le 2$, and $f(x) = 0$ otherwise. "
+                                                "Calculate the value of the constant $k$. (Enter your answer as a decimal rounded off to 3 decimal places, e.g. 0.375)",
+                                    "correct": 0.375,
+                                    "tolerance": 0.005,
+                                    "explanation": "Since $f(x)$ is a probability density function, the total area under the curve must equal 1:\n"
+                                                   "$$\\int_{-\\infty}^{\\infty} f(x) dx = 1 \\implies \\int_0^2 k x^2 dx = 1$$\n\n"
+                                                   "Perform the integration:\n"
+                                                   "$$k \\left[ \\frac{x^3}{3} \\right]_0^2 = 1 \\implies k \\left( \\frac{8}{3} - 0 \\right) = 1$$\n"
+                                                   "$$k \\frac{8}{3} = 1 \\implies k = \\frac{3}{8} = 0.375$$"
+                                }
+                            ]
+                        elif day_id == 164:
+                            INLINE_QUESTIONS = [
+                                {
+                                    "id": "q1",
+                                    "type": "MCQ",
+                                    "question": "Let $X$ and $Y$ be independent Poisson random variables with parameters $\\lambda_1 = 2$ and $\\lambda_2 = 3$ respectively. "
+                                                "What is the probability $P(X + Y = 1)$?",
+                                    "options": ["A) $e^{-5}$", "B) $5e^{-5}$", "C) $6e^{-5}$", "D) $2.5e^{-5}$"],
+                                    "correct": "B) $5e^{-5}$",
+                                    "explanation": "Since $X$ and $Y$ are independent Poisson random variables with parameters $\\lambda_1$ and $\\lambda_2$, their sum $Z = X + Y$ is also a Poisson random variable with parameter $\\lambda = \\lambda_1 + \\lambda_2 = 2 + 3 = 5$.\n\n"
+                                                   "The probability mass function of a Poisson random variable is $P(Z = z) = \\frac{e^{-\\lambda} \\lambda^z}{z!}$.\n\n"
+                                                   "For $z = 1$:\n"
+                                                   "$$P(X + Y = 1) = \\frac{e^{-5} 5^1}{1!} = 5e^{-5}$$"
+                                },
+                                {
+                                    "id": "q2",
+                                    "type": "MSQ",
+                                    "question": "Which of the following are **TRUE** regarding support vector machines (SVM)? (Select all that apply)",
+                                    "options": [
+                                        "A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
+                                        "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
+                                        "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors.",
+                                        "D) The radial basis function (RBF) kernel maps the inputs to a finite-dimensional feature space."
+                                    ],
+                                    "correct": ["A) In a soft-margin SVM, the parameter $C$ controls the trade-off between margin size and classification errors.",
+                                                "B) If we increase $C$, the margin size decreases and the classifier becomes more prone to overfitting.",
+                                                "C) The dual formulation of SVM optimization depends only on the dot products of input feature vectors."],
+                                    "explanation": "- **A is TRUE**: $C$ regulates regularization. High $C$ prioritizes correct classification, small $C$ prioritizes a wider margin.\n"
+                                                   "- **B is TRUE**: High $C$ fits training data very strictly, shrinking the margin, leading to overfitting risk.\n"
+                                                   "- **C is TRUE**: The dual objective function involves $\\sum \\alpha_i \\alpha_j y_i y_j (x_i \\cdot x_j)$, enabling the kernel trick.\n"
+                                                   "- **D is FALSE**: The RBF kernel maps inputs to an *infinite*-dimensional feature space, not finite."
+                                },
+                                {
+                                    "id": "q3",
+                                    "type": "NAT",
+                                    "question": "Assume we run the K-Means algorithm on a 1D dataset containing points $\\{2, 4, 10, 12, 20\\}$ with $K = 2$. "
+                                                "The initial centroids are chosen as $c_1 = 3$ and $c_2 = 15$. "
+                                                "What is the value of the updated centroid $c_1$ after the first iteration? (Enter your answer as a single integer/decimal)",
+                                    "correct": 3.0,
+                                    "tolerance": 0.01,
+                                    "explanation": "Let's run the first assignment step:\n"
+                                                   "- Point 2: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 13. Assign to Cluster 1.\n"
+                                                   "- Point 4: distance to $c_1(3)$ is 1, distance to $c_2(15)$ is 11. Assign to Cluster 1.\n"
+                                                   "- Point 10: distance to $c_1(3)$ is 7, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n"
+                                                   "- Point 12: distance to $c_1(3)$ is 9, distance to $c_2(15)$ is 3. Assign to Cluster 2.\n"
+                                                   "- Point 20: distance to $c_1(3)$ is 17, distance to $c_2(15)$ is 5. Assign to Cluster 2.\n\n"
+                                                   "Cluster 1 points: $\\{2, 4\\}$.\n"
+                                                   "Cluster 2 points: $\\{10, 12, 20\\}$.\n\n"
+                                                   "Updated centroid $c_1 = \\frac{2 + 4}{2} = 3.0$."
+                                },
+                                {
+                                    "id": "q4",
+                                    "type": "MCQ",
+                                    "question": "Let $X$ be a random variable representing the height of students. We collect a sample of size $n = 100$ "
+                                                "and calculate the sample mean $\\bar{x} = 170$ cm with sample standard deviation $s = 10$ cm. "
+                                                "What is the approximate $95\\%$ confidence interval for the population mean? (Use $z_{0.025} = 1.96$)",
+                                    "options": ["A) [169.02, 170.98]", "B) [168.04, 171.96]", "C) [165.02, 174.98]", "D) [167.08, 172.92]"],
+                                    "correct": "B) [168.04, 171.96]",
+                                    "explanation": "The formula for the confidence interval of the mean is:\n"
+                                                   "$$\\bar{x} \\pm z \\frac{s}{\\sqrt{n}}$$\n\n"
+                                                   "Substitute the given values:\n"
+                                                   "- $\\bar{x} = 170$\n"
+                                                   "- $z = 1.96$\n"
+                                                   "- $s = 10$\n"
+                                                   "- $n = 100 \\implies \\sqrt{n} = 10$\n\n"
+                                                   "Calculate standard error:\n"
+                                                   "$$\\text{SE} = \\frac{10}{10} = 1$$\n\n"
+                                                   "Calculate margin of error:\n"
+                                                   "$$\\text{ME} = 1.96 \\times 1 = 1.96$$\n\n"
+                                                   "Thus, the interval is:\n"
+                                                   "$$[170 - 1.96, 170 + 1.96] = [168.04, 171.96]$$"
+                                },
+                                {
+                                    "id": "q5",
+                                    "type": "NAT",
+                                    "question": "Find the maximum value of the function $f(x) = -2x^2 + 8x + 5$ using optimization methods. "
+                                                "(Enter your answer as a single integer/decimal)",
+                                    "correct": 13.0,
+                                    "tolerance": 0.01,
+                                    "explanation": "To find the maximum, we calculate the first derivative and set it to zero:\n"
+                                                   "$$f'(x) = -4x + 8 = 0 \\implies x = 2$$\n\n"
+                                                   "Verify using the second derivative:\n"
+                                                   "$$f''(x) = -4 < 0$$\n"
+                                                   "Since the second derivative is negative, $x=2$ is a local and global maximum.\n\n"
+                                                   "Substitute $x=2$ back into the original function $f(x)$:\n"
+                                                   "$$f(2) = -2(2)^2 + 8(2) + 5 = -8 + 16 + 5 = 13.0$$"
+                                }
+                            ]
+                        elif day_id == 169:
+                            INLINE_QUESTIONS = [
+                                {
+                                    "id": "q1",
+                                    "type": "MCQ",
+                                    "question": "Consider a system of linear equations $Ax = b$ where $A$ is a $3 \\times 4$ matrix. Which of the following is true?",
+                                    "options": [
+                                        "A) The system always has a unique solution.",
+                                        "B) If the rank of $A$ is 3, the system has infinitely many solutions.",
+                                        "C) If $b=0$, the system has only the trivial solution $x=0$.",
+                                        "D) The system can never be inconsistent."
+                                    ],
+                                    "correct": "B) If the rank of $A$ is 3, the system has infinitely many solutions.",
+                                    "explanation": "Since $A$ has dimensions $3 \\times 4$, the system has 4 variables and 3 equations. "
+                                                   "If the rank of $A$ is 3, there are 3 pivot variables and $4-3 = 1$ free variable. "
+                                                   "Since there is a free variable, the system (if consistent) has infinitely many solutions. "
+                                                   "Since the rank is 3 (equal to the number of rows), the column space of $A$ spans $\\mathbb{R}^3$, "
+                                                   "so $Ax=b$ is always consistent for any $b \\in \\mathbb{R}^3$. Hence, it has infinitely many solutions."
+                                },
+                                {
+                                    "id": "q2",
+                                    "type": "MSQ",
+                                    "question": "Which of the following properties are guaranteed by the ACID transaction model in DBMS? (Select all that apply)",
+                                    "options": [
+                                        "A) Atomicity: All operations in a transaction succeed or all fail.",
+                                        "B) Consistency: A transaction transforms the database from one valid state to another.",
+                                        "C) Isolation: Concurrent execution of transactions yields the same state as sequential execution.",
+                                        "D) Durability: Once committed, updates survive system crashes."
+                                    ],
+                                    "correct": [
+                                        "A) Atomicity: All operations in a transaction succeed or all fail.",
+                                        "B) Consistency: A transaction transforms the database from one valid state to another.",
+                                        "C) Isolation: Concurrent execution of transactions yields the same state as sequential execution.",
+                                        "D) Durability: Once committed, updates survive system crashes."
+                                    ],
+                                    "explanation": "All four properties define ACID: Atomicity, Consistency, Isolation, and Durability."
+                                },
+                                {
+                                    "id": "q3",
+                                    "type": "NAT",
+                                    "question": "Suppose we have a dataset with a single feature $x$ and target $y$. The linear regression model is $y = w x + b$. "
+                                                "The data points are $(1, 2)$, $(2, 4)$, and $(3, 5)$. What is the optimal value of $w$ that minimizes the mean squared error? "
+                                                "(Round off to 2 decimal places, e.g. 1.50)",
+                                    "correct": 1.50,
+                                    "tolerance": 0.01,
+                                    "explanation": "Using the slope formula for simple linear regression:\n"
+                                                   "$$w = \\frac{n \\sum xy - \\sum x \\sum y}{n \\sum x^2 - (\\sum x)^2}$$\n\n"
+                                                   "Substitute the values:\n"
+                                                   "- $n = 3$\n"
+                                                   "- $\\sum x = 1 + 2 + 3 = 6$\n"
+                                                   "- $\\sum y = 2 + 4 + 5 = 11$\n"
+                                                   "- $\\sum x^2 = 1 + 4 + 9 = 14$\n"
+                                                   "- $\\sum xy = (1\\times 2) + (2\\times 4) + (3\\times 5) = 2 + 8 + 15 = 25$\n\n"
+                                                   "Calculate $w$:\n"
+                                                   "$$w = \\frac{3(25) - 6(11)}{3(14) - 6^2} = \\frac{75 - 66}{42 - 36} = \\frac{9}{6} = 1.5$$"
+                                },
+                                {
+                                    "id": "q4",
+                                    "type": "MCQ",
+                                    "question": "What is the value of the limit: $\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$?",
+                                    "options": ["A) 0", "B) 0.5", "C) 1", "D) Undefined"],
+                                    "correct": "B) 0.5",
+                                    "explanation": "Applying L'Hopital's Rule since the limit has a $0/0$ indeterminate form:\n"
+                                                   "$$\\lim_{x \\to 0} \\frac{e^x - 1}{2x}$$\n"
+                                                   "This is still $0/0$. Applying L'Hopital's Rule again:\n"
+                                                   "$$\\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{e^0}{2} = \\frac{1}{2} = 0.5$$"
+                                },
+                                {
+                                    "id": "q5",
+                                    "type": "NAT",
+                                    "question": "The probability of hitting a target in any single shot is $0.4$. If 3 independent shots are fired, "
+                                                "what is the probability that the target is hit at least once? (Round off to 3 decimal places, e.g. 0.784)",
+                                    "correct": 0.784,
+                                    "tolerance": 0.002,
+                                    "explanation": "The probability of hitting the target at least once is $1$ minus the probability of missing it on all three shots.\n"
+                                                   "Probability of missing a single shot is $1 - 0.4 = 0.6$.\n\n"
+                                                   "Since shots are independent:\n"
+                                                   "$$P(\\text{miss all 3}) = 0.6^3 = 0.216$$\n\n"
+                                                   "Therefore:\n"
+                                                   "$$P(\\text{hit at least once}) = 1 - 0.216 = 0.784$$"
+                                }
+                            ]
+                        elif day_id == 171:
+                            INLINE_QUESTIONS = [
+                                {
+                                    "id": "q1",
+                                    "type": "MCQ",
+                                    "question": "Which of the following activation functions can output negative values?",
+                                    "options": ["A) Sigmoid", "B) ReLU", "C) Leaky ReLU", "D) Softmax"],
+                                    "correct": "C) Leaky ReLU",
+                                    "explanation": "Leaky ReLU is defined as $f(x) = \\max(\\alpha x, x)$ where $0 < \\alpha < 1$. For $x < 0$, $f(x) = \\alpha x$, which is negative. "
+                                                   "Sigmoid outputs in $(0, 1)$, ReLU outputs in $[0, \\infty)$, and Softmax outputs probability values in $(0, 1)$."
+                                },
+                                {
+                                    "id": "q2",
+                                    "type": "MSQ",
+                                    "question": "Which of the following are valid inference rules in propositional logic? (Select all that apply)",
+                                    "options": [
+                                        "A) Modus Ponens: From $P$ and $P \\to Q$, infer $Q$.",
+                                        "B) Modus Tollens: From $\\neg Q$ and $P \\to Q$, infer $\\neg P$.",
+                                        "C) Disjunctive Syllogism: From $P \\lor Q$ and $\\neg P$, infer $Q$.",
+                                        "D) Affirming the Consequent: From $Q$ and $P \\to Q$, infer $P$."
+                                    ],
+                                    "correct": [
+                                        "A) Modus Ponens: From $P$ and $P \\to Q$, infer $Q$.",
+                                        "B) Modus Tollens: From $\\neg Q$ and $P \\to Q$, infer $\\neg P$.",
+                                        "C) Disjunctive Syllogism: From $P \\lor Q$ and $\\neg P$, infer $Q$."
+                                    ],
+                                    "explanation": "A, B, and C are logically sound deductive rules. D is Affirming the Consequent, which is a formal logical fallacy."
+                                },
+                                {
+                                    "id": "q3",
+                                    "type": "NAT",
+                                    "question": "Let relation $R(A, B, C)$ contain 10 tuples, and relation $S(C, D)$ contain 5 tuples. "
+                                                "What is the maximum possible number of tuples in the natural join $R \\bowtie S$? (Assume no constraints)",
+                                    "correct": 50,
+                                    "tolerance": 0,
+                                    "explanation": "The natural join combines tuples on the shared attribute $C$. In the worst-case scenario, "
+                                                   "all 10 tuples in $R$ have the same value for attribute $C$ (e.g. $C=1$), and all 5 tuples "
+                                                   "in $S$ also have that same value $C=1$. Under these conditions, every tuple of $R$ joins with "
+                                                   "every tuple of $S$. The resulting table will contain $10 \\times 5 = 50$ tuples."
+                                },
+                                {
+                                    "id": "q4",
+                                    "type": "MCQ",
+                                    "question": "If $A$ is a real symmetric matrix, which of the following is always true?",
+                                    "options": ["A) All eigenvalues of $A$ are real.", "B) $A$ is always invertible.", "C) All eigenvalues of $A$ are positive.", "D) $A$ is always diagonal."],
+                                    "correct": "A) All eigenvalues of $A$ are real.",
+                                    "explanation": "By the Spectral Theorem, any real symmetric matrix has real eigenvalues. It is not necessarily invertible (eigenvalues can be zero), positive (eigenvalues can be negative), or diagonal (though it is diagonalizable)."
+                                },
+                                {
+                                    "id": "q5",
+                                    "type": "NAT",
+                                    "question": "Two fair 6-sided dice are rolled. What is the probability that the sum of the numbers shown is 7? "
+                                                "(Round off to 3 decimal places, e.g. 0.167)",
+                                    "correct": 0.167,
+                                    "tolerance": 0.002,
+                                    "explanation": "Total possible outcomes from rolling two 6-sided dice is $6 \\times 6 = 36$.\n"
+                                                   "Outcomes where sum equals 7:\n"
+                                                   "$$\\{(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)\\}$$\n"
+                                                   "There are 6 successful outcomes.\n\n"
+                                                   "Probability is:\n"
+                                                   "$$P = \\frac{6}{36} = \\frac{1}{6} \\approx 0.167$$"
+                                }
+                            ]
+                        else:
+                            INLINE_QUESTIONS = [
+                                {
+                                    "id": "q1",
+                                    "type": "MCQ",
+                                    "question": "Which of the following search algorithms expands nodes in order of their $f(n) = g(n) + h(n)$ value?",
+                                    "options": ["A) Breadth-First Search", "B) Uniform Cost Search", "C) Greedy Best-First Search", "D) A* Search"],
+                                    "correct": "D) A* Search",
+                                    "explanation": "A* search uses the evaluation function $f(n) = g(n) + h(n)$, where $g(n)$ is cost to reach node $n$ and $h(n)$ is heuristic estimate to target."
+                                },
+                                {
+                                    "id": "q2",
+                                    "type": "MSQ",
+                                    "question": "Which of the following are common techniques used to prevent overfitting in deep neural networks? (Select all that apply)",
+                                    "options": ["A) Dropout", "B) L2 Regularization (Weight Decay)", "C) Early Stopping", "D) Data Augmentation"],
+                                    "correct": ["A) Dropout", "B) L2 Regularization (Weight Decay)", "C) Early Stopping", "D) Data Augmentation"],
+                                    "explanation": "All four techniques (Dropout, L2 regularization, Early stopping, and Data augmentation) are standard regularization methods used to mitigate overfitting."
+                                },
+                                {
+                                    "id": "q3",
+                                    "type": "NAT",
+                                    "question": "If $A$ and $B$ are two independent events with $P(A) = 0.5$ and $P(B) = 0.2$, what is the probability $P(A \\cup B)$? (Round off to 1 decimal place, e.g. 0.6)",
+                                    "correct": 0.6,
+                                    "tolerance": 0.05,
+                                    "explanation": "Since $A$ and $B$ are independent:\n"
+                                                   "$$P(A \\cap B) = P(A) \\times P(B) = 0.5 \\times 0.2 = 0.1$$\n\n"
+                                                   "Using the addition rule of probability:\n"
+                                                   "$$P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = 0.5 + 0.2 - 0.1 = 0.6$$"
+                                },
+                                {
+                                    "id": "q4",
+                                    "type": "MCQ",
+                                    "question": "What is the primary objective of Principal Component Analysis (PCA)?",
+                                    "options": ["A) To maximize class separation.", "B) To project the data onto directions of maximum variance.", "C) To predict continuous target variables.", "D) To cluster data points into $K$ groups."],
+                                    "correct": "B) To project the data onto directions of maximum variance.",
+                                    "explanation": "PCA is a dimensionality reduction technique that finds the principal components (orthogonal directions) along which the variance of the data is maximized."
+                                },
+                                {
+                                    "id": "q5",
+                                    "type": "NAT",
+                                    "question": "Find the derivative of the function $f(x) = 3x^2 + 5x$ at $x = 4$. (Enter your answer as a single integer/decimal)",
+                                    "correct": 29.0,
+                                    "tolerance": 0,
+                                    "explanation": "Calculate the first derivative:\n"
+                                                   "$$f'(x) = 6x + 5$$\n\n"
+                                                   "Substitute $x = 4$:\n"
+                                                   "$$f'(4) = 6(4) + 5 = 24 + 5 = 29.0$$"
+                                }
+                            ]
+                            
                         col_pad, col_exam_area = st.columns([0.15, 3.85])
                         with col_exam_area:
                             with st.expander(f"📝 Attempt {day['title']} (Interactive Exam)", expanded=False):
@@ -1169,6 +1378,7 @@ with tabs[0]:
                                             st.rerun()
                                     else:
                                         st.info("✓ Score successfully saved to your Log Book.")
+
 
 
                 st.markdown("<hr style='margin:10px 0; border:0; border-top:1px solid rgba(255,255,255,0.04);'>", unsafe_allow_html=True)
