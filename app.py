@@ -782,6 +782,19 @@ with tabs[0]:
                     st.markdown(f"<span style='font-size:12px; color:#8c9bb4;'><strong>Focus:</strong> {day['focus']}</span>", unsafe_allow_html=True)
                     if day['url']:
                         st.markdown(f"[🔗 Resource: {day['resource']}]({day['url']})")
+                    if day_id in [166, 167]:
+                        try:
+                            with open("short_notes.md", "r", encoding="utf-8") as f:
+                                short_notes_md = f.read()
+                            st.download_button(
+                                label="📥 Download GATE DA Short Notes (Free)",
+                                data=short_notes_md,
+                                file_name="GATE_DA_Short_Notes.md",
+                                mime="text/markdown",
+                                key=f"dl_notes_{day_id}"
+                            )
+                        except Exception as e:
+                            pass
                         
                 with col_log:
                     # Log review input fields directly inline
