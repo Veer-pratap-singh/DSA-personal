@@ -33,7 +33,7 @@ Toppers recommend selecting **one primary source** for concepts and solving as m
 
 | Subject | Free Video Playlist / NPTEL Course | Standard Book & Free Material |
 | :--- | :--- | :--- |
-| **Linear Algebra** | [GO Classes Linear Algebra (YouTube)](https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg) <br> [3Blue1Brown Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | *Introduction to Linear Algebra* - Gilbert Strang <br> *Mathematics for Machine Learning* - Deisenroth (Chapters 2-4) |
+| **Linear Algebra** | [GO Classes Linear Algebra (YouTube)](https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_) <br> [3Blue1Brown Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | *Introduction to Linear Algebra* - Gilbert Strang <br> *Mathematics for Machine Learning* - Deisenroth (Chapters 2-4) |
 | **Probability & Stats** | [GO Classes Probability (YouTube)](https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr) <br> [GO Classes Probability (YouTube)](https://www.youtube.com/@Goclasses) | *Introduction to Probability* - Sheldon Ross <br> *Probability & Statistics* - Walpole |
 | **Calculus & Optimization** | [3Blue1Brown Essence of Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) <br> [NPTEL Optimization Methods](https://nptel.ac.in/courses/111105039) | *Calculus* - Thomas / Finney <br> *Mathematics for Machine Learning* (Chapters 5-7) |
 | **Python & DSA** | [NPTEL DSA using Python (Madhavan Mukund)](https://nptel.ac.in/courses/106106145) | *Data Structures and Algorithms in Python* - Goodrich, Tamassia <br> GeeksforGeeks Python & DSA |

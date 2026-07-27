@@ -22,12 +22,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 1, "title": "Vector Operations & Combinations", "focus": "Vectors, scalar multiplication, linear combinations, span", "resource": "GO Classes Linear Algebra - Lec 1-3", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 1, "title": "Vector Operations & Combinations", "focus": "Vectors, scalar multiplication, linear combinations, span", "resource": "GO Classes Linear Algebra - Lec 1-3", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 2, "title": "Linear Independence & Dependence", "focus": "Linearly independent vector sets, verifying dependencies", "resource": "3Blue1Brown Linear Algebra - Lec 2", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 3, "title": "Systems of Linear Equations (Ax = b)", "focus": "Matrix representations, coefficients, augmentations", "resource": "GO Classes Linear Algebra - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 4, "title": "Gaussian Elimination & Row Echelon", "focus": "Row operations, pivots, row echelon vs reduced row echelon", "resource": "GO Classes Linear Algebra - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 5, "title": "Rank of a Matrix", "focus": "Pivot variables, rank definition, rank calculation", "resource": "GO Classes Linear Algebra - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 6, "title": "Nullity & Rank-Nullity Theorem", "focus": "Free variables, null space, rank-nullity formulation", "resource": "GO Classes Linear Algebra - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 3, "title": "Systems of Linear Equations (Ax = b)", "focus": "Matrix representations, coefficients, augmentations", "resource": "GO Classes Linear Algebra - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 4, "title": "Gaussian Elimination & Row Echelon", "focus": "Row operations, pivots, row echelon vs reduced row echelon", "resource": "GO Classes Linear Algebra - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 5, "title": "Rank of a Matrix", "focus": "Pivot variables, rank definition, rank calculation", "resource": "GO Classes Linear Algebra - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 6, "title": "Nullity & Rank-Nullity Theorem", "focus": "Free variables, null space, rank-nullity formulation", "resource": "GO Classes Linear Algebra - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 7, "title": "Weekly Review & Practice", "focus": "Practice solving system of equations, write cheat sheet", "resource": "GO Classes Linear Algebra Problems", "url": "https://www.youtube.com/@Goclasses" }
         ]
     },
@@ -37,12 +37,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 8, "title": "Vector Spaces & Subspaces", "focus": "Definition axioms, subspace requirements, span subspaces", "resource": "GO Classes Linear Algebra - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 8, "title": "Vector Spaces & Subspaces", "focus": "Definition axioms, subspace requirements, span subspaces", "resource": "GO Classes Linear Algebra - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 9, "title": "Subspace Intersection & Sum", "focus": "Verifying if intersections or unions form subspaces", "resource": "Gilbert Strang Textbook - Chapter 3", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
-            { "id": 10, "title": "Bases & Dimension", "focus": "Definition of basis, uniqueness, computing dimensions", "resource": "GO Classes Linear Algebra - Lec 19-21", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 10, "title": "Bases & Dimension", "focus": "Definition of basis, uniqueness, computing dimensions", "resource": "GO Classes Linear Algebra - Lec 19-21", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 11, "title": "Change of Basis Matrix", "focus": "Transformation matrix from basis B1 to B2", "resource": "3Blue1Brown Linear Algebra - Lec 13", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 12, "title": "The Four Fundamental Subspaces", "focus": "Definitions of C(A), N(A), C(A^T), N(A^T)", "resource": "GO Classes Linear Algebra - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 13, "title": "Subspace Dimensions & Relations", "focus": "Finding dimensions of the 4 subspaces for mxn matrix", "resource": "GO Classes Linear Algebra - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 12, "title": "The Four Fundamental Subspaces", "focus": "Definitions of C(A), N(A), C(A^T), N(A^T)", "resource": "GO Classes Linear Algebra - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 13, "title": "Subspace Dimensions & Relations", "focus": "Finding dimensions of the 4 subspaces for mxn matrix", "resource": "GO Classes Linear Algebra - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 14, "title": "Bases & Subspaces Practice", "focus": "Solve past GATE questions on vectors & subspaces", "resource": "GATE DA PYQs & CS math papers", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -54,10 +54,10 @@ STUDY_PLAN = [
         "days": [
             { "id": 15, "title": "Matrix Multiplication & Inverse", "focus": "Properties, computational tricks, Gauss-Jordan inverse", "resource": "3Blue1Brown Linear Algebra - Lec 4", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
             { "id": 16, "title": "Linear Transformations & Kernel", "focus": "Linearity checks, image and kernel definitions", "resource": "3Blue1Brown Linear Algebra - Lec 3", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 17, "title": "Determinants & Properties", "focus": "Determinant calculation, row ops effects, volume expansion", "resource": "GO Classes Linear Algebra - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 18, "title": "Cramer's Rule & Formula", "focus": "Solving systems via Cramer's rule, cofactor formula", "resource": "GO Classes Linear Algebra - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 19, "title": "Eigenvalues & Eigenvectors", "focus": "Characteristic equation, solving det(A - λI) = 0", "resource": "GO Classes Linear Algebra - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 20, "title": "Diagonalization & Similarity", "focus": "Symmetric matrices, algebraic vs geometric multiplicity", "resource": "GO Classes Linear Algebra - Lec 37-39", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 17, "title": "Determinants & Properties", "focus": "Determinant calculation, row ops effects, volume expansion", "resource": "GO Classes Linear Algebra - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 18, "title": "Cramer's Rule & Formula", "focus": "Solving systems via Cramer's rule, cofactor formula", "resource": "GO Classes Linear Algebra - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 19, "title": "Eigenvalues & Eigenvectors", "focus": "Characteristic equation, solving det(A - λI) = 0", "resource": "GO Classes Linear Algebra - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 20, "title": "Diagonalization & Similarity", "focus": "Symmetric matrices, algebraic vs geometric multiplicity", "resource": "GO Classes Linear Algebra - Lec 37-39", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 21, "title": "Transformation & Eigenvalue practice", "focus": "Practice solving eigenvalues from GATE CS/EC papers", "resource": "GATE CSE Online Questions", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -67,11 +67,11 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 22, "title": "Inner Product & Orthogonality", "focus": "Dot products, lengths, angles, orthogonal vector spaces", "resource": "GO Classes Linear Algebra - Lec 40-42", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 23, "title": "Orthogonal Projections", "focus": "Projection onto lines, projection matrices", "resource": "GO Classes Linear Algebra - Lec 43-45", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 24, "title": "Gram-Schmidt & QR Decomposition", "focus": "Orthonormal basis construction, A = QR breakdown", "resource": "GO Classes Linear Algebra - Lec 46-48", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 25, "title": "LU Decomposition", "focus": "Lower-Upper matrix decomposition, forwards-back substitution", "resource": "GO Classes Linear Algebra - Lec 49-51", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
-            { "id": 26, "title": "Singular Value Decomposition (SVD)", "focus": "Mathematical formula, singular values, U Σ V^T properties", "resource": "GO Classes Linear Algebra - Lec 52-54", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 22, "title": "Inner Product & Orthogonality", "focus": "Dot products, lengths, angles, orthogonal vector spaces", "resource": "GO Classes Linear Algebra - Lec 40-42", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 23, "title": "Orthogonal Projections", "focus": "Projection onto lines, projection matrices", "resource": "GO Classes Linear Algebra - Lec 43-45", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 24, "title": "Gram-Schmidt & QR Decomposition", "focus": "Orthonormal basis construction, A = QR breakdown", "resource": "GO Classes Linear Algebra - Lec 46-48", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 25, "title": "LU Decomposition", "focus": "Lower-Upper matrix decomposition, forwards-back substitution", "resource": "GO Classes Linear Algebra - Lec 49-51", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
+            { "id": 26, "title": "Singular Value Decomposition (SVD)", "focus": "Mathematical formula, singular values, U Σ V^T properties", "resource": "GO Classes Linear Algebra - Lec 52-54", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 27, "title": "Matrix Decomposition Problems", "focus": "Practice LU, QR, and SVD calculation", "resource": "Maths for ML Deisenroth - Chapter 4", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
             { "id": 28, "title": "Linear Algebra Subject Test", "focus": "Solve 30-question subject test. Analyze error log", "resource": "GATE Mock Series / Free PYQs", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
@@ -408,7 +408,7 @@ STUDY_PLAN = [
 
 # Curated Resources
 RESOURCES_CATALOG = [
-    { "category": "math", "name": "GO Classes Linear Algebra for GATE DA", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+    { "category": "math", "name": "GO Classes Linear Algebra for GATE DA", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
     { "category": "math", "name": "3Blue1Brown Essence of Linear Algebra", "type": "YouTube Visualizations", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
     { "category": "math", "name": "GO Classes Probability for GATE DA/CS", "type": "MIT OpenCourseWare", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
     { "category": "math", "name": "GO Classes GATE DA Playlists", "type": "YouTube Channel", "url": "https://www.youtube.com/@Goclasses" },
