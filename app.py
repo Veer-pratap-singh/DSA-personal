@@ -337,9 +337,9 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Revision",
         "days": [
-            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "GFG DSA Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dsa-quick-slip-cheat-sheet/" },
-            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "GFG DSA Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dsa-quick-slip-cheat-sheet/" },
-            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GFG DBMS Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dbms-quick-slip-cheat-sheet/" },
+            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "GeeksforGeeks Algorithms Guide", "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/" },
+            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "GeeksforGeeks Data Structures Guide", "url": "https://www.geeksforgeeks.org/data-structures/" },
+            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GeeksforGeeks SQL Cheat Sheet", "url": "https://www.geeksforgeeks.org/sql-cheat-sheet/" },
             { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
             { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
             { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
