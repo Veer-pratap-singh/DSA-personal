@@ -715,12 +715,12 @@ with st.sidebar:
 # ==========================================
 # 6. Tabbed View Navigation
 # ==========================================
-tabs = st.tabs(["📅 Study Planner", "📋 Syllabus Tracker", "📚 Free Resources", "📝 Mock Tests Log", "📈 Performance Analytics"])
+tabs = st.tabs(["📈 Performance Analytics", "📅 Study Planner", "📋 Syllabus Tracker", "📚 Free Resources", "📝 Mock Tests Log"])
 
 # ------------------------------------------
 # Tab 1: Study Planner
 # ------------------------------------------
-with tabs[0]:
+with tabs[1]:
     col_hdr, col_fltr = st.columns([2, 1])
     with col_hdr:
         st.subheader("180-Day Study Plan")
@@ -1399,7 +1399,7 @@ with tabs[0]:
 # ------------------------------------------
 # Tab 2: Syllabus Tracker
 # ------------------------------------------
-with tabs[1]:
+with tabs[2]:
     st.subheader("Official GATE Data Science & AI Syllabus")
     st.caption("Verify you have covered every specific sub-topic listed in the official syllabus handbook.")
     
@@ -1439,7 +1439,7 @@ with tabs[1]:
 # ------------------------------------------
 # Tab 3: Free Resources
 # ------------------------------------------
-with tabs[2]:
+with tabs[3]:
     st.subheader("Curated Free Online Materials")
     st.caption("These resources are highly recommended by toppers to master theoretical concepts and practice problems.")
     
@@ -1483,7 +1483,7 @@ with tabs[2]:
 # ------------------------------------------
 # Tab 4: Mock Tests Log
 # ------------------------------------------
-with tabs[3]:
+with tabs[4]:
     st.subheader("GATE DA Mock Center")
     
     # Mode selection
@@ -1949,7 +1949,7 @@ with tabs[3]:
 # ------------------------------------------
 # Tab 5: Performance Analytics
 # ------------------------------------------
-with tabs[4]:
+with tabs[0]:
     st.subheader("Performance Insights & Review Notes")
     st.caption("Deep analysis based on daily study review logs.")
     
