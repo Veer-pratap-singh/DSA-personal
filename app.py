@@ -914,13 +914,13 @@ with tabs[1]:
                         <div style="background: linear-gradient(135deg, rgba(255, 126, 95, 0.08) 0%, rgba(254, 180, 123, 0.08) 100%); 
                                     border: 1px dashed rgba(255, 126, 95, 0.25); border-radius: 8px; padding: 12px; margin: 10px 0 10px 30px;">
                             <span style="color:#ff7e5f; font-weight:bold; font-size:13px;">🔒 Premium Mock Test is Locked</span>
-                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Mock 1, 2, and 3 are completely free! Pay a one-time fee of ₹29 via UPI to unlock Mock 4 and Mock 5 (Full-Length & Subject Exams).</p>
+                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Mock 1, 2, and 3 are completely free! Pay a one-time fee of ₹15 via UPI to unlock Mock 4 and Mock 5 (Full-Length & Subject Exams).</p>
                         </div>
                         """, unsafe_allow_html=True)
                         col_pad, col_unlock_btn = st.columns([0.15, 3.85])
                         with col_unlock_btn:
-                            with st.popover("🔓 Unlock All Mock Exams (₹29)"):
-                                st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹29", width=180)
+                            with st.popover("🔓 Unlock All Mock Exams (₹15)"):
+                                st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹15", width=180)
                                 st.success("UPI ID: 6376541591@fam")
                                 utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key=f"utr_{day_id}")
                                 if st.button("🚀 Verify & Unlock", type="primary", key=f"pay_inline_{day_id}"):
@@ -1650,7 +1650,7 @@ with tabs[4]:
                 <p style='margin: 10px 0; color: #8c9bb4; font-size:14px;'>
                     Gain access to exclusive full-length mock exams custom-built by top educators. Features interactive testing, automatic grading, and detailed explanations.
                 </p>
-                <div style='font-size: 28px; font-weight: 800; color: #ff7e5f; margin: 15px 0;'>₹29 <span style='font-size:14px; font-weight:normal; color:#8c9bb4;'>one-time payment</span></div>
+                <div style='font-size: 28px; font-weight: 800; color: #ff7e5f; margin: 15px 0;'>₹15 <span style='font-size:14px; font-weight:normal; color:#8c9bb4;'>one-time payment</span></div>
             </div>
             """, unsafe_allow_html=True)
             
@@ -1670,7 +1670,7 @@ with tabs[4]:
                 if show_qr:
                     st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
                     # Display the generated QR code image
-                    st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm or any UPI App to Pay ₹29", width=220)
+                    st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm or any UPI App to Pay ₹15", width=220)
                     st.markdown("</div>", unsafe_allow_html=True)
                     
                     st.success("UPI ID: 6376541591@fam")
