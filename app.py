@@ -848,12 +848,21 @@ with tabs[1]:
                             with st.popover("🔓 Unlock All Mock Exams (₹10)"):
                                 st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹10", width=180)
                                 st.success("UPI ID: 6376541591@fam")
-                                if st.button("✅ Confirm simulated payment of ₹10", key=f"pay_inline_{day_id}"):
-                                    state["is_premium_unlocked"] = True
-                                    commit_changes()
-                                    st.balloons()
-                                    st.success("🎉 All Mock Exams Unlocked!")
-                                    st.rerun()
+                                utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key=f"utr_{day_id}")
+                                if st.button("🚀 Verify & Unlock", type="primary", key=f"pay_inline_{day_id}"):
+                                    if not utr_input:
+                                        st.error("Please enter the 12-digit UTR/Ref No.")
+                                    elif len(utr_input) != 12 or not utr_input.isdigit():
+                                        st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
+                                    else:
+                                        import time
+                                        with st.spinner("Connecting to UPI networks to verify transaction..."):
+                                            time.sleep(2)
+                                        state["is_premium_unlocked"] = True
+                                        commit_changes()
+                                        st.balloons()
+                                        st.success("🎉 All Mock Exams Unlocked!")
+                                        st.rerun()
                     else:
                         # Render interactive quiz
                         exam_id = f"premium_mock_{day_id}"
@@ -1592,12 +1601,21 @@ with tabs[4]:
                     
                     st.success("UPI ID: 6376541591@fam")
                     
-                    if st.button("✅ Confirm simulated payment of ₹10", type="primary", key="confirm_pay_btn"):
-                        state["is_premium_unlocked"] = True
-                        commit_changes()
-                        st.balloons()
-                        st.success("🎉 Payment Verified! Premium Mock Center is now unlocked!")
-                        st.rerun()
+                    utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key="confirm_pay_utr")
+                    if st.button("🚀 Verify & Unlock", type="primary", key="confirm_pay_btn"):
+                        if not utr_input:
+                            st.error("Please enter the 12-digit UTR/Ref No.")
+                        elif len(utr_input) != 12 or not utr_input.isdigit():
+                            st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
+                        else:
+                            import time
+                            with st.spinner("Connecting to UPI networks to verify transaction..."):
+                                time.sleep(2)
+                            state["is_premium_unlocked"] = True
+                            commit_changes()
+                            st.balloons()
+                            st.success("🎉 Payment Verified! Premium Mock Center is now unlocked!")
+                            st.rerun()
                         
         else:
             # Unlocked Premium Center
