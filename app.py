@@ -325,9 +325,9 @@ STUDY_PLAN = [
             { "id": 141, "title": "Quantitative Aptitude (Ratios, %)", "focus": "Percentages, ratios, time-work, speed-distance", "resource": "GATE General Aptitude Resources", "url": "https://www.geeksforgeeks.org/gate-general-aptitude/" },
             { "id": 142, "title": "Aptitude Combinatorics & Stats", "focus": "Basic permutations, probability, mean-median-mode GA", "resource": "GATE GA Playlists", "url": "https://www.youtube.com/" },
             { "id": 143, "title": "Spatial Aptitude & Verbal", "focus": "Paper folding, shape rotations, English grammar, synonyms", "resource": "GATE GA Playlists", "url": "https://www.youtube.com/" },
-            { "id": 144, "title": "Linear Algebra Formulas Review", "focus": "Four subspaces, eigenvalues, QR, SVD formula cards", "resource": "Linear Algebra Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/linear-algebra/" },
-            { "id": 145, "title": "Probability Distributions Review", "focus": "Continuous/Discrete formula sheets, CLT bounds", "resource": "Probability Cheat Sheets (WZChen)", "url": "https://wzchen.com/probability-cheatsheet/" },
-            { "id": 146, "title": "Calculus & Optimization Review", "focus": "Hessian matrix test, gradient descent update steps", "resource": "Lamar Calculus Cheat Sheet", "url": "https://tutorial.math.lamar.edu/pdf/Calculus_Cheat_Sheet_All.pdf" },
+            { "id": 144, "title": "Linear Algebra Formulas Review", "focus": "Four subspaces, eigenvalues, QR, SVD formula cards", "resource": "MIT Linear Algebra Lecture Notes (PDF)", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/4d876a9159e32543eb0d73b4d4382f4c_MIT18_06S10ZoomNotes.pdf" },
+            { "id": 145, "title": "Probability Distributions Review", "focus": "Continuous/Discrete formula sheets, CLT bounds", "resource": "Probability Cheat Sheet (PDF)", "url": "https://wzchen.com/s/probability_cheatsheet.pdf" },
+            { "id": 146, "title": "Calculus & Optimization Review", "focus": "Hessian matrix test, gradient descent update steps", "resource": "Lamar Calculus Cheat Sheet (PDF)", "url": "https://tutorial.math.lamar.edu/pdf/Calculus_Cheat_Sheet_All.pdf" },
             { "id": 147, "title": "Math & Aptitude Combined Test", "focus": "Take 40-question Math & GA combined mock test", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
         ]
     },
@@ -337,12 +337,12 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Revision",
         "days": [
-            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "GFG Complexity & Algorithms Guide", "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/" },
-            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "GFG Python Data Structures Guide", "url": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/" },
-            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GeeksforGeeks DBMS Reference", "url": "https://www.geeksforgeeks.org/dbms/" },
-            { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheatsheet", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning" },
-            { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheatsheet", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning" },
-            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "GeeksforGeeks AI Reference Guide", "url": "https://www.geeksforgeeks.org/artificial-intelligence-tutorials/" },
+            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "GFG DSA Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dsa-quick-slip-cheat-sheet/" },
+            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "GFG DSA Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dsa-quick-slip-cheat-sheet/" },
+            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GFG DBMS Quick-Slip Cheat Sheet", "url": "https://www.geeksforgeeks.org/dbms-quick-slip-cheat-sheet/" },
+            { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
+            { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheat Sheet (PDF)", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning.pdf" },
+            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
             { "id": 154, "title": "CS & ML/AI Combined Revision Test", "focus": "Take 40-question technical combined test", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
         ]
     },
