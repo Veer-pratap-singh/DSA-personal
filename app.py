@@ -534,6 +534,28 @@ state = st.session_state.state
 def commit_changes():
     save_progress(st.session_state.state)
 
+def send_admin_email(subject, body):
+    try:
+        if "SMTP_EMAIL" in st.secrets and "SMTP_PASSWORD" in st.secrets:
+            import smtplib
+            from email.mime.text import MIMEText
+            sender = st.secrets["SMTP_EMAIL"]
+            password = st.secrets["SMTP_PASSWORD"]
+            receiver = "veerprataps1369@gmail.com"
+            
+            msg = MIMEText(body)
+            msg['Subject'] = subject
+            msg['From'] = sender
+            msg['To'] = receiver
+            
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+                server.login(sender, password)
+                server.sendmail(sender, [receiver], msg.as_string())
+            return True
+    except Exception as e:
+        pass
+    return False
+
 # ==========================================
 # 3. Dynamic Aggregated Statistics
 # ==========================================
@@ -600,7 +622,7 @@ if not st.session_state.is_logged_in:
         </div>
         """, unsafe_allow_html=True)
         
-        login_tab, register_tab = st.tabs(["🔑 Admin Sign In", "💎 Student Register & Access (₹19)"])
+        login_tab, student_in_tab, register_tab = st.tabs(["🔑 Admin Sign In", "🎓 Student Sign In", "💎 Student Register & Access (₹19)"])
         
         with login_tab:
             with st.form("admin_login_form"):
@@ -612,7 +634,6 @@ if not st.session_state.is_logged_in:
                     if admin_email.strip() == "veerprataps1369@gmail.com" and admin_pass == "veer@1702":
                         st.session_state.is_logged_in = True
                         st.session_state.is_admin = True
-                        # Auto-unlock premium mocks for admin!
                         state["is_premium_unlocked"] = True
                         commit_changes()
                         st.success("Welcome Admin Veer! Opening companion...")
@@ -622,10 +643,30 @@ if not st.session_state.is_logged_in:
                     else:
                         st.error("Invalid Admin credentials.")
         
+        with student_in_tab:
+            with st.form("student_signin_form"):
+                semail = st.text_input("Enter Registered Student Email Address", placeholder="e.g. rahul@gmail.com").strip().lower()
+                
+                in_submitted = st.form_submit_button("🔓 Student Sign In", type="primary", use_container_width=True)
+                if in_submitted:
+                    if semail in [u.lower() for u in state.get("approved_users", [])]:
+                        st.session_state.is_logged_in = True
+                        st.session_state.is_admin = False
+                        st.session_state.student_email = semail
+                        st.session_state.student_name = semail.split('@')[0].capitalize()
+                        st.success(f"Access granted! Opening companion...")
+                        st.rerun()
+                    elif semail in [r["email"].lower() for r in state.get("pending_registrations", [])]:
+                        st.warning("⏳ Your registration request is pending admin approval. Please check back later.")
+                    elif not semail:
+                        st.error("Please enter your email.")
+                    else:
+                        st.error("Email not found. If you are a new student, please register in the next tab first.")
+        
         with register_tab:
             with st.form("student_register_form"):
                 student_name = st.text_input("Full Name", placeholder="e.g. Rahul Sharma")
-                student_email = st.text_input("Email Address", placeholder="e.g. rahul@gmail.com")
+                student_email = st.text_input("Email Address", placeholder="e.g. rahul@gmail.com").strip().lower()
                 
                 st.markdown("<hr style='margin:10px 0; border:0; border-top:1px solid rgba(255,255,255,0.06);'>", unsafe_allow_html=True)
                 st.markdown("<span style='font-size:13px; color:#ff7e5f; font-weight:bold;'>💳 Access Registration Fee: ₹19</span>", unsafe_allow_html=True)
@@ -641,7 +682,7 @@ if not st.session_state.is_logged_in:
                     st.image("upi_qr_19.png", caption="Pay ₹19 via UPI", width=140)
                     st.caption("UPI ID: 6376541591@fam")
                     
-                student_submitted = st.form_submit_button("🚀 Verify Payment & Access", type="primary", use_container_width=True)
+                student_submitted = st.form_submit_button("🚀 Submit Registration & Verify Payment", type="primary", use_container_width=True)
                 if student_submitted:
                     if not student_name or not student_email:
                         st.error("Please enter your name and email address.")
@@ -650,16 +691,28 @@ if not st.session_state.is_logged_in:
                     elif len(utr_code) != 12 or not utr_code.isdigit():
                         st.error("Invalid UTR. Ref No. must be exactly 12 numeric digits.")
                     else:
-                        import time
-                        with st.spinner("Connecting to UPI networks to verify transaction..."):
-                            time.sleep(2.5)
-                        st.session_state.is_logged_in = True
-                        st.session_state.is_admin = False
-                        st.session_state.student_name = student_name
-                        st.session_state.student_email = student_email
-                        st.balloons()
-                        st.success(f"🎉 Welcome {student_name}! Access granted.")
-                        st.rerun()
+                        # Check duplicate
+                        if student_email in [u.lower() for u in state.get("approved_users", [])]:
+                            st.info("You are already registered! Please sign in using the 'Student Sign In' tab.")
+                        elif student_email in [r["email"].lower() for r in state.get("pending_registrations", [])]:
+                            st.warning("⏳ Registration request is already pending verification. Please wait for admin approval.")
+                        else:
+                            # Add to pending list
+                            new_reg = {
+                                "name": student_name,
+                                "email": student_email,
+                                "utr": utr_code,
+                                "timestamp": date.today().strftime("%Y-%m-%d")
+                            }
+                            state["pending_registrations"].append(new_reg)
+                            commit_changes()
+                            
+                            # Send Email Notification to Veer
+                            subject = "🎓 New GATE DA Student Registration Request"
+                            body = f"Hi Veer,\n\nA new student has registered and is waiting for your approval:\n\nName: {student_name}\nEmail: {student_email}\nUTR / Ref No: {utr_code}\nDate: {date.today().strftime('%Y-%m-%d')}\n\nLog into your Admin account on the dashboard to verify and approve."
+                            send_admin_email(subject, body)
+                            
+                            st.success("🎉 Registration request submitted! Your account will be unlocked as soon as Admin Veer verifies your payment. A request has been sent to the Admin email.")
         
     st.stop()
 
@@ -992,6 +1045,12 @@ with tabs[1]:
                                                 "timestamp": date.today().strftime("%Y-%m-%d")
                                             })
                                             commit_changes()
+                                            
+                                            # Send Mock request email to Veer
+                                            subject = "📝 New GATE DA Mock Exam Unlock Request"
+                                            body = f"Hi Veer,\n\nA student has requested to unlock a premium mock exam:\n\nEmail: {student_email_key}\nMock Day: {day_id}\nUTR / Ref No: {utr_input}\nDate: {date.today().strftime('%Y-%m-%d')}\n\nLog into your Admin account on the dashboard to verify and approve."
+                                            send_admin_email(subject, body)
+                                            
                                             st.success("🎉 Request submitted! Your mock will be unlocked after admin verification.")
                                             st.rerun()
 
@@ -1761,6 +1820,12 @@ with tabs[4]:
                                     "timestamp": date.today().strftime("%Y-%m-%d")
                                 })
                                 commit_changes()
+                                
+                                # Send Mock Pack request email to Veer
+                                subject = "📝 New GATE DA Mock Exam Pack Unlock Request"
+                                body = f"Hi Veer,\n\nA student has requested to unlock the Mock Exam Pack:\n\nEmail: {student_email_key}\nUTR / Ref No: {utr_input}\nDate: {date.today().strftime('%Y-%m-%d')}\n\nLog into your Admin account on the dashboard to verify and approve."
+                                send_admin_email(subject, body)
+                                
                                 st.success("🎉 Unlock request submitted! Access will be granted after Admin Veer verifies your payment.")
                                 st.rerun()
                         
