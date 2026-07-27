@@ -22,12 +22,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 1, "title": "Vector Operations & Combinations", "focus": "Vectors, scalar multiplication, linear combinations, span", "resource": "MIT 18.06 Gilbert Strang - Lec 1", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 1, "title": "Vector Operations & Combinations", "focus": "Vectors, scalar multiplication, linear combinations, span", "resource": "GO Classes Linear Algebra - Lec 1-3", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 2, "title": "Linear Independence & Dependence", "focus": "Linearly independent vector sets, verifying dependencies", "resource": "3Blue1Brown Linear Algebra - Lec 2", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 3, "title": "Systems of Linear Equations (Ax = b)", "focus": "Matrix representations, coefficients, augmentations", "resource": "MIT 18.06 Gilbert Strang - Lec 2", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 4, "title": "Gaussian Elimination & Row Echelon", "focus": "Row operations, pivots, row echelon vs reduced row echelon", "resource": "MIT 18.06 Gilbert Strang - Lec 3", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 5, "title": "Rank of a Matrix", "focus": "Pivot variables, rank definition, rank calculation", "resource": "MIT 18.06 Gilbert Strang - Lec 7", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 6, "title": "Nullity & Rank-Nullity Theorem", "focus": "Free variables, null space, rank-nullity formulation", "resource": "MIT 18.06 Gilbert Strang - Lec 8", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 3, "title": "Systems of Linear Equations (Ax = b)", "focus": "Matrix representations, coefficients, augmentations", "resource": "GO Classes Linear Algebra - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 4, "title": "Gaussian Elimination & Row Echelon", "focus": "Row operations, pivots, row echelon vs reduced row echelon", "resource": "GO Classes Linear Algebra - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 5, "title": "Rank of a Matrix", "focus": "Pivot variables, rank definition, rank calculation", "resource": "GO Classes Linear Algebra - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 6, "title": "Nullity & Rank-Nullity Theorem", "focus": "Free variables, null space, rank-nullity formulation", "resource": "GO Classes Linear Algebra - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 7, "title": "Weekly Review & Practice", "focus": "Practice solving system of equations, write cheat sheet", "resource": "GO Classes Linear Algebra Problems", "url": "https://www.youtube.com/@Goclasses" }
         ]
     },
@@ -37,12 +37,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 8, "title": "Vector Spaces & Subspaces", "focus": "Definition axioms, subspace requirements, span subspaces", "resource": "MIT 18.06 Gilbert Strang - Lec 6", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 8, "title": "Vector Spaces & Subspaces", "focus": "Definition axioms, subspace requirements, span subspaces", "resource": "GO Classes Linear Algebra - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 9, "title": "Subspace Intersection & Sum", "focus": "Verifying if intersections or unions form subspaces", "resource": "Gilbert Strang Textbook - Chapter 3", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
-            { "id": 10, "title": "Bases & Dimension", "focus": "Definition of basis, uniqueness, computing dimensions", "resource": "MIT 18.06 Gilbert Strang - Lec 9", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 10, "title": "Bases & Dimension", "focus": "Definition of basis, uniqueness, computing dimensions", "resource": "GO Classes Linear Algebra - Lec 19-21", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 11, "title": "Change of Basis Matrix", "focus": "Transformation matrix from basis B1 to B2", "resource": "3Blue1Brown Linear Algebra - Lec 13", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 12, "title": "The Four Fundamental Subspaces", "focus": "Definitions of C(A), N(A), C(A^T), N(A^T)", "resource": "MIT 18.06 Gilbert Strang - Lec 10", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 13, "title": "Subspace Dimensions & Relations", "focus": "Finding dimensions of the 4 subspaces for mxn matrix", "resource": "MIT 18.06 Gilbert Strang - Lec 11", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 12, "title": "The Four Fundamental Subspaces", "focus": "Definitions of C(A), N(A), C(A^T), N(A^T)", "resource": "GO Classes Linear Algebra - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 13, "title": "Subspace Dimensions & Relations", "focus": "Finding dimensions of the 4 subspaces for mxn matrix", "resource": "GO Classes Linear Algebra - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 14, "title": "Bases & Subspaces Practice", "focus": "Solve past GATE questions on vectors & subspaces", "resource": "GATE DA PYQs & CS math papers", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -54,10 +54,10 @@ STUDY_PLAN = [
         "days": [
             { "id": 15, "title": "Matrix Multiplication & Inverse", "focus": "Properties, computational tricks, Gauss-Jordan inverse", "resource": "3Blue1Brown Linear Algebra - Lec 4", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
             { "id": 16, "title": "Linear Transformations & Kernel", "focus": "Linearity checks, image and kernel definitions", "resource": "3Blue1Brown Linear Algebra - Lec 3", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-            { "id": 17, "title": "Determinants & Properties", "focus": "Determinant calculation, row ops effects, volume expansion", "resource": "MIT 18.06 Gilbert Strang - Lec 18", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 18, "title": "Cramer's Rule & Formula", "focus": "Solving systems via Cramer's rule, cofactor formula", "resource": "MIT 18.06 Gilbert Strang - Lec 20", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 19, "title": "Eigenvalues & Eigenvectors", "focus": "Characteristic equation, solving det(A - λI) = 0", "resource": "MIT 18.06 Gilbert Strang - Lec 21", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 20, "title": "Diagonalization & Similarity", "focus": "Symmetric matrices, algebraic vs geometric multiplicity", "resource": "MIT 18.06 Gilbert Strang - Lec 22", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 17, "title": "Determinants & Properties", "focus": "Determinant calculation, row ops effects, volume expansion", "resource": "GO Classes Linear Algebra - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 18, "title": "Cramer's Rule & Formula", "focus": "Solving systems via Cramer's rule, cofactor formula", "resource": "GO Classes Linear Algebra - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 19, "title": "Eigenvalues & Eigenvectors", "focus": "Characteristic equation, solving det(A - λI) = 0", "resource": "GO Classes Linear Algebra - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 20, "title": "Diagonalization & Similarity", "focus": "Symmetric matrices, algebraic vs geometric multiplicity", "resource": "GO Classes Linear Algebra - Lec 37-39", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 21, "title": "Transformation & Eigenvalue practice", "focus": "Practice solving eigenvalues from GATE CS/EC papers", "resource": "GATE CSE Online Questions", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -67,11 +67,11 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Linear Algebra",
         "days": [
-            { "id": 22, "title": "Inner Product & Orthogonality", "focus": "Dot products, lengths, angles, orthogonal vector spaces", "resource": "MIT 18.06 Gilbert Strang - Lec 14", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 23, "title": "Orthogonal Projections", "focus": "Projection onto lines, projection matrices", "resource": "MIT 18.06 Gilbert Strang - Lec 15", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 24, "title": "Gram-Schmidt & QR Decomposition", "focus": "Orthonormal basis construction, A = QR breakdown", "resource": "MIT 18.06 Gilbert Strang - Lec 17", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 25, "title": "LU Decomposition", "focus": "Lower-Upper matrix decomposition, forwards-back substitution", "resource": "MIT 18.06 Gilbert Strang - Lec 4", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
-            { "id": 26, "title": "Singular Value Decomposition (SVD)", "focus": "Mathematical formula, singular values, U Σ V^T properties", "resource": "MIT 18.06 Gilbert Strang - Lec 29", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+            { "id": 22, "title": "Inner Product & Orthogonality", "focus": "Dot products, lengths, angles, orthogonal vector spaces", "resource": "GO Classes Linear Algebra - Lec 40-42", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 23, "title": "Orthogonal Projections", "focus": "Projection onto lines, projection matrices", "resource": "GO Classes Linear Algebra - Lec 43-45", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 24, "title": "Gram-Schmidt & QR Decomposition", "focus": "Orthonormal basis construction, A = QR breakdown", "resource": "GO Classes Linear Algebra - Lec 46-48", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 25, "title": "LU Decomposition", "focus": "Lower-Upper matrix decomposition, forwards-back substitution", "resource": "GO Classes Linear Algebra - Lec 49-51", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
+            { "id": 26, "title": "Singular Value Decomposition (SVD)", "focus": "Mathematical formula, singular values, U Σ V^T properties", "resource": "GO Classes Linear Algebra - Lec 52-54", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
             { "id": 27, "title": "Matrix Decomposition Problems", "focus": "Practice LU, QR, and SVD calculation", "resource": "Maths for ML Deisenroth - Chapter 4", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
             { "id": 28, "title": "Linear Algebra Subject Test", "focus": "Solve 30-question subject test. Analyze error log", "resource": "GATE Mock Series / Free PYQs", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
@@ -82,10 +82,10 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Probability & Statistics",
         "days": [
-            { "id": 29, "title": "Sample Space, Events & Axioms", "focus": "Basic probability rules, Venn diagrams, set operations", "resource": "MIT OCW Probabilistic Systems - Lec 1", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 29, "title": "Sample Space, Events & Axioms", "focus": "Basic probability rules, Venn diagrams, set operations", "resource": "GO Classes Probability - Lec 1-3", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 30, "title": "Permutations & Combinations in Prob.", "focus": "Counting principles, balls & bins, combinations selection", "resource": "Sheldon Ross Textbook - Chapter 1", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
-            { "id": 31, "title": "Conditional Probability & Independence", "focus": "Multiplication rule, independent events definition", "resource": "MIT OCW Probabilistic Systems - Lec 2", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 32, "title": "Total Probability Theorem", "focus": "Partitioning sample space, weighted probabilities sum", "resource": "MIT OCW Probabilistic Systems - Lec 2", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 31, "title": "Conditional Probability & Independence", "focus": "Multiplication rule, independent events definition", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 32, "title": "Total Probability Theorem", "focus": "Partitioning sample space, weighted probabilities sum", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 33, "title": "Bayes' Theorem", "focus": "Posterior probability calculation, base rate fallacy", "resource": "3Blue1Brown Bayes Theorem Video", "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM" },
             { "id": 34, "title": "Bayes' Theorem Advanced Scenarios", "focus": "Multiple observations, conditional independence in Bayes", "resource": "GO Classes Probability Playlist", "url": "https://www.youtube.com/@Goclasses" },
             { "id": 35, "title": "Bayes' & Probability Practice", "focus": "Solve 20 problems on conditional probability", "resource": "GATE CSE PYQs on Probability", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
@@ -97,12 +97,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Probability & Statistics",
         "days": [
-            { "id": 36, "title": "Discrete Random Variables (PMF, CDF)", "focus": "Probability mass function, cumulative steps, mean, variance", "resource": "MIT OCW Probabilistic Systems - Lec 3", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 36, "title": "Discrete Random Variables (PMF, CDF)", "focus": "Probability mass function, cumulative steps, mean, variance", "resource": "GO Classes Probability - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 37, "title": "Expectation & Variance Properties", "focus": "Linearity of expectation, scaling variance, moments", "resource": "Sheldon Ross Textbook - Chapter 4", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
-            { "id": 38, "title": "Continuous Random Variables (PDF, CDF)", "focus": "Integration of density, cumulative distributions, mean, variance", "resource": "MIT OCW Probabilistic Systems - Lec 5", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 39, "title": "Binomial & Poisson Distributions", "focus": "Derivations, PMFs, mean, variance, Poisson approximation", "resource": "MIT OCW Probabilistic Systems - Lec 4", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 40, "title": "Uniform, Exponential & Geometric Dist.", "focus": "Memoryless property of exponential & geometric, integrations", "resource": "MIT OCW Probabilistic Systems - Lec 6", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 41, "title": "Normal (Gaussian) Distribution", "focus": "PDF, standard normal conversion, Z-table usage, properties", "resource": "MIT OCW Probabilistic Systems - Lec 7", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 38, "title": "Continuous Random Variables (PDF, CDF)", "focus": "Integration of density, cumulative distributions, mean, variance", "resource": "GO Classes Probability - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 39, "title": "Binomial & Poisson Distributions", "focus": "Derivations, PMFs, mean, variance, Poisson approximation", "resource": "GO Classes Probability - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 40, "title": "Uniform, Exponential & Geometric Dist.", "focus": "Memoryless property of exponential & geometric, integrations", "resource": "GO Classes Probability - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 41, "title": "Normal (Gaussian) Distribution", "focus": "PDF, standard normal conversion, Z-table usage, properties", "resource": "GO Classes Probability - Lec 19-21", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 42, "title": "Distribution Summary & Short Notes", "focus": "Write formula sheet for all distributions, solve 15 questions", "resource": "GO Classes Distribution Practice", "url": "https://www.youtube.com/@Goclasses" }
         ]
     },
@@ -112,12 +112,12 @@ STUDY_PLAN = [
         "phase": "phase1",
         "subject": "Probability & Statistics",
         "days": [
-            { "id": 43, "title": "Joint PMF & PDF", "focus": "Marginals, joint CDF, integration limits, double integration", "resource": "MIT OCW Probabilistic Systems - Lec 8", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 43, "title": "Joint PMF & PDF", "focus": "Marginals, joint CDF, integration limits, double integration", "resource": "GO Classes Probability - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 44, "title": "Conditional Distributions & Independence", "focus": "Independent random variables, conditional density", "resource": "Sheldon Ross Textbook - Chapter 6", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
-            { "id": 45, "title": "Covariance & Correlation", "focus": "Mathematical formula, properties, correlation coefficient", "resource": "MIT OCW Probabilistic Systems - Lec 9", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 46, "title": "Sum of Independent Random Variables", "focus": "Convolutions of discrete and continuous variables", "resource": "MIT OCW Probabilistic Systems - Lec 10", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 47, "title": "Chebyshev's Inequality", "focus": "Bounding probability using mean and variance", "resource": "MIT OCW Probabilistic Systems - Lec 13", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
-            { "id": 48, "title": "LLN & Central Limit Theorem", "focus": "Law of Large Numbers, CLT application to approximations", "resource": "MIT OCW Probabilistic Systems - Lec 14", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+            { "id": 45, "title": "Covariance & Correlation", "focus": "Mathematical formula, properties, correlation coefficient", "resource": "GO Classes Probability - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 46, "title": "Sum of Independent Random Variables", "focus": "Convolutions of discrete and continuous variables", "resource": "GO Classes Probability - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 47, "title": "Chebyshev's Inequality", "focus": "Bounding probability using mean and variance", "resource": "GO Classes Probability - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
+            { "id": 48, "title": "LLN & Central Limit Theorem", "focus": "Law of Large Numbers, CLT application to approximations", "resource": "GO Classes Probability - Lec 34-36", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 49, "title": "Joint Distributions & Limits Practice", "focus": "Solve past GATE questions on CLT & Covariance", "resource": "GATE Math PYQ Papers", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -408,9 +408,9 @@ STUDY_PLAN = [
 
 # Curated Resources
 RESOURCES_CATALOG = [
-    { "category": "math", "name": "Gilbert Strang MIT 18.06 Lectures", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PL49CF3715CB72B641" },
+    { "category": "math", "name": "GO Classes Linear Algebra for GATE DA", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLw61-y4GfF1_19p-O7nI0S1Jp2q4e_mXg" },
     { "category": "math", "name": "3Blue1Brown Essence of Linear Algebra", "type": "YouTube Visualizations", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
-    { "category": "math", "name": "MIT 6.041 Probabilistic Systems Analysis", "type": "MIT OpenCourseWare", "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/" },
+    { "category": "math", "name": "GO Classes Probability for GATE DA/CS", "type": "MIT OpenCourseWare", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
     { "category": "math", "name": "GO Classes GATE DA Playlists", "type": "YouTube Channel", "url": "https://www.youtube.com/@Goclasses" },
     { "category": "math", "name": "Mathematics for Machine Learning Textbook", "type": "PDF / Free Book Chapters", "url": "https://mml-book.github.io/" },
     { "category": "math", "name": "3Blue1Brown Essence of Calculus", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" },
