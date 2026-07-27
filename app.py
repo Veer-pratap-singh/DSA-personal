@@ -596,31 +596,66 @@ if not st.session_state.is_logged_in:
         </div>
         """, unsafe_allow_html=True)
         
-        with st.form("login_form"):
-            st.markdown("<h4 style='margin-top:0; color:#f0f2f5; font-family:Outfit,sans-serif;'>🔑 Secure Login</h4>", unsafe_allow_html=True)
-            username = st.text_input("Email Address / Username", placeholder="e.g. admin@gate.in")
-            password = st.text_input("Password", type="password", placeholder="••••••••")
-            
-            submitted = st.form_submit_button("🔓 Sign In", type="primary", use_container_width=True)
-            if submitted:
-                if username.strip() == "admin@gate.in" and password == "gate2026":
-                    st.session_state.is_logged_in = True
-                    st.success("Access granted! Loading companion...")
-                    st.rerun()
-                elif not username or not password:
-                    st.error("Please fill in both fields.")
-                else:
-                    st.error("Invalid credentials. Try the demo credentials below.")
+        login_tab, register_tab = st.tabs(["🔑 Admin Sign In", "💎 Student Register & Access (₹19)"])
+        
+        with login_tab:
+            with st.form("admin_login_form"):
+                admin_email = st.text_input("Admin Email Address", placeholder="e.g. veerprataps1369@gmail.com")
+                admin_pass = st.text_input("Admin Password", type="password", placeholder="••••••••")
+                
+                admin_submitted = st.form_submit_button("🔓 Admin Sign In", type="primary", use_container_width=True)
+                if admin_submitted:
+                    if admin_email.strip() == "veerprataps1369@gmail.com" and admin_pass == "veer@1702":
+                        st.session_state.is_logged_in = True
+                        st.session_state.is_admin = True
+                        # Auto-unlock premium mocks for admin!
+                        state["is_premium_unlocked"] = True
+                        commit_changes()
+                        st.success("Welcome Admin Veer! Opening companion...")
+                        st.rerun()
+                    elif not admin_email or not admin_pass:
+                        st.error("Please fill in all fields.")
+                    else:
+                        st.error("Invalid Admin credentials.")
+        
+        with register_tab:
+            with st.form("student_register_form"):
+                student_name = st.text_input("Full Name", placeholder="e.g. Rahul Sharma")
+                student_email = st.text_input("Email Address", placeholder="e.g. rahul@gmail.com")
+                
+                st.markdown("<hr style='margin:10px 0; border:0; border-top:1px solid rgba(255,255,255,0.06);'>", unsafe_allow_html=True)
+                st.markdown("<span style='font-size:13px; color:#ff7e5f; font-weight:bold;'>💳 Access Registration Fee: ₹19</span>", unsafe_allow_html=True)
+                
+                col_qr_info, col_qr_img = st.columns([1.2, 1])
+                with col_qr_info:
+                    st.markdown("""
+                    1. Scan the QR code to pay the **₹19** registration fee.
+                    2. Enter the **12-digit UPI UTR / Ref No.** below to verify payment.
+                    """)
+                    utr_code = st.text_input("12-Digit UPI Ref No. (UTR)", placeholder="e.g. 620584739201", key="student_reg_utr")
+                with col_qr_img:
+                    st.image("upi_qr_19.png", caption="Pay ₹19 via UPI", width=140)
+                    st.caption("UPI ID: 6376541591@fam")
                     
-        st.markdown("""
-        <div style="background-color: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.15); border-radius: 10px; padding: 15px; margin-top: 15px; font-family:'Inter',sans-serif;">
-            <span style="color:#00f2fe; font-weight:bold; font-size:13px;">💡 Demo Access Credentials:</span>
-            <p style="margin: 5px 0 0 0; font-size:12px; color:#8c9bb4;">
-                <strong>Email:</strong> admin@gate.in<br>
-                <strong>Password:</strong> gate2026
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+                student_submitted = st.form_submit_button("🚀 Verify Payment & Access", type="primary", use_container_width=True)
+                if student_submitted:
+                    if not student_name or not student_email:
+                        st.error("Please enter your name and email address.")
+                    elif not utr_code:
+                        st.error("Please enter the 12-digit UPI Ref/UTR No. to verify payment.")
+                    elif len(utr_code) != 12 or not utr_code.isdigit():
+                        st.error("Invalid UTR. Ref No. must be exactly 12 numeric digits.")
+                    else:
+                        import time
+                        with st.spinner("Connecting to UPI networks to verify transaction..."):
+                            time.sleep(2.5)
+                        st.session_state.is_logged_in = True
+                        st.session_state.is_admin = False
+                        st.session_state.student_name = student_name
+                        st.session_state.student_email = student_email
+                        st.balloons()
+                        st.success(f"🎉 Welcome {student_name}! Access granted.")
+                        st.rerun()
         
     st.stop()
 
