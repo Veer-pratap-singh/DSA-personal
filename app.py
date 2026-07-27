@@ -28,7 +28,7 @@ STUDY_PLAN = [
             { "id": 4, "title": "Gaussian Elimination & Row Echelon", "focus": "Row operations, pivots, row echelon vs reduced row echelon", "resource": "GO Classes Linear Algebra - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 5, "title": "Rank of a Matrix", "focus": "Pivot variables, rank definition, rank calculation", "resource": "GO Classes Linear Algebra - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
             { "id": 6, "title": "Nullity & Rank-Nullity Theorem", "focus": "Free variables, null space, rank-nullity formulation", "resource": "GO Classes Linear Algebra - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
-            { "id": 7, "title": "Weekly Review & Practice", "focus": "Practice solving system of equations, write cheat sheet", "resource": "GO Classes Linear Algebra Problems", "url": "https://www.youtube.com/@Goclasses" }
+            { "id": 7, "title": "Weekly Review & Practice", "focus": "Practice solving system of equations, write cheat sheet", "resource": "GO Classes Linear Algebra Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" }
         ]
     },
     {
@@ -87,7 +87,7 @@ STUDY_PLAN = [
             { "id": 31, "title": "Conditional Probability & Independence", "focus": "Multiplication rule, independent events definition", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 32, "title": "Total Probability Theorem", "focus": "Partitioning sample space, weighted probabilities sum", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 33, "title": "Bayes' Theorem", "focus": "Posterior probability calculation, base rate fallacy", "resource": "3Blue1Brown Bayes Theorem Video", "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM" },
-            { "id": 34, "title": "Bayes' Theorem Advanced Scenarios", "focus": "Multiple observations, conditional independence in Bayes", "resource": "GO Classes Probability Playlist", "url": "https://www.youtube.com/@Goclasses" },
+            { "id": 34, "title": "Bayes' Theorem Advanced Scenarios", "focus": "Multiple observations, conditional independence in Bayes", "resource": "GO Classes Probability Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 35, "title": "Bayes' & Probability Practice", "focus": "Solve 20 problems on conditional probability", "resource": "GATE Overflow Probability Questions", "url": "https://gateoverflow.in/tag/probability" }
         ]
     },
@@ -103,7 +103,7 @@ STUDY_PLAN = [
             { "id": 39, "title": "Binomial & Poisson Distributions", "focus": "Derivations, PMFs, mean, variance, Poisson approximation", "resource": "GO Classes Probability - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 40, "title": "Uniform, Exponential & Geometric Dist.", "focus": "Memoryless property of exponential & geometric, integrations", "resource": "GO Classes Probability - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 41, "title": "Normal (Gaussian) Distribution", "focus": "PDF, standard normal conversion, Z-table usage, properties", "resource": "GO Classes Probability - Lec 19-21", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-            { "id": 42, "title": "Distribution Summary & Short Notes", "focus": "Write formula sheet for all distributions, solve 15 questions", "resource": "GO Classes Distribution Practice", "url": "https://www.youtube.com/@Goclasses" }
+            { "id": 42, "title": "Distribution Summary & Short Notes", "focus": "Write formula sheet for all distributions, solve 15 questions", "resource": "GO Classes Probability Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" }
         ]
     },
     {
@@ -129,7 +129,7 @@ STUDY_PLAN = [
         "days": [
             { "id": 50, "title": "Sampling Distributions", "focus": "Sample mean, sample variance, Chi-square & Student-t", "resource": "Wasserman All of Statistics PDF", "url": "https://egrcc.github.io/docs/math/all-of-statistics.pdf" },
             { "id": 51, "title": "Point Estimation & Bias", "focus": "Estimator definition, unbiasedness, Mean Squared Error", "resource": "NPTEL Statistical Inference", "url": "https://nptel.ac.in/courses/111105039" },
-            { "id": 52, "title": "Maximum Likelihood Estimation (MLE)", "focus": "Likelihood functions, log-likelihood optimization, MLE steps", "resource": "GO Classes Stats MLE Lecture", "url": "https://www.youtube.com/@Goclasses" },
+            { "id": 52, "title": "Maximum Likelihood Estimation (MLE)", "focus": "Likelihood functions, log-likelihood optimization, MLE steps", "resource": "GO Classes Probability Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 53, "title": "Hypothesis Testing Basics", "focus": "Null/Alternative, Type I & II errors, significance level", "resource": "NPTEL Hypothesis Testing", "url": "https://nptel.ac.in/courses/111105039" },
             { "id": 54, "title": "z-test & t-test Procedures", "focus": "One-sample, two-sample tests, critical values, p-value", "resource": "Wasserman All of Statistics PDF", "url": "https://egrcc.github.io/docs/math/all-of-statistics.pdf" },
             { "id": 55, "title": "Chi-Square Test & Likelihood Ratio", "focus": "Goodness of fit, independence tests", "resource": "NPTEL Statistical Inference - Lec 30", "url": "https://nptel.ac.in/courses/111105039" },
@@ -202,11 +202,11 @@ STUDY_PLAN = [
         "phase": "phase2",
         "subject": "DBMS & Warehousing",
         "days": [
-            { "id": 85, "title": "Entity-Relationship (ER) Model", "focus": "Entities, attributes, primary key, relationships, mapping", "resource": "Amit Khurana DBMS - ER Model Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 85, "title": "Entity-Relationship (ER) Model", "focus": "Entities, attributes, primary key, relationships, mapping", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 86, "title": "Relational Model Concepts", "focus": "Schema, relations, constraints (domain, referential integrity)", "resource": "NPTEL Database Design - Lec 5", "url": "https://nptel.ac.in/courses/106105175" },
-            { "id": 87, "title": "Keys (Super, Candidate, Primary, Foreign)", "focus": "Identifying candidate keys from functional dependencies", "resource": "Amit Khurana DBMS Keys Lecture", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 87, "title": "Keys (Super, Candidate, Primary, Foreign)", "focus": "Identifying candidate keys from functional dependencies", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 88, "title": "Relational Algebra Operations", "focus": "Selection, Projection, Join (Natural, Theta, Outer), Union", "resource": "NPTEL Relational Algebra", "url": "https://nptel.ac.in/courses/106105175" },
-            { "id": 89, "title": "SQL Basics (SELECT, WHERE, GROUP BY)", "focus": "Query syntax, aggregates, having clause, filtering", "resource": "Amit Khurana SQL Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 89, "title": "SQL Basics (SELECT, WHERE, GROUP BY)", "focus": "Query syntax, aggregates, having clause, filtering", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 90, "title": "Advanced SQL (Joins & Subqueries)", "focus": "Nested queries, correlated subqueries, left/right outer joins", "resource": "NPTEL SQL Lectures", "url": "https://nptel.ac.in/courses/106105175" },
             { "id": 91, "title": "Relational Algebra & SQL Practice", "focus": "Solve 20 SQL/RA query translation problems", "resource": "GATE Overflow DBMS Questions", "url": "https://gateoverflow.in/tag/dbms" }
         ]
@@ -217,11 +217,11 @@ STUDY_PLAN = [
         "phase": "phase2",
         "subject": "DBMS & Warehousing",
         "days": [
-            { "id": 92, "title": "Functional Dependencies", "focus": "FD rules, attribute closure, equivalence of FD sets", "resource": "Amit Khurana Normalization Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 92, "title": "Functional Dependencies", "focus": "FD rules, attribute closure, equivalence of FD sets", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 93, "title": "Normal Forms (1NF, 2NF, 3NF, BCNF)", "focus": "Lossless joins, dependency preservation, normal form check", "resource": "NPTEL Normalization Lectures", "url": "https://nptel.ac.in/courses/106105175" },
-            { "id": 94, "title": "Transaction ACID Properties", "focus": "Atomicity, consistency, isolation, durability definitions", "resource": "Amit Khurana Transactions Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 94, "title": "Transaction ACID Properties", "focus": "Atomicity, consistency, isolation, durability definitions", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 95, "title": "Serializability & Concurrency Control", "focus": "Conflict serializable check (precedence graph), view serializability", "resource": "NPTEL Concurrency Control", "url": "https://nptel.ac.in/courses/106105175" },
-            { "id": 96, "title": "File Organization & B+ Trees", "focus": "Indexing concepts, B/B+ tree insertions & capacities", "resource": "Amit Khurana Indexing Lectures", "url": "https://www.youtube.com/@AmitKhurana" },
+            { "id": 96, "title": "File Organization & B+ Trees", "focus": "Indexing concepts, B/B+ tree insertions & capacities", "resource": "Amit Khurana DBMS Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
             { "id": 97, "title": "Data Warehousing Basics", "focus": "Star schema, snowflake schema, OLAP operations (Rollup, Drilldown)", "resource": "GeeksforGeeks DBMS & Warehousing Guide", "url": "https://www.geeksforgeeks.org/data-warehousing-and-data-mining-tutorial/" },
             { "id": 98, "title": "DBMS & DW Subject Test", "focus": "Solve 35 DBMS questions, check normalization & SQL solutions", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
         ]
@@ -267,7 +267,7 @@ STUDY_PLAN = [
             { "id": 115, "title": "Multilayer Perceptron Structure", "focus": "Nodes, hidden layers, weights, bias, feedforward flow", "resource": "3Blue1Brown Neural Networks - Lec 1", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000DX_ZCJB-3Ky" },
             { "id": 116, "title": "Activation Functions", "focus": "Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax and derivatives", "resource": "3Blue1Brown Neural Networks - Lec 2", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000DX_ZCJB-3Ky" },
             { "id": 117, "title": "Backpropagation Algorithm", "focus": "Chain rule for gradients, weights updates formulations", "resource": "3Blue1Brown Neural Networks - Lec 3-4", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000DX_ZCJB-3Ky" },
-            { "id": 118, "title": "Neural Networks Practice", "focus": "Perform forward/backprop calculations on mini-network", "resource": "GO Classes NN Tutorials", "url": "https://www.youtube.com/@Goclasses" },
+            { "id": 118, "title": "Neural Networks Practice", "focus": "Perform forward/backprop calculations on mini-network", "resource": "GO Classes NN Tutorials", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 119, "title": "Evaluation Metrics (ROC, AUC, F1)", "focus": "Precision, recall, confusion matrix, ROC-AUC plot", "resource": "Stanford CS229 ML - Lecture 11", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" }
         ]
     },
@@ -310,9 +310,9 @@ STUDY_PLAN = [
             { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "AIMA Berkeley AI Textbook Website", "url": "http://aima.cs.berkeley.edu/" },
             { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "NPTEL AI Search/Logic - Lec 20", "url": "https://nptel.ac.in/courses/106105077" },
             { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "AIMA Berkeley AI Textbook Website", "url": "http://aima.cs.berkeley.edu/" },
-            { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "NPTEL AI Search/Logic - Lec 24", "url": "https://nptel.ac.in/courses/106105077" },
-            { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "UC Berkeley CS188 - Lec 5", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
-            { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "UC Berkeley CS188 - Lec 6", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
+            { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "Berkeley CS188 First-Order Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
+            { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "Berkeley CS188 Bayesian Networks Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
+            { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "Berkeley CS188 Bayes Nets Independence Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
             { "id": 140, "title": "Artificial Intelligence Subject Test", "focus": "Complete AI subject test, check resolution and Bayes nets", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
         ]
     },
@@ -323,8 +323,8 @@ STUDY_PLAN = [
         "subject": "Revision",
         "days": [
             { "id": 141, "title": "Quantitative Aptitude (Ratios, %)", "focus": "Percentages, ratios, time-work, speed-distance", "resource": "GATE General Aptitude Resources", "url": "https://www.geeksforgeeks.org/gate-general-aptitude/" },
-            { "id": 142, "title": "Aptitude Combinatorics & Stats", "focus": "Basic permutations, probability, mean-median-mode GA", "resource": "GATE GA Playlists", "url": "https://www.youtube.com/" },
-            { "id": 143, "title": "Spatial Aptitude & Verbal", "focus": "Paper folding, shape rotations, English grammar, synonyms", "resource": "GATE GA Playlists", "url": "https://www.youtube.com/" },
+            { "id": 142, "title": "Aptitude Combinatorics & Stats", "focus": "Basic permutations, probability, mean-median-mode GA", "resource": "Saurabh Thakur GA Playlist (AptiXpress)", "url": "https://youtube.com/playlist?list=PLNEqvET0cb64A4pPR97wyMdHuZ8sN4VGr" },
+            { "id": 143, "title": "Spatial Aptitude & Verbal", "focus": "Paper folding, shape rotations, English grammar, synonyms", "resource": "Saurabh Thakur GA Playlist (AptiXpress)", "url": "https://youtube.com/playlist?list=PLNEqvET0cb64A4pPR97wyMdHuZ8sN4VGr" },
             { "id": 144, "title": "Linear Algebra Formulas Review", "focus": "Four subspaces, eigenvalues, QR, SVD formula cards", "resource": "MIT Linear Algebra Lecture Notes (PDF)", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/4d876a9159e32543eb0d73b4d4382f4c_MIT18_06S10ZoomNotes.pdf" },
             { "id": 145, "title": "Probability Distributions Review", "focus": "Continuous/Discrete formula sheets, CLT bounds", "resource": "Probability Cheat Sheet (PDF)", "url": "https://wzchen.com/s/probability_cheatsheet.pdf" },
             { "id": 146, "title": "Calculus & Optimization Review", "focus": "Hessian matrix test, gradient descent update steps", "resource": "Lamar Calculus Cheat Sheet (PDF)", "url": "https://tutorial.math.lamar.edu/pdf/Calculus_Cheat_Sheet_All.pdf" },
@@ -354,10 +354,10 @@ STUDY_PLAN = [
         "days": [
             { "id": 155, "title": "Solve GATE DA 2024 - Part 1", "focus": "Attempt first 30 questions under 1.5 hours", "resource": "Official GATE DA 2024 Paper", "url": "https://gateoverflow.in/" },
             { "id": 156, "title": "Solve GATE DA 2024 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "Official GATE DA 2024 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 157, "title": "Thorough Analysis of 2024 Paper", "focus": "Check solutions, write down wrong questions in Mistake Book", "resource": "GATE DA 2024 Video Analysis", "url": "https://www.youtube.com/" },
+            { "id": 157, "title": "Thorough Analysis of 2024 Paper", "focus": "Check solutions, write down wrong questions in Mistake Book", "resource": "GATE DA 2024 Video Analysis Solutions", "url": "https://www.youtube.com/results?search_query=GATE+DA+2024+Paper+Analysis+GO+Classes" },
             { "id": 158, "title": "Solve GATE DA 2025 - Part 1", "focus": "Attempt first 30 questions under exam conditions", "resource": "Official GATE DA 2025 Paper", "url": "https://gateoverflow.in/" },
             { "id": 159, "title": "Solve GATE DA 2025 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "Official GATE DA 2025 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 160, "title": "Thorough Analysis of 2025 Paper", "focus": "Analyze error patterns, calculate total raw score", "resource": "GATE DA 2025 Video Analysis", "url": "https://www.youtube.com/" },
+            { "id": 160, "title": "Thorough Analysis of 2025 Paper", "focus": "Analyze error patterns, calculate total raw score", "resource": "GATE DA 2025 Video Analysis Solutions", "url": "https://www.youtube.com/results?search_query=GATE+DA+2025+Paper+Analysis+GO+Classes" },
             { "id": 161, "title": "Mistake Book Sunday Review", "focus": "Re-solve all questions logged in your Mistake Book", "resource": "Personal Notes", "url": "" }
         ]
     },
@@ -411,11 +411,11 @@ RESOURCES_CATALOG = [
     { "category": "math", "name": "GO Classes Linear Algebra for GATE DA", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_" },
     { "category": "math", "name": "3Blue1Brown Essence of Linear Algebra", "type": "YouTube Visualizations", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" },
     { "category": "math", "name": "GO Classes Probability for GATE DA/CS", "type": "MIT OpenCourseWare", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-    { "category": "math", "name": "GO Classes GATE DA Playlists", "type": "YouTube Channel", "url": "https://www.youtube.com/@Goclasses" },
+    { "category": "math", "name": "GO Classes GATE DA Playlists", "type": "YouTube Channel", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
     { "category": "math", "name": "Mathematics for Machine Learning Textbook", "type": "PDF / Free Book Chapters", "url": "https://mml-book.github.io/" },
     { "category": "math", "name": "3Blue1Brown Essence of Calculus", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" },
     { "category": "cs", "name": "NPTEL Programming & Data Structures in Python", "type": "NPTEL Course Lectures", "url": "https://nptel.ac.in/courses/106106145" },
-    { "category": "cs", "name": "Amit Khurana DBMS Lectures", "type": "YouTube Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
+    { "category": "cs", "name": "Amit Khurana DBMS Lectures", "type": "YouTube Playlist", "url": "https://tinyurl.com/AK-DBMS-GATE" },
     { "category": "cs", "name": "NPTEL Database System Concepts (IITM)", "type": "NPTEL Course", "url": "https://nptel.ac.in/courses/106105175" },
     { "category": "cs", "name": "GeeksforGeeks GATE CS & DA Notes", "type": "Written Tutorials", "url": "https://www.geeksforgeeks.org/gate-ds-ai-syllabus/" },
     { "category": "ml-ai", "name": "Stanford Andrew Ng CS229 Machine Learning", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
