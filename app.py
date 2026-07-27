@@ -232,12 +232,12 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Machine Learning",
         "days": [
-            { "id": 99, "title": "Introduction to Machine Learning", "focus": "Types of learning, generalization, under/overfitting", "resource": "Andrew Ng ML Coursera - Week 1", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 99, "title": "Introduction to Machine Learning", "focus": "Types of learning, generalization, under/overfitting", "resource": "Stanford CS229 ML - Lecture 1", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 100, "title": "Bias-Variance Tradeoff", "focus": "Mathematical breakdown of MSE = Bias^2 + Var + Noise", "resource": "NPTEL Intro to ML - Lec 4", "url": "https://nptel.ac.in/courses/106106139" },
-            { "id": 101, "title": "Simple Linear Regression", "focus": "OLS cost function, derivations of beta coefficients", "resource": "Andrew Ng ML Coursera - Week 2", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 101, "title": "Simple Linear Regression", "focus": "OLS cost function, derivations of beta coefficients", "resource": "Stanford CS229 ML - Lecture 2", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 102, "title": "Multiple Linear Regression & OLS", "focus": "Matrix formula β = (X^T X)^-1 X^T y derivation", "resource": "Aurélien Géron Chapter 4", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
             { "id": 103, "title": "Regularization (Lasso, Ridge)", "focus": "L1 and L2 penalties, geometrical explanation of sparsity", "resource": "NPTEL Intro to ML - Lec 8", "url": "https://nptel.ac.in/courses/106106139" },
-            { "id": 104, "title": "Cross-Validation & Grid Search", "focus": "K-fold, stratified K-fold, hyperparameter tuning", "resource": "Andrew Ng ML Coursera - Week 3", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 104, "title": "Cross-Validation & Grid Search", "focus": "K-fold, stratified K-fold, hyperparameter tuning", "resource": "Stanford CS229 ML - Lecture 5", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 105, "title": "Regression Practice Problems", "focus": "Compute gradient equations, regularized cost minimization", "resource": "Bishop PRML Exercises Chapter 3", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
         ]
     },
@@ -247,10 +247,10 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Machine Learning",
         "days": [
-            { "id": 106, "title": "Logistic Regression", "focus": "Sigmoid function, logistic loss function (cross-entropy)", "resource": "Andrew Ng ML Coursera - Week 4", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 106, "title": "Logistic Regression", "focus": "Sigmoid function, logistic loss function (cross-entropy)", "resource": "Stanford CS229 ML - Lecture 4", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 107, "title": "Logistic Regression Decision Boundary", "focus": "Linear decision boundaries, multi-class softmax", "resource": "NPTEL Intro to ML - Lec 12", "url": "https://nptel.ac.in/courses/106106139" },
             { "id": 108, "title": "Support Vector Machines (Hard Margin)", "focus": "Maximizing the margin, constraint optimization formulation", "resource": "NPTEL Intro to ML - Lec 18", "url": "https://nptel.ac.in/courses/106106139" },
-            { "id": 109, "title": "SVM Soft Margin & Kernel Trick", "focus": "Slack variables, dual form, RBF/polynomial kernels", "resource": "Andrew Ng ML Coursera - Week 7", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 109, "title": "SVM Soft Margin & Kernel Trick", "focus": "Slack variables, dual form, RBF/polynomial kernels", "resource": "Stanford CS229 ML - Lecture 6", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 110, "title": "Decision Trees Splitting Criteria", "focus": "Entropy, Gini impurity, Information Gain calculations", "resource": "NPTEL Intro to ML - Lec 15", "url": "https://nptel.ac.in/courses/106106139" },
             { "id": 111, "title": "Decision Tree Regressors & Pruning", "focus": "Variance reduction split, cost complexity pruning", "resource": "Aurélien Géron Chapter 6", "url": "https://ds-ai-gate.github.io/dsai-gate/" },
             { "id": 112, "title": "Classification Models Practice", "focus": "Calculate entropy splits, trace SVM decision boundaries", "resource": "GATE DA 2024 ML Questions", "url": "https://ds-ai-gate.github.io/dsai-gate/" }
@@ -268,7 +268,7 @@ STUDY_PLAN = [
             { "id": 116, "title": "Activation Functions", "focus": "Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax and derivatives", "resource": "3Blue1Brown Neural Networks - Lec 2", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000DX_ZCJB-3Ky" },
             { "id": 117, "title": "Backpropagation Algorithm", "focus": "Chain rule for gradients, weights updates formulations", "resource": "3Blue1Brown Neural Networks - Lec 3-4", "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000DX_ZCJB-3Ky" },
             { "id": 118, "title": "Neural Networks Practice", "focus": "Perform forward/backprop calculations on mini-network", "resource": "GO Classes NN Tutorials", "url": "https://www.youtube.com/@Goclasses" },
-            { "id": 119, "title": "Evaluation Metrics (ROC, AUC, F1)", "focus": "Precision, recall, confusion matrix, ROC-AUC plot", "resource": "Andrew Ng ML Coursera - Week 6", "url": "https://www.coursera.org/specializations/machine-learning-introduction" }
+            { "id": 119, "title": "Evaluation Metrics (ROC, AUC, F1)", "focus": "Precision, recall, confusion matrix, ROC-AUC plot", "resource": "Stanford CS229 ML - Lecture 11", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" }
         ]
     },
     {
@@ -277,7 +277,7 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Machine Learning",
         "days": [
-            { "id": 120, "title": "K-Means Clustering", "focus": "K-means Lloyd's algorithm, objective function, initialization", "resource": "Andrew Ng ML Coursera - Week 8", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+            { "id": 120, "title": "K-Means Clustering", "focus": "K-means Lloyd's algorithm, objective function, initialization", "resource": "Stanford CS229 ML - Lecture 12", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
             { "id": 121, "title": "K-Means Evaluation & Medoids", "focus": "Elbow method, silhouette score, k-medoids algorithm", "resource": "NPTEL Intro to ML - Lec 25", "url": "https://nptel.ac.in/courses/106106139" },
             { "id": 122, "title": "Hierarchical Clustering", "focus": "Agglomerative vs divisive, single, complete, average linkage", "resource": "NPTEL Intro to ML - Lec 26", "url": "https://nptel.ac.in/courses/106106139" },
             { "id": 123, "title": "PCA Concepts", "focus": "Dimensionality reduction, projection, variance maximization", "resource": "NPTEL Intro to ML - Lec 28", "url": "https://nptel.ac.in/courses/106106139" },
@@ -418,7 +418,7 @@ RESOURCES_CATALOG = [
     { "category": "cs", "name": "Amit Khurana DBMS Lectures", "type": "YouTube Playlist", "url": "https://www.youtube.com/@AmitKhurana" },
     { "category": "cs", "name": "NPTEL Database System Concepts (IITM)", "type": "NPTEL Course", "url": "https://nptel.ac.in/courses/106105175" },
     { "category": "cs", "name": "GeeksforGeeks GATE CS & DA Notes", "type": "Written Tutorials", "url": "https://www.geeksforgeeks.org/gate-ds-ai-syllabus/" },
-    { "category": "ml-ai", "name": "Andrew Ng Machine Learning Specialization", "type": "Coursera (Audit Mode)", "url": "https://www.coursera.org/specializations/machine-learning-introduction" },
+    { "category": "ml-ai", "name": "Stanford Andrew Ng CS229 Machine Learning", "type": "YouTube Playlist", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
     { "category": "ml-ai", "name": "NPTEL Introduction to Machine Learning (IITM)", "type": "NPTEL Course Lectures", "url": "https://nptel.ac.in/courses/106106139" },
     { "category": "ml-ai", "name": "UC Berkeley CS188 Artificial Intelligence", "type": "UC Berkeley Course Website", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
     { "category": "ml-ai", "name": "NPTEL Artificial Intelligence Search Methods", "type": "NPTEL Course", "url": "https://nptel.ac.in/courses/106105077" },

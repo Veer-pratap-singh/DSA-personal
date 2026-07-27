@@ -38,7 +38,7 @@ Toppers recommend selecting **one primary source** for concepts and solving as m
 | **Calculus & Optimization** | [3Blue1Brown Essence of Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) <br> [NPTEL Optimization Methods](https://nptel.ac.in/courses/111105039) | *Calculus* - Thomas / Finney <br> *Mathematics for Machine Learning* (Chapters 5-7) |
 | **Python & DSA** | [NPTEL DSA using Python (Madhavan Mukund)](https://nptel.ac.in/courses/106106145) | *Data Structures and Algorithms in Python* - Goodrich, Tamassia <br> GeeksforGeeks Python & DSA |
 | **DBMS & Warehousing** | [Amit Khurana DBMS Playlist (YouTube)](https://www.youtube.com/@AmitKhurana) <br> [NPTEL Database System Concepts](https://nptel.ac.in/courses/106105175) | *Database System Concepts* - Silberschatz, Korth <br> Gate Applied Course DBMS |
-| **Machine Learning** | [Andrew Ng Coursera Lectures (Free/Audit)](https://www.coursera.org/specializations/machine-learning-introduction) <br> [NPTEL Introduction to ML (IITM)](https://nptel.ac.in/courses/106106139) | *Hands-On Machine Learning* - Aurélien Géron <br> *Pattern Recognition and ML* - Bishop |
+| **Machine Learning** | [Stanford Andrew Ng CS229 ML Lectures (YouTube)](https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU) <br> [NPTEL Introduction to ML (IITM)](https://nptel.ac.in/courses/106106139) | *Hands-On Machine Learning* - Aurélien Géron <br> *Pattern Recognition and ML* - Bishop |
 | **Artificial Intelligence** | [NPTEL Artificial Intelligence: Search Methods](https://nptel.ac.in/courses/106105077) <br> [UC Berkeley CS188 AI (YouTube)](https://inst.eecs.berkeley.edu/~cs188/fa23/) | *Artificial Intelligence: A Modern Approach* - Stuart Russell & Peter Norvig |
 
 ---
