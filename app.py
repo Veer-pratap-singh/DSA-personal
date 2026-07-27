@@ -1013,7 +1013,7 @@ with tabs[3]:
                     st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm or any UPI App to Pay ₹10", width=220)
                     st.markdown("</div>", unsafe_allow_html=True)
                     
-                    st.success("UPI ID: veerpratapsingh@upi")
+                    st.success("UPI ID: 6376541591@fam")
                     
                     if st.button("✅ Confirm simulated payment of ₹10", type="primary", key="confirm_pay_btn"):
                         state["is_premium_unlocked"] = True
