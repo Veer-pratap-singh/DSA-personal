@@ -597,7 +597,7 @@ if not st.session_state.is_logged_in:
         """, unsafe_allow_html=True)
         
         with st.form("login_form"):
-            st.markdown("<h4 style='margin-top:0; color:#f0f2f5; font-family:"Outfit",sans-serif;'>🔑 Secure Login</h4>", unsafe_allow_html=True)
+            st.markdown("<h4 style='margin-top:0; color:#f0f2f5; font-family:Outfit,sans-serif;'>🔑 Secure Login</h4>", unsafe_allow_html=True)
             username = st.text_input("Email Address / Username", placeholder="e.g. admin@gate.in")
             password = st.text_input("Password", type="password", placeholder="••••••••")
             
