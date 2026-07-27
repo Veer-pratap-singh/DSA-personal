@@ -2,5 +2,10 @@
     "completed_days": [],
     "daily_reviews": {},
     "syllabus_checked": [],
-    "mocks": []
+    "mocks": [],
+    "is_premium_unlocked": false,
+    "pending_registrations": [],
+    "approved_users": [],
+    "pending_mocks": [],
+    "approved_mocks": []
 }

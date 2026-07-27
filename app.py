@@ -498,7 +498,11 @@ def load_progress():
         "daily_reviews": {},
         "syllabus_checked": [],
         "mocks": [],
-        "is_premium_unlocked": False
+        "is_premium_unlocked": False,
+        "pending_registrations": [],
+        "approved_users": [],
+        "pending_mocks": [],
+        "approved_mocks": []
     }
     if os.path.exists(STORAGE_FILE):
         try:
@@ -941,37 +945,56 @@ with tabs[1]:
                 
                                 # Inline Mock Test for Day 162, 164, 169, 171, 173 (Week 24 & Week 25)
                 if day_id in [162, 164, 169, 171, 173]:
-                    is_free_mock = day_id in [162, 164]
-                    is_unlocked = state.get("is_premium_unlocked", False) or is_free_mock
+                    is_free_mock = day_id in [162, 164, 169] # Mock 1, 2, 3 are free
+                    student_email_key = st.session_state.get("student_email", "")
+                    is_unlocked = (
+                        state.get("is_premium_unlocked", False)
+                        or is_free_mock
+                        or (f"{student_email_key}_mockpack" in state.get("approved_mocks", []))
+                        or (f"{student_email_key}_{day_id}" in state.get("approved_mocks", []))
+                        or st.session_state.get("is_admin", False)
+                    )
                     
                     if not is_unlocked:
+                        pending_keys = [f"{m['email']}_{m['day_id']}" for m in state.get("pending_mocks", [])]
+                        is_pending = f"{student_email_key}_{day_id}" in pending_keys or f"{student_email_key}_mockpack" in pending_keys
+                        
                         st.markdown("""
                         <div style="background: linear-gradient(135deg, rgba(255, 126, 95, 0.08) 0%, rgba(254, 180, 123, 0.08) 100%); 
                                     border: 1px dashed rgba(255, 126, 95, 0.25); border-radius: 8px; padding: 12px; margin: 10px 0 10px 30px;">
-                            <span style="color:#ff7e5f; font-weight:bold; font-size:13px;">🔒 Premium Mock Test is Locked</span>
-                            <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Mock 1, 2, and 3 are completely free! Pay a one-time fee of ₹15 via UPI to unlock Mock 4 and Mock 5 (Full-Length & Subject Exams).</p>
+                             <span style="color:#ff7e5f; font-weight:bold; font-size:13px;">🔒 Premium Mock Test is Locked</span>
+                             <p style="margin: 5px 0 10px 0; font-size:11px; color:#8c9bb4;">Mock 1, 2, and 3 are completely free! Pay a one-time fee of ₹15 via UPI to unlock Mock 4 and Mock 5 (Full-Length & Subject Exams).</p>
                         </div>
                         """, unsafe_allow_html=True)
+                        
                         col_pad, col_unlock_btn = st.columns([0.15, 3.85])
                         with col_unlock_btn:
-                            with st.popover("🔓 Unlock All Mock Exams (₹15)"):
-                                st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹15", width=180)
-                                st.success("UPI ID: 6376541591@fam")
-                                utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key=f"utr_{day_id}")
-                                if st.button("🚀 Verify & Unlock", type="primary", key=f"pay_inline_{day_id}"):
-                                    if not utr_input:
-                                        st.error("Please enter the 12-digit UTR/Ref No.")
-                                    elif len(utr_input) != 12 or not utr_input.isdigit():
-                                        st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
-                                    else:
-                                        import time
-                                        with st.spinner("Connecting to UPI networks to verify transaction..."):
-                                            time.sleep(2)
-                                        state["is_premium_unlocked"] = True
-                                        commit_changes()
-                                        st.balloons()
-                                        st.success("🎉 All Mock Exams Unlocked!")
-                                        st.rerun()
+                            if is_pending:
+                                st.warning("⏳ Your unlock request is pending verification by Admin Veer.")
+                            else:
+                                with st.popover("🔓 Unlock All Mock Exams (₹15)"):
+                                    st.image("upi_qr.png", caption="Scan using GPay, PhonePe, Paytm, etc. to Pay ₹15", width=180)
+                                    st.success("UPI ID: 6376541591@fam")
+                                    utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key=f"utr_{day_id}")
+                                    if st.button("🚀 Submit UTR to Unlock", type="primary", key=f"pay_inline_{day_id}"):
+                                        if not utr_input:
+                                            st.error("Please enter the 12-digit UTR/Ref No.")
+                                        elif len(utr_input) != 12 or not utr_input.isdigit():
+                                            st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
+                                        else:
+                                            import time
+                                            with st.spinner("Submitting unlock request..."):
+                                                time.sleep(1.5)
+                                            state["pending_mocks"].append({
+                                                "email": student_email_key,
+                                                "utr": utr_input,
+                                                "day_id": str(day_id),
+                                                "timestamp": date.today().strftime("%Y-%m-%d")
+                                            })
+                                            commit_changes()
+                                            st.success("🎉 Request submitted! Your mock will be unlocked after admin verification.")
+                                            st.rerun()
+
                     else:
                         # Render interactive quiz
                         exam_id = f"premium_mock_{day_id}"
@@ -1605,7 +1628,12 @@ with tabs[4]:
     st.subheader("GATE DA Mock Center")
     
     # Mode selection
-    is_unlocked = state.get("is_premium_unlocked", False)
+    student_email_key = st.session_state.get("student_email", "")
+    is_unlocked = (
+        state.get("is_premium_unlocked", False)
+        or (f"{student_email_key}_mockpack" in state.get("approved_mocks", []))
+        or st.session_state.get("is_admin", False)
+    )
     mode_options = ["📊 Mock Attempt Log Book", "🏆 Premium Practice Mock Center" + (" (Locked 🔒)" if not is_unlocked else " (Unlocked)")]
     mock_mode = st.radio("Choose Section:", mode_options, horizontal=True, key="mock_center_mode_select")
     
@@ -1710,21 +1738,31 @@ with tabs[4]:
                     
                     st.success("UPI ID: 6376541591@fam")
                     
-                    utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key="confirm_pay_utr")
-                    if st.button("🚀 Verify & Unlock", type="primary", key="confirm_pay_btn"):
-                        if not utr_input:
-                            st.error("Please enter the 12-digit UTR/Ref No.")
-                        elif len(utr_input) != 12 or not utr_input.isdigit():
-                            st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
-                        else:
-                            import time
-                            with st.spinner("Connecting to UPI networks to verify transaction..."):
-                                time.sleep(2)
-                            state["is_premium_unlocked"] = True
-                            commit_changes()
-                            st.balloons()
-                            st.success("🎉 Payment Verified! Premium Mock Center is now unlocked!")
-                            st.rerun()
+                    pending_keys = [f"{m['email']}_{m['day_id']}" for m in state.get("pending_mocks", [])]
+                    is_pending = f"{student_email_key}_mockpack" in pending_keys
+                    
+                    if is_pending:
+                        st.warning("⏳ Your mock pack unlock request is pending verification by Admin Veer. Please check back later!")
+                    else:
+                        utr_input = st.text_input("Enter 12-digit UPI Ref/UTR No. after payment:", placeholder="e.g. 620584739201", key="confirm_pay_utr")
+                        if st.button("🚀 Submit UTR to Unlock", type="primary", key="confirm_pay_btn"):
+                            if not utr_input:
+                                st.error("Please enter the 12-digit UTR/Ref No.")
+                            elif len(utr_input) != 12 or not utr_input.isdigit():
+                                st.error("Invalid UTR. The UPI Ref No. must be exactly 12 numeric digits.")
+                            else:
+                                import time
+                                with st.spinner("Submitting unlock request..."):
+                                    time.sleep(1.5)
+                                state["pending_mocks"].append({
+                                    "email": student_email_key,
+                                    "utr": utr_input,
+                                    "day_id": "mockpack",
+                                    "timestamp": date.today().strftime("%Y-%m-%d")
+                                })
+                                commit_changes()
+                                st.success("🎉 Unlock request submitted! Access will be granted after Admin Veer verifies your payment.")
+                                st.rerun()
                         
         else:
             # Unlocked Premium Center
@@ -2077,104 +2115,162 @@ with tabs[4]:
 # Tab 5: Performance Analytics
 # ------------------------------------------
 with tabs[0]:
-    st.subheader("Performance Insights & Review Notes")
-    st.caption("Deep analysis based on daily study review logs.")
-    
-    col_stat1, col_stat2, col_stat3 = st.columns(3)
-    with col_stat1:
-        st.metric("Study Consistency", f"{progress_pct}%", "days ticked off")
-    with col_stat2:
-        st.metric("Hours Studied", f"{round(total_hours, 1)} hrs", "total logged time")
-    with col_stat3:
-        rate = round(total_hours / completed_count, 1) if completed_count > 0 else 0.0
-        st.metric("Daily Study Rate", f"{rate} hrs/day", "average hours per completed day")
+    if st.session_state.get("is_admin", False):
+        st.markdown("### 👑 Admin Control Panel")
+        st.info("Welcome back Veer! Use this dashboard to verify student payments and approve access.")
         
-    st.markdown("---")
-    
-    col_an1, col_an2 = st.columns(2)
-    
-    # 1. Urgent Revisions Queue (Rating <= 2)
-    with col_an1:
-        st.markdown("#### 🚨 Urgent Revisions Queue")
-        st.caption("Topics where self-assessed understanding rating was logged at 2 stars or lower.")
+        # Two tabs for approvals
+        app_tab1, app_tab2 = st.tabs(["📋 Student Registrations", "📝 Mock Exam Unlocks"])
         
-        revisions = []
-        for day_id_str, log in state["daily_reviews"].items():
-            if int(log.get("rating", 5)) <= 2:
-                day_id = int(day_id_str)
-                # Find day name
-                topic = "Unknown"
-                subj = "Unknown"
+        with app_tab1:
+            st.markdown("#### Pending Registrations (₹19)")
+            pending_regs = state.get("pending_registrations", [])
+            if not pending_regs:
+                st.success("No pending registrations. Good job!")
+            else:
+                for idx, reg in enumerate(pending_regs):
+                    col_reg_info, col_reg_actions = st.columns([3, 1])
+                    with col_reg_info:
+                        st.markdown(f"👤 **Name:** {reg['name']} | **Email:** {reg['email']}")
+                        st.markdown(f"💳 **UTR:** `{reg['utr']}` | **Date:** {reg['timestamp']}")
+                    with col_reg_actions:
+                        if st.button("✅ Approve", key=f"app_reg_{idx}_{reg['email']}"):
+                            # Add to approved
+                            state["approved_users"].append(reg["email"])
+                            # Remove from pending
+                            state["pending_registrations"] = [r for r in state["pending_registrations"] if r["email"] != reg["email"]]
+                            commit_changes()
+                            st.success(f"Approved {reg['email']}!")
+                            st.rerun()
+                        if st.button("❌ Reject", key=f"rej_reg_{idx}_{reg['email']}"):
+                            state["pending_registrations"] = [r for r in state["pending_registrations"] if r["email"] != reg["email"]]
+                            commit_changes()
+                            st.warning(f"Rejected request for {reg['email']}")
+                            st.rerun()
+                    st.markdown("---")
+                    
+        with app_tab2:
+            st.markdown("#### Pending Mock Unlocks (₹15)")
+            pending_m = state.get("pending_mocks", [])
+            if not pending_m:
+                st.success("No pending mock unlocks. Good job!")
+            else:
+                for idx, pm in enumerate(pending_m):
+                    col_mock_info, col_mock_actions = st.columns([3, 1])
+                    with col_mock_info:
+                        st.markdown(f"👤 **Student:** {pm['email']} | **Mock ID:** Day {pm['day_id']}")
+                        st.markdown(f"💳 **UTR:** `{pm['utr']}` | **Date:** {pm['timestamp']}")
+                    with col_mock_actions:
+                        if st.button("✅ Approve", key=f"app_mock_{idx}_{pm['email']}_{pm['day_id']}"):
+                            # Add to approved
+                            state["approved_mocks"].append(f"{pm['email']}_{pm['day_id']}")
+                            # Remove from pending
+                            state["pending_mocks"] = [m for m in state["pending_mocks"] if not (m["email"] == pm["email"] and m["day_id"] == pm["day_id"])]
+                            commit_changes()
+                            st.success(f"Unlocked Mock {pm['day_id']} for {pm['email']}!")
+                            st.rerun()
+                        if st.button("❌ Reject", key=f"rej_mock_{idx}_{pm['email']}_{pm['day_id']}"):
+                            state["pending_mocks"] = [m for m in state["pending_mocks"] if not (m["email"] == pm["email"] and m["day_id"] == pm["day_id"])]
+                            commit_changes()
+                            st.warning(f"Rejected request for {pm['email']} Day {pm['day_id']}")
+                            st.rerun()
+                    st.markdown("---")
+    else:
+        # Standard Student Analytics dashboard
+        st.subheader("Performance Insights & Review Notes")
+        st.caption("Deep analysis based on daily study review logs.")
+        
+        col_stat1, col_stat2, col_stat3 = st.columns(3)
+        with col_stat1:
+            st.metric("Study Consistency", f"{progress_pct}%", "days ticked off")
+        with col_stat2:
+            st.metric("Hours Studied", f"{round(total_hours, 1)} hrs", "total logged time")
+        with col_stat3:
+            rate = round(total_hours / completed_count, 1) if completed_count > 0 else 0.0
+            st.metric("Daily Study Rate", f"{rate} hrs/day", "average hours per completed day")
+            
+        st.markdown("---")
+        
+        col_an1, col_an2 = st.columns(2)
+        
+        # 1. Urgent Revisions Queue (Rating <= 2)
+        with col_an1:
+            st.markdown("#### 🚨 Urgent Revision Queue")
+            st.caption("Topics where your understanding rating is 2★ or lower.")
+            
+            low_topics = []
+            for day_id_str, log in state["daily_reviews"].items():
+                if int(log.get("rating", 5)) <= 2:
+                    # Find day details
+                    day_details = None
+                    for w in STUDY_PLAN:
+                        for d in w["days"]:
+                            if str(d["id"]) == day_id_str:
+                                day_details = d
+                                break
+                    if day_details:
+                        low_topics.append((day_id_str, day_details["title"], log["rating"]))
+                        
+            if not low_topics:
+                st.success("Your revision queue is clean! All logged topics rated 3★ or above.")
+            else:
+                for d_id, title, rating in low_topics:
+                    st.markdown(f"⚠️ **Day {d_id}:** {title} ({rating}★)")
+                    
+        # 2. Subject-wise Confidence Breakdown
+        with col_an2:
+            st.markdown("#### 🧠 Subject Confidence Mapping")
+            st.caption("Average understanding rate by subject classification.")
+            
+            subject_ratings = {}
+            for day_id_str, log in state["daily_reviews"].items():
+                # Find subject for this day
+                sub_found = "General"
                 for w in STUDY_PLAN:
-                    d_obj = next((d for d in w["days"] if d["id"] == day_id), None)
-                    if d_obj:
-                        topic = d_obj["title"]
-                        subj = w["subject"]
-                        break
-                revisions.append((day_id, topic, subj, log["rating"], log.get("notes", "")))
+                    for d in w["days"]:
+                        if str(d["id"]) == day_id_str:
+                            sub_found = w["subject"]
+                            break
+                subject_ratings.setdefault(sub_found, []).append(int(log.get("rating", 5)))
                 
-        if not revisions:
-            st.success("All logged topics are set to stable confidence! No urgent revisions needed.")
-        else:
-            for d_id, topic, subj, rating, notes in sorted(revisions):
-                st.error(f"**Day {d_id}**: {topic} ({subj}) — Confidence: **{rating}★**\n\n*Notes*: _{notes or 'No notes logged.'}_")
+            conf_data = []
+            for sub, ratings in subject_ratings.items():
+                conf_data.append({
+                    "Subject": sub,
+                    "Average Rating": round(sum(ratings) / len(ratings), 2)
+                })
                 
-    # 2. Subject Confidence Bars
-    with col_an2:
-        st.markdown("#### 🧠 Subject Confidence Indices")
-        st.caption("Average self-ratings across specific disciplines.")
-        
-        subjects = [
-            ("Linear Algebra", 1, 28),
-            ("Probability & Stats", 29, 56),
-            ("Calculus & Optimization", 57, 70),
-            ("Programming & DSA", 71, 84),
-            ("DBMS & Warehousing", 85, 98),
-            ("Machine Learning", 99, 126),
-            ("Artificial Intelligence", 127, 140)
-        ]
-        
-        conf_data = []
-        for s_name, start, end in subjects:
-            subj_ratings = []
-            for d_id in range(start, end + 1):
-                log = state["daily_reviews"].get(str(d_id))
-                if log and "rating" in log:
-                    subj_ratings.append(log["rating"])
-            avg_r = sum(subj_ratings) / len(subj_ratings) if subj_ratings else 0.0
-            conf_data.append({"Subject": s_name, "Average Rating": avg_r})
-            
-        if not any(d["Average Rating"] > 0 for d in conf_data):
-            st.info("Log reviews inside the study planner to populate subject confidence charts.")
-        else:
-            conf_df = pd.DataFrame(conf_data)
-            st.bar_chart(conf_df.set_index("Subject"))
+            if not any(d["Average Rating"] > 0 for d in conf_data):
+                st.info("Log reviews inside the study planner to populate subject confidence charts.")
+            else:
+                conf_df = pd.DataFrame(conf_data)
+                st.bar_chart(conf_df.set_index("Subject"))
 
-    st.markdown("---")
-    
-    # 3. 180-Day Grid Calendar Matrix (HTML rendering)
-    st.markdown("#### 📅 180-Day Study Calendar Matrix")
-    st.caption("Green represents high confidence (4-5★), Orange represents medium (3★), and Pink represents low confidence (1-2★). Gray cells are unstudied.")
-    
-    grid_html = "<div class='matrix-grid'>"
-    for day_id in range(1, 181):
-        log = state["daily_reviews"].get(str(day_id))
-        cls = "cell-empty"
-        tooltip = f"Day {day_id}: Not Studied"
+        st.markdown("---")
         
-        if log:
-            rating = log.get("rating", 5)
-            hours = log.get("hours", 0)
-            notes = log.get("notes", "").replace("'", "")
-            tooltip = f"Day {day_id}: {rating}/5 stars | Hours: {hours}h | Notes: {notes[:40]}..."
-            if rating <= 2: cls = "cell-low"
-            elif rating == 3: cls = "cell-medium"
-            else: cls = "cell-high"
-        elif day_id in state["completed_days"]:
-            cls = "cell-medium"
-            tooltip = f"Day {day_id}: Completed (no log detail)"
+        # 3. 180-Day Grid Calendar Matrix (HTML rendering)
+        st.markdown("#### 📅 180-Day Study Calendar Matrix")
+        st.caption("Green represents high confidence (4-5★), Orange represents medium (3★), and Pink represents low confidence (1-2★). Gray cells are unstudied.")
+        
+        grid_html = "<div class='matrix-grid'>"
+        for day_id in range(1, 181):
+            log = state["daily_reviews"].get(str(day_id))
+            cls = "cell-empty"
+            tooltip = f"Day {day_id}: Not Studied"
             
-        grid_html += f"<div class='matrix-cell {cls}' title='{tooltip}'></div>"
-        
-    grid_html += "</div>"
-    st.markdown(grid_html, unsafe_allow_html=True)
+            if log:
+                rating = log.get("rating", 5)
+                hours = log.get("hours", 0)
+                notes = log.get("notes", "").replace("'", "")
+                tooltip = f"Day {day_id}: {rating}/5 stars | Hours: {hours}h | Notes: {notes[:40]}..."
+                if rating <= 2: cls = "cell-low"
+                elif rating == 3: cls = "cell-medium"
+                else: cls = "cell-high"
+            elif day_id in state["completed_days"]:
+                cls = "cell-medium"
+                tooltip = f"Day {day_id}: Completed (no log detail)"
+                
+            grid_html += f"<div class='matrix-cell {cls}' title='{tooltip}'></div>"
+            
+        grid_html += "</div>"
+        st.markdown(grid_html, unsafe_allow_html=True)
