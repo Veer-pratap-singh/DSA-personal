@@ -529,77 +529,6 @@ state = st.session_state.state
 def commit_changes():
     save_progress(st.session_state.state)
 
-# Helper to map day_id to dsai-gate slide ID
-def get_dsai_present_id(day_id):
-    if 1 <= day_id <= 2: return 10
-    elif 3 <= day_id <= 6: return 12
-    elif 8 <= day_id <= 10: return 9
-    elif day_id == 11: return 10
-    elif 12 <= day_id <= 13: return 9
-    elif 15 <= day_id <= 16: return 11
-    elif 17 <= day_id <= 18: return 12
-    elif 19 <= day_id <= 20: return 13
-    elif 22 <= day_id <= 23: return 14
-    elif 24 <= day_id <= 25: return 15
-    elif 26 <= day_id <= 27: return 16
-    
-    # Probability
-    elif 29 <= day_id <= 30: return 0
-    elif 31 <= day_id <= 32: return 2
-    elif 33 <= day_id <= 34: return 3
-    elif 36 <= day_id <= 37: return 4
-    elif 38 <= day_id <= 41: return 5
-    elif 43 <= day_id <= 44: return 5
-    elif 45 <= day_id <= 46: return 6
-    elif 47 <= day_id <= 48: return 7
-    elif 50 <= day_id <= 53: return 7
-    elif 54 <= day_id <= 55: return 8
-    
-    # Calculus
-    elif 57 <= day_id <= 58: return 18
-    elif 59 <= day_id <= 60: return 19
-    elif 61 <= day_id <= 62: return 20
-    elif 64 <= day_id <= 67: return 21
-    elif 68 <= day_id <= 69: return 22
-    
-    # Programming & DSA
-    elif 71 <= day_id <= 72: return 26
-    elif 73 <= day_id <= 74: return 27
-    elif 75 <= day_id <= 76: return 28
-    elif 78 <= day_id <= 80: return 29
-    elif 81 <= day_id <= 82: return 31
-    elif day_id == 83: return 30
-    
-    # DBMS
-    elif 85 <= day_id <= 86: return 35
-    elif 87 <= day_id <= 88: return 36
-    elif 89 <= day_id <= 90: return 37
-    elif 92 <= day_id <= 93: return 38
-    elif 94 <= day_id <= 95: return 40
-    elif day_id == 96: return 39
-    elif day_id == 97: return 41
-    
-    # Machine Learning
-    elif 99 <= day_id <= 100: return 44
-    elif 101 <= day_id <= 104: return 45
-    elif 106 <= day_id <= 107: return 46
-    elif 108 <= day_id <= 109: return 47
-    elif 110 <= day_id <= 111: return 48
-    elif 113 <= day_id <= 114: return 49
-    elif 115 <= day_id <= 118: return 50
-    elif 120 <= day_id <= 122: return 51
-    elif 123 <= day_id <= 124: return 52
-    
-    # AI
-    elif 127 <= day_id <= 129: return 53
-    elif 130 <= day_id <= 131: return 54
-    elif day_id == 132: return 55
-    elif 134 <= day_id <= 135: return 56
-    elif 136 <= day_id <= 137: return 57
-    elif 138 <= day_id <= 139: return 58
-    
-    return None
-
 # ==========================================
 # 3. Dynamic Aggregated Statistics
 # ==========================================
@@ -852,11 +781,6 @@ with tabs[0]:
                     st.markdown(f"<span style='font-size:12px; color:#8c9bb4;'><strong>Focus:</strong> {day['focus']}</span>", unsafe_allow_html=True)
                     if day['url']:
                         st.markdown(f"[🔗 Resource: {day['resource']}]({day['url']})")
-                    
-                    # Innovative DSAI-GATE interactive presentation slide integration
-                    slide_id = get_dsai_present_id(day_id)
-                    if slide_id is not None:
-                        st.markdown(f"[📖 Revision Deck: DSAI-GATE Slide #{slide_id}](https://ds-ai-gate.github.io/dsai-gate/#present={slide_id})")
                         
                 with col_log:
                     # Log review input fields directly inline
