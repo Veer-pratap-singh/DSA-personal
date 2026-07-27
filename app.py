@@ -83,7 +83,7 @@ STUDY_PLAN = [
         "subject": "Probability & Statistics",
         "days": [
             { "id": 29, "title": "Sample Space, Events & Axioms", "focus": "Basic probability rules, Venn diagrams, set operations", "resource": "GO Classes Probability - Lec 1-3", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-            { "id": 30, "title": "Permutations & Combinations in Prob.", "focus": "Counting principles, balls & bins, combinations selection", "resource": "Probability Course Online Textbook", "url": "https://www.probabilitycourse.com/" },
+            { "id": 30, "title": "Permutations & Combinations in Prob.", "focus": "Counting principles, balls & bins, combinations selection", "resource": "Probability Course - Combinatorics", "url": "https://www.probabilitycourse.com/chapter1/1_3_0_combinatorics.php" },
             { "id": 31, "title": "Conditional Probability & Independence", "focus": "Multiplication rule, independent events definition", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 32, "title": "Total Probability Theorem", "focus": "Partitioning sample space, weighted probabilities sum", "resource": "GO Classes Probability - Lec 4-6", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 33, "title": "Bayes' Theorem", "focus": "Posterior probability calculation, base rate fallacy", "resource": "3Blue1Brown Bayes Theorem Video", "url": "https://www.youtube.com/watch?v=HZGCoVF3YvM" },
@@ -98,7 +98,7 @@ STUDY_PLAN = [
         "subject": "Probability & Statistics",
         "days": [
             { "id": 36, "title": "Discrete Random Variables (PMF, CDF)", "focus": "Probability mass function, cumulative steps, mean, variance", "resource": "GO Classes Probability - Lec 7-9", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-            { "id": 37, "title": "Expectation & Variance Properties", "focus": "Linearity of expectation, scaling variance, moments", "resource": "Probability Course Online Textbook", "url": "https://www.probabilitycourse.com/" },
+            { "id": 37, "title": "Expectation & Variance Properties", "focus": "Linearity of expectation, scaling variance, moments", "resource": "Probability Course - Expectation & Variance", "url": "https://www.probabilitycourse.com/chapter3/3_1_2_expectation_variance.php" },
             { "id": 38, "title": "Continuous Random Variables (PDF, CDF)", "focus": "Integration of density, cumulative distributions, mean, variance", "resource": "GO Classes Probability - Lec 10-12", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 39, "title": "Binomial & Poisson Distributions", "focus": "Derivations, PMFs, mean, variance, Poisson approximation", "resource": "GO Classes Probability - Lec 13-15", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 40, "title": "Uniform, Exponential & Geometric Dist.", "focus": "Memoryless property of exponential & geometric, integrations", "resource": "GO Classes Probability - Lec 16-18", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
@@ -113,7 +113,7 @@ STUDY_PLAN = [
         "subject": "Probability & Statistics",
         "days": [
             { "id": 43, "title": "Joint PMF & PDF", "focus": "Marginals, joint CDF, integration limits, double integration", "resource": "GO Classes Probability - Lec 22-24", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
-            { "id": 44, "title": "Conditional Distributions & Independence", "focus": "Independent random variables, conditional density", "resource": "Probability Course Online Textbook", "url": "https://www.probabilitycourse.com/" },
+            { "id": 44, "title": "Conditional Distributions & Independence", "focus": "Independent random variables, conditional density", "resource": "Probability Course - Conditional Distributions", "url": "https://www.probabilitycourse.com/chapter5/5_1_3_conditional_distributions.php" },
             { "id": 45, "title": "Covariance & Correlation", "focus": "Mathematical formula, properties, correlation coefficient", "resource": "GO Classes Probability - Lec 25-27", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 46, "title": "Sum of Independent Random Variables", "focus": "Convolutions of discrete and continuous variables", "resource": "GO Classes Probability - Lec 28-30", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
             { "id": 47, "title": "Chebyshev's Inequality", "focus": "Bounding probability using mean and variance", "resource": "GO Classes Probability - Lec 31-33", "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHjGbysj9OvLTfL2qhsTdsbr" },
@@ -293,7 +293,7 @@ STUDY_PLAN = [
         "subject": "Artificial Intelligence",
         "days": [
             { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "UC Berkeley CS188 - Lec 1", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
-            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "AIMA Berkeley AI Textbook Website", "url": "http://aima.cs.berkeley.edu/" },
+            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "Berkeley CS188 Search Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note01.pdf" },
             { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "UC Berkeley CS188 - Lec 2", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/" },
             { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "NPTEL AI Search Methods - Lec 10", "url": "https://nptel.ac.in/courses/106105077" },
             { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "NPTEL AI Search Methods - Lec 11", "url": "https://nptel.ac.in/courses/106105077" },
@@ -307,9 +307,9 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Artificial Intelligence",
         "days": [
-            { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "AIMA Berkeley AI Textbook Website", "url": "http://aima.cs.berkeley.edu/" },
+            { "id": 134, "title": "Propositional Logic Basics", "focus": "Conjunction, disjunction, implication, truth tables", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 135, "title": "Propositional Inference", "focus": "Tautology, contradiction, resolution refutation proofs", "resource": "NPTEL AI Search/Logic - Lec 20", "url": "https://nptel.ac.in/courses/106105077" },
-            { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "AIMA Berkeley AI Textbook Website", "url": "http://aima.cs.berkeley.edu/" },
+            { "id": 136, "title": "First-Order Logic (FOL)", "focus": "Quantifiers (Universal, Existential), predicates, functions", "resource": "Berkeley CS188 Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 137, "title": "FOL Inference & Unification", "focus": "Unification algorithm, Skolemization, resolution in FOL", "resource": "Berkeley CS188 First-Order Logic Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note07.pdf" },
             { "id": 138, "title": "Bayesian Networks Syntax", "focus": "Graph structure, conditional probability tables (CPT)", "resource": "Berkeley CS188 Bayesian Networks Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
             { "id": 139, "title": "Bayesian Networks Independence", "focus": "d-separation active/inactive paths, joint factorization", "resource": "Berkeley CS188 Bayes Nets Independence Notes (PDF)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/note03.pdf" },
