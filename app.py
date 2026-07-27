@@ -278,9 +278,9 @@ STUDY_PLAN = [
         "subject": "Machine Learning",
         "days": [
             { "id": 120, "title": "K-Means Clustering", "focus": "K-means Lloyd's algorithm, objective function, initialization", "resource": "Stanford CS229 ML - Lecture 12", "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU" },
-            { "id": 121, "title": "K-Means Evaluation & Medoids", "focus": "Elbow method, silhouette score, k-medoids algorithm", "resource": "NPTEL Intro to ML - Lec 25", "url": "https://nptel.ac.in/courses/106106139" },
-            { "id": 122, "title": "Hierarchical Clustering", "focus": "Agglomerative vs divisive, single, complete, average linkage", "resource": "NPTEL Intro to ML - Lec 26", "url": "https://nptel.ac.in/courses/106106139" },
-            { "id": 123, "title": "PCA Concepts", "focus": "Dimensionality reduction, projection, variance maximization", "resource": "NPTEL Intro to ML - Lec 28", "url": "https://nptel.ac.in/courses/106106139" },
+            { "id": 121, "title": "K-Means Evaluation & Medoids", "focus": "Elbow method, silhouette score, k-medoids algorithm", "resource": "GFG K-Medoids Clustering Guide", "url": "https://www.geeksforgeeks.org/k-medoids-clustering-clustering-algorithms-in-machine-learning/" },
+            { "id": 122, "title": "Hierarchical Clustering", "focus": "Agglomerative vs divisive, single, complete, average linkage", "resource": "GFG Hierarchical Clustering Guide", "url": "https://www.geeksforgeeks.org/hierarchical-clustering-in-data-mining/" },
+            { "id": 123, "title": "PCA Concepts", "focus": "Dimensionality reduction, projection, variance maximization", "resource": "GFG Principal Component Analysis Guide", "url": "https://www.geeksforgeeks.org/principal-component-analysis-pca/" },
             { "id": 124, "title": "PCA Mathematical Derivation", "focus": "Covariance matrix, eigen decomposition, projection matrix", "resource": "Maths for ML Deisenroth Textbook", "url": "https://mml-book.github.io/book/mml-book.pdf" },
             { "id": 125, "title": "Unsupervised Learning Practice", "focus": "Solve 15 problems on PCA & clustering", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" },
             { "id": 126, "title": "Machine Learning Subject Test", "focus": "Solve 35 ML questions, log accuracy and weak spots", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
