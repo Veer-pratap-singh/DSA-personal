@@ -556,6 +556,75 @@ if state["completed_days"]:
             break
 
 # ==========================================
+# 3.5. Authentication Guard & Login Interface
+# ==========================================
+if "is_logged_in" not in st.session_state:
+    st.session_state.is_logged_in = False
+
+if not st.session_state.is_logged_in:
+    # Google Fonts
+    st.markdown("<link href='https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap' rel='stylesheet'>", unsafe_allow_html=True)
+    
+    st.markdown("""
+    <style>
+        .stApp {
+            background: linear-gradient(135deg, #0d0f1d 0%, #151825 100%) !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        div[data-testid="stForm"] {
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            background-color: rgba(15, 18, 37, 0.45) !important;
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    _, col_login, _ = st.columns([1, 1.8, 1])
+    with col_login:
+        st.markdown("<br><br>", unsafe_allow_html=True)
+        st.markdown("""
+        <div style='text-align: center; margin-bottom: 25px;'>
+            <h1 style='margin:0; font-family:"Outfit",sans-serif; font-weight:800; font-size:2.2rem; background: linear-gradient(to right, #00f2fe, #ab64fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>
+                🎓 GATE DA Study Companion
+            </h1>
+            <p style='margin: 8px 0 0 0; color: #8c9bb4; font-size:14px; font-family:"Inter",sans-serif;'>
+                Secure topper-grade study path, revision logs, and interactive mock exams.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        with st.form("login_form"):
+            st.markdown("<h4 style='margin-top:0; color:#f0f2f5; font-family:"Outfit",sans-serif;'>🔑 Secure Login</h4>", unsafe_allow_html=True)
+            username = st.text_input("Email Address / Username", placeholder="e.g. admin@gate.in")
+            password = st.text_input("Password", type="password", placeholder="••••••••")
+            
+            submitted = st.form_submit_button("🔓 Sign In", type="primary", use_container_width=True)
+            if submitted:
+                if username.strip() == "admin@gate.in" and password == "gate2026":
+                    st.session_state.is_logged_in = True
+                    st.success("Access granted! Loading companion...")
+                    st.rerun()
+                elif not username or not password:
+                    st.error("Please fill in both fields.")
+                else:
+                    st.error("Invalid credentials. Try the demo credentials below.")
+                    
+        st.markdown("""
+        <div style="background-color: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.15); border-radius: 10px; padding: 15px; margin-top: 15px; font-family:'Inter',sans-serif;">
+            <span style="color:#00f2fe; font-weight:bold; font-size:13px;">💡 Demo Access Credentials:</span>
+            <p style="margin: 5px 0 0 0; font-size:12px; color:#8c9bb4;">
+                <strong>Email:</strong> admin@gate.in<br>
+                <strong>Password:</strong> gate2026
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    st.stop()
+
+# ==========================================
 # 4. Premium Interface Layout & CSS Injection
 # ==========================================
 st.markdown("""
@@ -711,6 +780,11 @@ with st.sidebar:
                 st.rerun()
             else:
                 st.error("Please type 'RESET' to confirm.")
+                
+    st.markdown("---")
+    if st.button("🚪 Sign Out", use_container_width=True, key="sign_out_btn"):
+        st.session_state.is_logged_in = False
+        st.rerun()
 
 # ==========================================
 # 6. Tabbed View Navigation
