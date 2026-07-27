@@ -819,7 +819,7 @@ with tabs[0]:
                 
                                 # Inline Mock Test for Day 162, 164, 169, 171, 173 (Week 24 & Week 25)
                 if day_id in [162, 164, 169, 171, 173]:
-                    is_free_mock = day_id in [162, 164, 169]
+                    is_free_mock = day_id in [162, 164]
                     is_unlocked = state.get("is_premium_unlocked", False) or is_free_mock
                     
                     if not is_unlocked:
