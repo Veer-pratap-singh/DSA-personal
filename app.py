@@ -292,11 +292,11 @@ STUDY_PLAN = [
         "phase": "phase3",
         "subject": "Artificial Intelligence",
         "days": [
-            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "CS188 Search Note 01 (Sec. 1-3: DFS/BFS)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "CS188 Search Note 01 (Sec. 3: Depth-Limited & IDS)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "CS188 Search Note 01 (Sec. 4: Greedy Search)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "CS188 Search Note 01 (Sec. 4: A* Search)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
-            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "CS188 Search Note 01 (Sec. 5: Consistency & Optimality)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note01.pdf" },
+            { "id": 127, "title": "Uninformed Search (BFS, DFS)", "focus": "BFS & DFS properties, time and space complexity, completeness", "resource": "GFG BFS vs DFS Comparison Guide", "url": "https://www.geeksforgeeks.org/difference-between-bfs-and-dfs/" },
+            { "id": 128, "title": "Depth Limited & Iterative Deepening", "focus": "Space advantages of DFS with completeness of BFS", "resource": "GFG Iterative Deepening Search (IDS)", "url": "https://www.geeksforgeeks.org/iterative-deepening-search-ids-or-iddfs/" },
+            { "id": 129, "title": "Informed Search (Greedy Best First)", "focus": "Heuristic functions, search tree expansion strategy", "resource": "GFG Greedy Best-First Search Guide", "url": "https://www.geeksforgeeks.org/greedy-best-first-search-algorithm/" },
+            { "id": 130, "title": "A* Search", "focus": "A* completeness, heuristic admissibility (h(n) <= h*(n))", "resource": "GFG A* Search Algorithm Guide", "url": "https://www.geeksforgeeks.org/a-search-algorithm/" },
+            { "id": 131, "title": "A* Consistency & Optimality", "focus": "Consistent heuristics, monotone property, optimality proofs", "resource": "Gate Applied A* Admissibility & Consistency Video", "url": "https://www.youtube.com/watch?v=k21zZ4W6Q5M" },
             { "id": 132, "title": "Minimax & Alpha-Beta Pruning", "focus": "Game trees, utility values, alpha-beta cutoffs", "resource": "CS188 Game Trees Note 02 (Minimax & Pruning)", "url": "https://inst.eecs.berkeley.edu/~cs188/fa23/assets/notes/cs188-fa23-note02.pdf" },
             { "id": 133, "title": "Search Algorithms Problems", "focus": "Solve game trees and calculate admissible A* heuristics", "resource": "GATE Overflow AI Questions", "url": "https://gateoverflow.in/tag/artificial-intelligence" }
         ]
