@@ -367,9 +367,9 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Mock Prep",
         "days": [
-            { "id": 162, "title": "Full Length Mock 1", "focus": "Attempt 3-hour mock. Focus on question selection", "resource": "GATE Overflow Practice Exams", "url": "https://gateoverflow.in/" },
+            { "id": 162, "title": "Full Length Mock 1", "focus": "Attempt 3-hour mock. Focus on question selection", "resource": "🏆 Custom Premium Mock Exam (Take in Tab 4)", "url": "" },
             { "id": 163, "title": "Analyze Mock 1 & Revise", "focus": "Error analysis: mathematical slips vs conceptual gaps", "resource": "Personal Notes", "url": "" },
-            { "id": 164, "title": "Full Length Mock 2", "focus": "Attempt 3-hour mock. Improve time allocation", "resource": "GATE Overflow Practice Exams", "url": "https://gateoverflow.in/" },
+            { "id": 164, "title": "Full Length Mock 2", "focus": "Attempt 3-hour mock. Improve time allocation", "resource": "🏆 Custom Premium Mock Exam (Take in Tab 4)", "url": "" },
             { "id": 165, "title": "Analyze Mock 2 & Revise", "focus": "Review ML activation & backpropagation formulas", "resource": "Personal Notes", "url": "" },
             { "id": 166, "title": "Compile final 10-page Short Notes", "focus": "Extract core critical equations from all subjects", "resource": "Personal Notes", "url": "" },
             { "id": 167, "title": "Short Notes Review (Active Recall)", "focus": "Read title, write formulas without looking", "resource": "Personal Notes", "url": "" },
@@ -382,11 +382,11 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Mock Prep",
         "days": [
-            { "id": 169, "title": "Full Length Mock 3", "focus": "Complete mock under simulated GATE timing (9 AM - 12 PM)", "resource": "GATE Overflow Practice Exams", "url": "https://gateoverflow.in/" },
+            { "id": 169, "title": "Full Length Mock 3", "focus": "Complete mock under simulated GATE timing (9 AM - 12 PM)", "resource": "🏆 Custom Premium Mock Exam (Take in Tab 4)", "url": "" },
             { "id": 170, "title": "Analyze Mock 3 & Target Revision", "focus": "Revise Bayesian nets and eigenvalues", "resource": "Personal Notes", "url": "" },
-            { "id": 171, "title": "Full Length Mock 4", "focus": "Complete mock under simulated GATE timing", "resource": "GATE Overflow Practice Exams", "url": "https://gateoverflow.in/" },
+            { "id": 171, "title": "Full Length Mock 4", "focus": "Complete mock under simulated GATE timing", "resource": "🏆 Custom Premium Mock Exam (Take in Tab 4)", "url": "" },
             { "id": 172, "title": "Analyze Mock 4 & Target Revision", "focus": "Revise A* search heuristics conditions", "resource": "Personal Notes", "url": "" },
-            { "id": 173, "title": "Full Length Mock 5", "focus": "Final score calibration mock", "resource": "GATE Overflow Practice Exams", "url": "https://gateoverflow.in/" },
+            { "id": 173, "title": "Full Length Mock 5", "focus": "Final score calibration mock", "resource": "🏆 Custom Premium Mock Exam (Take in Tab 4)", "url": "" },
             { "id": 174, "title": "Analyze Mock 5 & Review Mistakes", "focus": "Resolve final numeric calculations errors", "resource": "Personal Notes", "url": "" },
             { "id": 175, "title": "Sunday Revision of Short Notes", "focus": "Complete read-through of formula book", "resource": "Formula Book", "url": "" }
         ]
