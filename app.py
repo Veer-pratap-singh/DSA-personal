@@ -337,12 +337,12 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Revision",
         "days": [
-            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "DSA Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/data-structures/" },
-            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "DSA Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/data-structures/" },
-            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "DBMS Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/dbms/" },
-            { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "ML Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/machine-learning/" },
-            { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "ML Cheat Sheets (Cheatography)", "url": "https://www.cheatography.com/tags/machine-learning/" },
-            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "AI Cheat Sheets", "url": "https://gateoverflow.in/" },
+            { "id": 148, "title": "Programming & Complexity Review", "focus": "Recursion trees, Master method, sorting bounds", "resource": "GFG Complexity & Algorithms Guide", "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/" },
+            { "id": 149, "title": "Data Structures & Graphs Review", "focus": "Tree traversals, heap ops, Graph DFS/BFS codes", "resource": "GFG Python Data Structures Guide", "url": "https://www.geeksforgeeks.org/python-data-structures-and-algorithms/" },
+            { "id": 150, "title": "DBMS SQL & Normalization Review", "focus": "Checking normal forms, transactions serializability graphs", "resource": "GeeksforGeeks DBMS Reference", "url": "https://www.geeksforgeeks.org/dbms/" },
+            { "id": 151, "title": "Machine Learning Regression & SVM Review", "focus": "OLS formula, L1/L2 shapes, SVM margin formulas", "resource": "Stanford CS229 Supervised ML Cheatsheet", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning" },
+            { "id": 152, "title": "ML Trees & Neural Networks Review", "focus": "Information gain, backprop chain rule steps", "resource": "Stanford CS229 Supervised ML Cheatsheet", "url": "https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning" },
+            { "id": 153, "title": "AI Search & Logic Review", "focus": "A* heuristics consistency, resolution rules FOL", "resource": "GeeksforGeeks AI Reference Guide", "url": "https://www.geeksforgeeks.org/artificial-intelligence-tutorials/" },
             { "id": 154, "title": "CS & ML/AI Combined Revision Test", "focus": "Take 40-question technical combined test", "resource": "GATE Overflow Questions Hub", "url": "https://gateoverflow.in/" }
         ]
     },
