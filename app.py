@@ -352,12 +352,12 @@ STUDY_PLAN = [
         "phase": "phase4",
         "subject": "Mock Prep",
         "days": [
-            { "id": 155, "title": "Solve GATE DA 2024 - Part 1", "focus": "Attempt first 30 questions under 1.5 hours", "resource": "Official GATE DA 2024 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 156, "title": "Solve GATE DA 2024 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "Official GATE DA 2024 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 157, "title": "Thorough Analysis of 2024 Paper", "focus": "Check solutions, write down wrong questions in Mistake Book", "resource": "GATE DA 2024 Video Analysis Solutions", "url": "https://www.youtube.com/results?search_query=GATE+DA+2024+Paper+Analysis+GO+Classes" },
-            { "id": 158, "title": "Solve GATE DA 2025 - Part 1", "focus": "Attempt first 30 questions under exam conditions", "resource": "Official GATE DA 2025 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 159, "title": "Solve GATE DA 2025 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "Official GATE DA 2025 Paper", "url": "https://gateoverflow.in/" },
-            { "id": 160, "title": "Thorough Analysis of 2025 Paper", "focus": "Analyze error patterns, calculate total raw score", "resource": "GATE DA 2025 Video Analysis Solutions", "url": "https://www.youtube.com/results?search_query=GATE+DA+2025+Paper+Analysis+GO+Classes" },
+            { "id": 155, "title": "Solve GATE DA 2024 - Part 1", "focus": "Attempt first 30 questions under 1.5 hours", "resource": "GO Classes GATE DA 2024 Solved Questions (Video)", "url": "https://www.youtube.com/watch?v=uzOmdiaYoSo" },
+            { "id": 156, "title": "Solve GATE DA 2024 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "GO Classes GATE DA 2024 Solved Questions (Video)", "url": "https://www.youtube.com/watch?v=uzOmdiaYoSo" },
+            { "id": 157, "title": "Thorough Analysis of 2024 Paper", "focus": "Check solutions, write down wrong questions in Mistake Book", "resource": "GFG GATE DA 2024 Solved Paper Analysis", "url": "https://www.geeksforgeeks.org/gate/gate-da-important-questions/" },
+            { "id": 158, "title": "Solve GATE DA 2025 - Part 1", "focus": "Attempt first 30 questions under exam conditions", "resource": "GO Classes GATE DA 2025 Solved Questions (Video)", "url": "https://www.youtube.com/watch?v=MGzuIszajAI" },
+            { "id": 159, "title": "Solve GATE DA 2025 - Part 2", "focus": "Attempt remaining 35 questions", "resource": "GO Classes GATE DA 2025 Solved Questions (Video)", "url": "https://www.youtube.com/watch?v=MGzuIszajAI" },
+            { "id": 160, "title": "Thorough Analysis of 2025 Paper", "focus": "Analyze error patterns, calculate total raw score", "resource": "GO Classes GATE DA 2025 Paper Analysis", "url": "https://www.youtube.com/watch?v=MGzuIszajAI" },
             { "id": 161, "title": "Mistake Book Sunday Review", "focus": "Re-solve all questions logged in your Mistake Book", "resource": "Personal Notes", "url": "" }
         ]
     },
